@@ -15,8 +15,8 @@
 2. [Bối cảnh và Phạm vi](#2-bối-cảnh-và-phạm-vi)
 3. [Các bên liên quan (Stakeholders)](#3-các-bên-liên-quan-stakeholders)
 4. [Yêu cầu chức năng](#4-yêu-cầu-chức-năng)
-   - 4.1 - 4.12: Các module nghiệp vụ
-   - 4.13: Module Quản lý Cấu hình Hệ thống (System Configuration Management)
+    - 4.1 - 4.12: Các module nghiệp vụ
+    - 4.13: Module Quản lý Cấu hình Hệ thống (System Configuration Management)
 5. [Yêu cầu phi chức năng](#5-yêu-cầu-phi-chức-năng)
 6. [Mô hình nghiệp vụ](#6-mô-hình-nghiệp-vụ)
 7. [Phụ lục](#7-phụ-lục)
@@ -75,20 +75,20 @@ Tài liệu này mô tả chi tiết các yêu cầu người dùng cho Hệ th�
 
 #### 2.1.2 Các đơn vị đào tạo (Khoa/Trung tâm)
 
-| STT | Tên đơn vị                               | Mã đơn vị | Website                    |
-| --- | ---------------------------------------- | --------- | -------------------------- |
-| 1   | Khoa Công trình                          | KCT       | ce.tlu.edu.vn              |
-| 2   | Khoa Kỹ thuật tài nguyên nước            | KKTTN     | kttnn.tlu.edu.vn           |
-| 3   | Khoa Cơ khí                              | KCK       | khoacokhi.tlu.edu.vn       |
-| 4   | Khoa Điện - Điện tử                      | KDDT      | ee.tlu.edu.vn              |
-| 5   | Khoa Kinh tế và Quản lý                  | KKTQL     | fem.tlu.edu.vn             |
-| 6   | Khoa Kế toán và Kinh doanh               | KKTKD     | fab.tlu.edu.vn             |
-| 7   | Khoa Công nghệ thông tin                 | KCNTT     | cse.tlu.edu.vn             |
-| 8   | Khoa Hóa và Môi trường                   | KHMT      | env.tlu.edu.vn             |
-| 9   | Khoa Luật và Lý luận Chính trị           | KLLCT     | pl.tlu.edu.vn              |
-| 10  | Trung tâm Đào tạo quốc tế                | TTDTQT    | sie.tlu.edu.vn             |
-| 11  | Trung tâm Giáo dục Quốc phòng và An ninh | TTGDQPAN  | ttgdqp.tlu.edu.vn          |
-| 12  | Phân hiệu Đại học Thủy lợi (TP.HCM)      | PHDHTL    | tlus.edu.vn                |
+| STT | Tên đơn vị                               | Mã đơn vị | Website              |
+| --- | ---------------------------------------- | --------- | -------------------- |
+| 1   | Khoa Công trình                          | KCT       | ce.tlu.edu.vn        |
+| 2   | Khoa Kỹ thuật tài nguyên nước            | KKTTN     | kttnn.tlu.edu.vn     |
+| 3   | Khoa Cơ khí                              | KCK       | khoacokhi.tlu.edu.vn |
+| 4   | Khoa Điện - Điện tử                      | KDDT      | ee.tlu.edu.vn        |
+| 5   | Khoa Kinh tế và Quản lý                  | KKTQL     | fem.tlu.edu.vn       |
+| 6   | Khoa Kế toán và Kinh doanh               | KKTKD     | fab.tlu.edu.vn       |
+| 7   | Khoa Công nghệ thông tin                 | KCNTT     | cse.tlu.edu.vn       |
+| 8   | Khoa Hóa và Môi trường                   | KHMT      | env.tlu.edu.vn       |
+| 9   | Khoa Luật và Lý luận Chính trị           | KLLCT     | pl.tlu.edu.vn        |
+| 10  | Trung tâm Đào tạo quốc tế                | TTDTQT    | sie.tlu.edu.vn       |
+| 11  | Trung tâm Giáo dục Quốc phòng và An ninh | TTGDQPAN  | ttgdqp.tlu.edu.vn    |
+| 12  | Phân hiệu Đại học Thủy lợi (TP.HCM)      | PHDHTL    | tlus.edu.vn          |
 
 ##### Chi tiết Cơ cấu Bộ môn trong các Khoa
 
@@ -96,197 +96,207 @@ Tài liệu này mô tả chi tiết các yêu cầu người dùng cho Hệ th�
 > Thông tin chi tiết về cơ cấu bộ môn dưới đây được thu thập từ website các Khoa nhằm thiết kế chính xác cấu trúc phân cấp tổ chức trong hệ thống HRMS.
 
 **1. Khoa Công nghệ thông tin (KCNTT)**
+
 - Địa chỉ: Nhà C1, 175 Tây Sơn, Đống Đa, Hà Nội
 - Email: vpkcntt@tlu.edu.vn
 - Các bộ môn:
-  | STT | Tên Bộ môn                      |
+  | STT | Tên Bộ môn |
   | --- | ------------------------------- |
-  | 1   | Bộ môn Công nghệ phần mềm       |
-  | 2   | Bộ môn Hệ thống thông tin       |
-  | 3   | Bộ môn Mạng và An toàn thông tin|
-  | 4   | Bộ môn Tin học và Kỹ thuật tính toán |
-  | 5   | Bộ môn Trí tuệ nhân tạo         |
-  | 6   | Bộ môn Toán học                 |
+  | 1 | Bộ môn Công nghệ phần mềm |
+  | 2 | Bộ môn Hệ thống thông tin |
+  | 3 | Bộ môn Mạng và An toàn thông tin|
+  | 4 | Bộ môn Tin học và Kỹ thuật tính toán |
+  | 5 | Bộ môn Trí tuệ nhân tạo |
+  | 6 | Bộ môn Toán học |
 - Phòng thí nghiệm: Có các PTN phục vụ nghiên cứu và đào tạo
 
 **2. Khoa Công trình (KCT) - Viện Kỹ thuật Công trình (VKTCT)**
+
 - Đặc thù: Khoa Công trình hoạt động song song với Viện Kỹ thuật Công trình, có cùng Trưởng khoa kiêm Viện trưởng
 - Chức năng: Đào tạo + Tư vấn thiết kế + Nghiên cứu khoa học
 - Địa chỉ: Phòng 402, Tầng 4, nhà A1, 175 Tây Sơn, Kim Liên, Hà Nội
 - Điện thoại: (024) 3852.2024
 - Email: vpkct@tlu.edu.vn
 - **Thống kê nhân sự:**
-  | Chỉ tiêu               | Số lượng |
+  | Chỉ tiêu | Số lượng |
   | ---------------------- | -------- |
-  | Nhà giáo nhân dân      | 05       |
-  | Nhà giáo ưu tú         | 30       |
-  | Giáo sư                | 07       |
-  | Phó Giáo sư            | 18       |
-  | Tiến sĩ                | 50       |
-  | Thạc sĩ                | 11       |
-  | Giảng viên đang làm NCS| 41       |
+  | Nhà giáo nhân dân | 05 |
+  | Nhà giáo ưu tú | 30 |
+  | Giáo sư | 07 |
+  | Phó Giáo sư | 18 |
+  | Tiến sĩ | 50 |
+  | Thạc sĩ | 11 |
+  | Giảng viên đang làm NCS| 41 |
 - Các bộ môn (10 bộ môn):
-  | STT | Tên Bộ môn                             |
+  | STT | Tên Bộ môn |
   | --- | -------------------------------------- |
-  | 1   | Bộ môn Thủy công                       |
-  | 2   | Bộ môn Công nghệ và Quản lý xây dựng   |
-  | 3   | Bộ môn Kết cấu Công trình              |
-  | 4   | Bộ môn Sức bền - Kết cấu               |
-  | 5   | Bộ môn Địa kỹ thuật                    |
-  | 6   | Bộ môn Vật liệu xây dựng               |
-  | 7   | Bộ môn Công trình giao thông           |
-  | 8   | Bộ môn Xây dựng dân dụng và Công nghiệp|
-  | 9   | Bộ môn Thủy điện và Năng lượng tái tạo |
-  | 10  | Bộ môn Công trình Biển và Đường thủy   |
+  | 1 | Bộ môn Thủy công |
+  | 2 | Bộ môn Công nghệ và Quản lý xây dựng |
+  | 3 | Bộ môn Kết cấu Công trình |
+  | 4 | Bộ môn Sức bền - Kết cấu |
+  | 5 | Bộ môn Địa kỹ thuật |
+  | 6 | Bộ môn Vật liệu xây dựng |
+  | 7 | Bộ môn Công trình giao thông |
+  | 8 | Bộ môn Xây dựng dân dụng và Công nghiệp|
+  | 9 | Bộ môn Thủy điện và Năng lượng tái tạo |
+  | 10 | Bộ môn Công trình Biển và Đường thủy |
 - Viện Kỹ thuật Công trình (song song với Khoa):
-  - Đội ngũ: 100 người (06 PGS, 03 TS, 30 ThS) + 100 cộng tác viên
-  - Gồm 09 trung tâm và 01 phòng
+    - Đội ngũ: 100 người (06 PGS, 03 TS, 30 ThS) + 100 cộng tác viên
+    - Gồm 09 trung tâm và 01 phòng
 - Ghi chú HRMS: Cần hỗ trợ cấu trúc Khoa-Viện song song, một người có thể giữ 2 chức vụ
 
 **3. Khoa Cơ khí (KCK)**
+
 - Năm thành lập: 1986
 - Địa chỉ: Phòng 312-314, nhà A1, 175 Tây Sơn, Đống Đa, Hà Nội
 - Email: khoaM@tlu.edu.vn
 - Điện thoại: (04) 3853.3082
 - **Thống kê nhân sự mẫu:**
-  | Chỉ tiêu               | Số lượng |
+  | Chỉ tiêu | Số lượng |
   | ---------------------- | -------- |
-  | Tổng cán bộ, giảng viên| 62       |
-  | Giáo sư, Phó Giáo sư   | 08       |
-  | Tiến sĩ                | 24       |
-  | Nghiên cứu sinh        | 11       |
-  | Thạc sĩ                | 18       |
-  | Nhà giáo ưu tú         | 06       |
+  | Tổng cán bộ, giảng viên| 62 |
+  | Giáo sư, Phó Giáo sư | 08 |
+  | Tiến sĩ | 24 |
+  | Nghiên cứu sinh | 11 |
+  | Thạc sĩ | 18 |
+  | Nhà giáo ưu tú | 06 |
 - Ban chủ nhiệm khoa:
-  - Trưởng Khoa: PGS.TS Đoàn Yên Thế
-  - Phó trưởng khoa: TS. Nguyễn Ngọc Huyên
-  - Phó trưởng khoa: PGS.TS Nguyễn Anh Tuấn
+    - Trưởng Khoa: PGS.TS Đoàn Yên Thế
+    - Phó trưởng khoa: TS. Nguyễn Ngọc Huyên
+    - Phó trưởng khoa: PGS.TS Nguyễn Anh Tuấn
 - Các bộ môn (6 bộ môn):
-  | STT | Tên Bộ môn                    | Trưởng BM                   |
+  | STT | Tên Bộ môn | Trưởng BM |
   | --- | ----------------------------- | --------------------------- |
-  | 1   | Bộ môn Công nghệ cơ khí       | TS. Phan Bình Nguyên        |
-  | 2   | Bộ môn Kỹ thuật hệ thống công nghiệp | PGS.TS Nguyễn Anh Tuấn |
-  | 3   | Bộ môn Kỹ thuật ô tô          | PGS.TS Nguyễn Đức Ngọc      |
-  | 4   | Bộ môn Kỹ thuật cơ điện tử    | TS. Nguyễn Huy Thế          |
-  | 5   | Bộ môn Cơ học kỹ thuật        | TS. Nguyễn Thị Thanh Bình   |
-  | 6   | Bộ môn Đồ họa kỹ thuật        | ThS.Kts. Nguyễn Việt Anh    |
+  | 1 | Bộ môn Công nghệ cơ khí | TS. Phan Bình Nguyên |
+  | 2 | Bộ môn Kỹ thuật hệ thống công nghiệp | PGS.TS Nguyễn Anh Tuấn |
+  | 3 | Bộ môn Kỹ thuật ô tô | PGS.TS Nguyễn Đức Ngọc |
+  | 4 | Bộ môn Kỹ thuật cơ điện tử | TS. Nguyễn Huy Thế |
+  | 5 | Bộ môn Cơ học kỹ thuật | TS. Nguyễn Thị Thanh Bình |
+  | 6 | Bộ môn Đồ họa kỹ thuật | ThS.Kts. Nguyễn Việt Anh |
 - Phòng thí nghiệm (4 PTN):
-  - PTN Kỹ thuật Hệ thống Công nghiệp
-  - PTN Vật liệu kỹ thuật và Kỹ thuật đo
-  - PTN Kỹ thuật ô tô
-  - Phòng Thực hành Mô phỏng số và Robot
+    - PTN Kỹ thuật Hệ thống Công nghiệp
+    - PTN Vật liệu kỹ thuật và Kỹ thuật đo
+    - PTN Kỹ thuật ô tô
+    - Phòng Thực hành Mô phỏng số và Robot
 - Xưởng thực hành (2 xưởng):
-  - Xưởng Cơ khí
-  - Xưởng thực hành Kỹ thuật Ô tô
+    - Xưởng Cơ khí
+    - Xưởng thực hành Kỹ thuật Ô tô
 - Trung tâm: Trung tâm KHCN Cơ học và Máy Thủy lợi
 - Ngành đào tạo: Kỹ thuật cơ khí, Công nghệ chế tạo máy, Kỹ thuật ô tô, Kỹ thuật cơ điện tử
 
 **4. Khoa Điện - Điện tử (KDDT)**
+
 - Website: ee.tlu.edu.vn
 - Địa chỉ: Phòng 106-109, Nhà B5, 175 Tây Sơn, Đống Đa, Hà Nội
 - Ban chủ nhiệm khoa:
-  - Trưởng khoa: TS. Nguyễn Nhất Tùng
-  - Phó trưởng khoa: TS. Nguyễn Quang Thuấn
-  - Phó trưởng khoa: PGS.TS. Phạm Đức Đại
+    - Trưởng khoa: TS. Nguyễn Nhất Tùng
+    - Phó trưởng khoa: TS. Nguyễn Quang Thuấn
+    - Phó trưởng khoa: PGS.TS. Phạm Đức Đại
 - Văn phòng khoa: ThS. Cao Thị Nụ, ThS. Nguyễn Thị Thúy An
 - Các bộ môn (5 bộ môn):
-  | STT | Tên Bộ môn                                | Trưởng BM                |
+  | STT | Tên Bộ môn | Trưởng BM |
   | --- | ----------------------------------------- | ------------------------ |
-  | 1   | Bộ môn Vật lý                             | PGS.TS. Phan Văn Độ      |
-  | 2   | Bộ môn Kỹ thuật điện, điện tử             | PGS.TS. Nguyễn Minh Ý    |
-  | 3   | Bộ môn Kỹ thuật điều khiển và Tự động hóa | PGS.TS. Phạm Đức Đại     |
-  | 4   | Bộ môn Điện tử viễn thông                 | TS. Trần Văn Hội         |
-  | 5   | Bộ môn Kỹ thuật Robot và Hệ thống thông minh | PGS.TS. Lê Trung Dũng |
+  | 1 | Bộ môn Vật lý | PGS.TS. Phan Văn Độ |
+  | 2 | Bộ môn Kỹ thuật điện, điện tử | PGS.TS. Nguyễn Minh Ý |
+  | 3 | Bộ môn Kỹ thuật điều khiển và Tự động hóa | PGS.TS. Phạm Đức Đại |
+  | 4 | Bộ môn Điện tử viễn thông | TS. Trần Văn Hội |
+  | 5 | Bộ môn Kỹ thuật Robot và Hệ thống thông minh | PGS.TS. Lê Trung Dũng |
 - Trung tâm: Trung tâm Kỹ thuật Điện và Tự động hóa
 - Phòng thí nghiệm (4 PTN):
-  - PTN Vật lý (Nhà B5 - 175 Tây Sơn)
-  - PTN Kỹ thuật điện (Hưng Yên và Hà Nội)
-  - PTN Hệ thống nhúng, IoT và Điện tử viễn thông (109 Nhà B5)
-  - PTN Kỹ thuật điều khiển và Tự động hóa (108 Nhà B5)
+    - PTN Vật lý (Nhà B5 - 175 Tây Sơn)
+    - PTN Kỹ thuật điện (Hưng Yên và Hà Nội)
+    - PTN Hệ thống nhúng, IoT và Điện tử viễn thông (109 Nhà B5)
+    - PTN Kỹ thuật điều khiển và Tự động hóa (108 Nhà B5)
 - Ngành đào tạo: Kỹ thuật điện, Kỹ thuật điện tử - viễn thông, Kỹ thuật điều khiển và tự động hóa, Kỹ thuật Robot
 
 **5. Khoa Hóa và Môi trường (KHMT)**
+
 - Địa chỉ: P316-317, nhà A5, 175 Tây Sơn, Đống Đa, Hà Nội
 - Điện thoại: 024.3564.0704
 - Ban chủ nhiệm khoa:
-  - Phó Trưởng khoa (Phụ trách): PGS.TS Nguyễn Thị Lan Hương
-  - Phó Trưởng khoa: TS Trịnh Đình Khá
+    - Phó Trưởng khoa (Phụ trách): PGS.TS Nguyễn Thị Lan Hương
+    - Phó Trưởng khoa: TS Trịnh Đình Khá
 - Sứ mệnh: Đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực môi trường, công nghệ sinh học và kỹ thuật hóa học
 - Các bộ môn:
-  | STT | Tên Bộ môn                      | Địa chỉ văn phòng  |
+  | STT | Tên Bộ môn | Địa chỉ văn phòng |
   | --- | ------------------------------- | ------------------ |
-  | 1   | Bộ môn Kỹ thuật và Quản lý Môi trường | (thành lập 1993) |
-  | 2   | Bộ môn Kỹ thuật Hóa học         | P313 - Nhà A5      |
-  | 3   | Bộ môn Công nghệ sinh học       | (thành lập 11/2018)|
+  | 1 | Bộ môn Kỹ thuật và Quản lý Môi trường | (thành lập 1993) |
+  | 2 | Bộ môn Kỹ thuật Hóa học | P313 - Nhà A5 |
+  | 3 | Bộ môn Công nghệ sinh học | (thành lập 11/2018)|
 
 **6. Khoa Kỹ thuật tài nguyên nước (KKTTN)**
+
 - Địa chỉ: Phòng 301-307 Nhà A1, 175 Tây Sơn, Kim Liên, Hà Nội
 - Điện thoại: 0243.852.8026
 - Email: khoaTNN@tlu.edu.vn
 - Website: kttnn.tlu.edu.vn
 - **Thống kê nhân sự:**
-  | Chỉ tiêu               | Số lượng |
+  | Chỉ tiêu | Số lượng |
   | ---------------------- | -------- |
-  | Tổng cán bộ, giảng viên| 62       |
-  | Giáo sư                | 01       |
-  | Phó Giáo sư            | 17       |
-  | Tiến sĩ                | 33       |
-  | Thạc sĩ                | 10       |
-  | Kỹ sư                  | 01       |
+  | Tổng cán bộ, giảng viên| 62 |
+  | Giáo sư | 01 |
+  | Phó Giáo sư | 17 |
+  | Tiến sĩ | 33 |
+  | Thạc sĩ | 10 |
+  | Kỹ sư | 01 |
 - Ban chủ nhiệm khoa:
-  - Trưởng khoa (kiêm Viện trưởng Viện KTTNN): PGS.TS. Lê Văn Chín
-  - Phó trưởng khoa (kiêm Viện trưởng Viện TV, MT & BĐKH): GS.TS. Phạm Thị Hương Lan
-  - Phó trưởng khoa: PGS.TS. Đặng Minh Hải
-  - Phó trưởng khoa (kiêm P. Viện trưởng Viện TV, MT & BĐKH): PGS.TS. Hoàng Thanh Tùng
+    - Trưởng khoa (kiêm Viện trưởng Viện KTTNN): PGS.TS. Lê Văn Chín
+    - Phó trưởng khoa (kiêm Viện trưởng Viện TV, MT & BĐKH): GS.TS. Phạm Thị Hương Lan
+    - Phó trưởng khoa: PGS.TS. Đặng Minh Hải
+    - Phó trưởng khoa (kiêm P. Viện trưởng Viện TV, MT & BĐKH): PGS.TS. Hoàng Thanh Tùng
 - Các bộ môn (7 bộ môn):
-  | STT | Tên Bộ môn                        | Trưởng BM                  |
+  | STT | Tên Bộ môn | Trưởng BM |
   | --- | --------------------------------- | -------------------------- |
-  | 1   | Bộ môn Kỹ thuật Tài nguyên nước   | TS. Nguyễn Quang Phi       |
-  | 2   | Bộ môn Thủy lực                   | PGS.TS. Hồ Việt Hùng       |
-  | 3   | Bộ môn Cấp thoát nước             | PGS.TS. Đoàn Thu Hà        |
-  | 4   | Bộ môn Kỹ thuật Hạ tầng           | TS. Lưu Văn Quân           |
-  | 5   | Bộ môn Trắc địa                   | TS. Lã Phú Hiến            |
-  | 6   | Bộ môn Thủy văn và Biến đổi khí hậu | PGS.TS. Ngô Lê An        |
-  | 7   | Bộ môn Kỹ thuật sông và Quản lý thiên tai | GS.TS. Phạm Thị Hương Lan |
+  | 1 | Bộ môn Kỹ thuật Tài nguyên nước | TS. Nguyễn Quang Phi |
+  | 2 | Bộ môn Thủy lực | PGS.TS. Hồ Việt Hùng |
+  | 3 | Bộ môn Cấp thoát nước | PGS.TS. Đoàn Thu Hà |
+  | 4 | Bộ môn Kỹ thuật Hạ tầng | TS. Lưu Văn Quân |
+  | 5 | Bộ môn Trắc địa | TS. Lã Phú Hiến |
+  | 6 | Bộ môn Thủy văn và Biến đổi khí hậu | PGS.TS. Ngô Lê An |
+  | 7 | Bộ môn Kỹ thuật sông và Quản lý thiên tai | GS.TS. Phạm Thị Hương Lan |
 - Cơ cấu tổ chức: Có Ban lãnh đạo các thời kỳ được lưu trữ
 - Đặc thù: Hoạt động song song với Viện Kỹ thuật Tài nguyên nước và Viện Thủy văn, Môi trường & BĐKH
 
 **7. Khoa Kinh tế và Quản lý (KKTQL)**
+
 - Năm thành lập: 1980 (45 năm lịch sử tính đến 2025)
 - Website: fem.tlu.edu.vn
 - Địa chỉ: Phòng 218-222, nhà A1, 175 Tây Sơn, Đống Đa, Hà Nội
 - Hoạt động: Hội nghị viên chức, người lao động hàng năm; Nghiên cứu khoa học sinh viên; Công đoàn bộ phận
 - Các bộ môn và trung tâm (8 đơn vị):
-  | STT | Tên Bộ môn/Trung tâm               |
+  | STT | Tên Bộ môn/Trung tâm |
   | --- | ---------------------------------- |
-  | 1   | Bộ môn Kinh tế                     |
-  | 2   | Bộ môn Kinh tế xây dựng            |
-  | 3   | Bộ môn Quản trị du lịch            |
-  | 4   | Bộ môn Thương mại điện tử          |
-  | 5   | Bộ môn Logistics và chuỗi cung ứng |
-  | 6   | Bộ môn Kinh tế và Kinh doanh số    |
-  | 7   | Bộ môn Phát triển kỹ năng          |
-  | 8   | Trung tâm Kinh tế và Quản lý       |
+  | 1 | Bộ môn Kinh tế |
+  | 2 | Bộ môn Kinh tế xây dựng |
+  | 3 | Bộ môn Quản trị du lịch |
+  | 4 | Bộ môn Thương mại điện tử |
+  | 5 | Bộ môn Logistics và chuỗi cung ứng |
+  | 6 | Bộ môn Kinh tế và Kinh doanh số |
+  | 7 | Bộ môn Phát triển kỹ năng |
+  | 8 | Trung tâm Kinh tế và Quản lý |
 - Ngành đào tạo: Kinh tế, Kinh tế xây dựng, Quản trị kinh doanh, Quản trị du lịch, Thương mại điện tử, Logistics và chuỗi cung ứng
 
 **8. Trung tâm Đào tạo quốc tế (TTDTQT)**
+
 - Cơ cấu tổ chức:
-  | STT | Đơn vị                          |
+  | STT | Đơn vị |
   | --- | ------------------------------- |
-  | 1   | Ban Giám đốc                    |
-  | 2   | Văn phòng Trung tâm             |
-  | 3   | Bộ môn Tiếng Anh                |
-  | 4   | Bộ môn Ngôn ngữ Anh             |
-  | 5   | Bộ môn Ngôn ngữ Trung Quốc      |
+  | 1 | Ban Giám đốc |
+  | 2 | Văn phòng Trung tâm |
+  | 3 | Bộ môn Tiếng Anh |
+  | 4 | Bộ môn Ngôn ngữ Anh |
+  | 5 | Bộ môn Ngôn ngữ Trung Quốc |
 - Đối tác quốc tế: Nhiều trường đại học quốc tế
 - Chức năng: Đào tạo chương trình tiên tiến, liên kết quốc tế
 
 **9. Trung tâm Giáo dục Quốc phòng và An ninh (TTGDQPAN)**
+
 - Website: ttgdqp.tlu.edu.vn
 - Chức năng: Đào tạo giáo dục quốc phòng an ninh cho sinh viên
 
 > [!IMPORTANT]
 > **Yêu cầu HRMS từ cơ cấu tổ chức:**
+>
 > - Hỗ trợ cấu trúc phân cấp: Trường → Khoa/Viện/Trung tâm → Bộ môn → Giảng viên
 > - Quản lý chức vụ kiêm nhiệm (1 người có thể giữ nhiều chức vụ ở các đơn vị khác nhau)
 > - Quản lý lịch sử lãnh đạo qua các thời kỳ
@@ -295,31 +305,32 @@ Tài liệu này mô tả chi tiết các yêu cầu người dùng cho Hệ th�
 
 #### 2.1.3 Các đơn vị KHCN kết hợp đào tạo (Viện/Trung tâm nghiên cứu)
 
-| STT | Tên đơn vị                             | Mã đơn vị |
-| --- | -------------------------------------- | --------- |
-| 1   | Viện Đào tạo và KHƯD Miền Trung        | VDTKHUDMT |
-| 2   | Trung tâm Khoa học và Thiết kế KTTL    | TTKHTK    |
-| 3   | Văn phòng Tư vấn thẩm định thiết kế    | VPTVTD    |
-| 4   | Viện Kỹ thuật tài nguyên nước          | VKTTNN    |
-| 5   | Viện Kỹ thuật công trình               | VKTCT     |
-| 6   | Viện Thủy văn, Môi trường và BĐKH      | VTVMTBDKH |
-| 7   | Viện Thủy lợi và Môi trường (TP.HCM)   | VTLMT_HCM |
-| 8   | Công ty TNHH Tư vấn Trường ĐHTL        | CTYTVTL   |
-| 9   | Trung tâm Nước và Môi trường VN-Hà Lan | TTMTVNHL  |
-| 10  | Viện Nghiên cứu Ứng dụng CN và Hợp tác Doanh nghiệp (IARTEP) | VIARTEP |
+| STT | Tên đơn vị                                                   | Mã đơn vị |
+| --- | ------------------------------------------------------------ | --------- |
+| 1   | Viện Đào tạo và KHƯD Miền Trung                              | VDTKHUDMT |
+| 2   | Trung tâm Khoa học và Thiết kế KTTL                          | TTKHTK    |
+| 3   | Văn phòng Tư vấn thẩm định thiết kế                          | VPTVTD    |
+| 4   | Viện Kỹ thuật tài nguyên nước                                | VKTTNN    |
+| 5   | Viện Kỹ thuật công trình                                     | VKTCT     |
+| 6   | Viện Thủy văn, Môi trường và BĐKH                            | VTVMTBDKH |
+| 7   | Viện Thủy lợi và Môi trường (TP.HCM)                         | VTLMT_HCM |
+| 8   | Công ty TNHH Tư vấn Trường ĐHTL                              | CTYTVTL   |
+| 9   | Trung tâm Nước và Môi trường VN-Hà Lan                       | TTMTVNHL  |
+| 10  | Viện Nghiên cứu Ứng dụng CN và Hợp tác Doanh nghiệp (IARTEP) | VIARTEP   |
 
 ##### Chi tiết Viện Nghiên cứu Ứng dụng Công nghệ và Hợp tác Doanh nghiệp (IARTEP)
+
 - Tên tiếng Anh: Institute for Applied Research, Technology and Enterprise Partnership
 - Website: iartep.com
 - Số nhân sự: 12 cán bộ
 - Các đơn vị trực thuộc (5 trung tâm):
-  | STT | Tên Trung tâm                                  |
+  | STT | Tên Trung tâm |
   | --- | ---------------------------------------------- |
-  | 1   | Trung tâm Nghiên cứu Ứng dụng Công nghệ        |
-  | 2   | Trung tâm Hợp tác Doanh nghiệp                 |
-  | 3   | Trung tâm Đổi mới Sáng tạo và Khởi nghiệp      |
-  | 4   | Trung tâm Phát triển Nguồn nhân lực            |
-  | 5   | Trung tâm Chuyển giao Công nghệ                |
+  | 1 | Trung tâm Nghiên cứu Ứng dụng Công nghệ |
+  | 2 | Trung tâm Hợp tác Doanh nghiệp |
+  | 3 | Trung tâm Đổi mới Sáng tạo và Khởi nghiệp |
+  | 4 | Trung tâm Phát triển Nguồn nhân lực |
+  | 5 | Trung tâm Chuyển giao Công nghệ |
 - Chức năng: Nghiên cứu ứng dụng, hợp tác doanh nghiệp, chuyển giao công nghệ
 
 #### 2.1.4 Các cơ sở/chi nhánh
@@ -331,16 +342,17 @@ Tài liệu này mô tả chi tiết các yêu cầu người dùng cho Hệ th�
 | 3   | Phân hiệu TP.HCM | TP. Hồ Chí Minh              | Có Ban Giám đốc, phòng ban, khoa riêng |
 
 ##### Chi tiết Phân hiệu Đại học Thủy lợi tại TP.HCM (PHDHTL)
+
 - Website: tlus.edu.vn
 - Địa chỉ: 02 Trường Sa, Phường 17, Quận Bình Thạnh, TP. Hồ Chí Minh
 - Điện thoại: (028) 3512.0730
 - Năm thành lập: 2004
 - Chức năng: Đào tạo đại học, sau đại học các ngành kỹ thuật tại khu vực phía Nam
 - Cơ cấu tổ chức:
-  - Ban Giám đốc (Giám đốc, các Phó Giám đốc)
-  - Các phòng ban: Phòng Đào tạo, Phòng Tổ chức - Hành chính, Phòng KHCN-HTQT
-  - Các khoa: Khoa Công trình, Khoa Kỹ thuật tài nguyên nước, Khoa Kinh tế và Quản lý
-  - Viện Thủy lợi và Môi trường (TP.HCM)
+    - Ban Giám đốc (Giám đốc, các Phó Giám đốc)
+    - Các phòng ban: Phòng Đào tạo, Phòng Tổ chức - Hành chính, Phòng KHCN-HTQT
+    - Các khoa: Khoa Công trình, Khoa Kỹ thuật tài nguyên nước, Khoa Kinh tế và Quản lý
+    - Viện Thủy lợi và Môi trường (TP.HCM)
 - Ngành đào tạo: Kỹ thuật xây dựng công trình thủy, Kỹ thuật tài nguyên nước, Quản lý xây dựng, Kinh tế xây dựng
 - Ghi chú HRMS: Cần quản lý riêng nhân sự Phân hiệu với cơ cấu tổ chức độc lập
 
@@ -457,13 +469,12 @@ Quản lý toàn diện thông tin của tất cả cán bộ, giảng viên, nh
 | **FR-ER-010** | Cho phép tìm kiếm, lọc hồ sơ theo nhiều tiêu chí                                                                           | Bắt buộc |
 | **FR-ER-011** | Xuất hồ sơ ra file (PDF, Excel, Word) theo mẫu                                                                             | Bắt buộc |
 | **FR-ER-012** | Lưu trữ lịch sử thay đổi hồ sơ (audit trail)                                                                               | Bắt buộc |
-| **FR-ER-013** | Quản lý thông tin giảng viên mở rộng: lĩnh vực nghiên cứu, hướng nghiên cứu chính, từ khóa chuyên môn                       | Bắt buộc |
+| **FR-ER-013** | Quản lý thông tin giảng viên mở rộng: lĩnh vực nghiên cứu, hướng nghiên cứu chính, từ khóa chuyên môn                      | Bắt buộc |
 | **FR-ER-014** | Lưu trữ liên kết đến trang cá nhân giảng viên (profile page) trên website khoa                                             | Tùy chọn |
-| **FR-ER-015** | Quản lý phân công giảng viên vào Bộ môn (một GV có thể thuộc nhiều bộ môn)                                                  | Bắt buộc |
-| **FR-ER-016** | Quản lý chức vụ trong Bộ môn: Trưởng bộ môn, Phó trưởng bộ môn, Giảng viên                                                  | Bắt buộc |
-| **FR-ER-017** | Hỗ trợ hiển thị thông tin giảng viên theo định dạng: Học hàm + Học vị + Họ tên (VD: PGS.TS. Nguyễn Văn A)                   | Bắt buộc |
-| **FR-ER-018** | Quản lý thông tin giảng viên thỉnh giảng: đơn vị công tác chính, hợp đồng thỉnh giảng                                       | Bắt buộc |
-
+| **FR-ER-015** | Quản lý phân công giảng viên vào Bộ môn (một GV có thể thuộc nhiều bộ môn)                                                 | Bắt buộc |
+| **FR-ER-016** | Quản lý chức vụ trong Bộ môn: Trưởng bộ môn, Phó trưởng bộ môn, Giảng viên                                                 | Bắt buộc |
+| **FR-ER-017** | Hỗ trợ hiển thị thông tin giảng viên theo định dạng: Học hàm + Học vị + Họ tên (VD: PGS.TS. Nguyễn Văn A)                  | Bắt buộc |
+| **FR-ER-018** | Quản lý thông tin giảng viên thỉnh giảng: đơn vị công tác chính, hợp đồng thỉnh giảng                                      | Bắt buộc |
 
 ### 4.2 Module Quản lý Trình độ và Chức danh (Qualifications Management)
 
@@ -496,24 +507,25 @@ Quản lý cấu trúc phân cấp tổ chức của trường, từ cấp trư�
 
 #### 4.3.2 Yêu cầu chi tiết
 
-| ID            | Yêu cầu                                                                                                 | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------------- | -------- |
-| **FR-OS-001** | Quản lý các loại đơn vị: Khoa, Viện, Trung tâm, Phòng/Ban, Bộ môn, Phòng thí nghiệm                     | Bắt buộc |
-| **FR-OS-002** | Hỗ trợ cấu trúc phân cấp: Trường → Khoa/Viện/Trung tâm → Bộ môn → Phòng thí nghiệm                      | Bắt buộc |
-| **FR-OS-003** | Quản lý mô hình Khoa-Viện song song (VD: Khoa Công trình + Viện Kỹ thuật Công trình cùng lãnh đạo)      | Bắt buộc |
-| **FR-OS-004** | Lưu trữ thông tin đơn vị: tên, mã, địa chỉ văn phòng, email, điện thoại, website                        | Bắt buộc |
-| **FR-OS-005** | Quản lý lịch sử thành lập, sáp nhập, giải thể đơn vị                                                    | Bắt buộc |
-| **FR-OS-006** | Quản lý ban lãnh đạo đơn vị qua các thời kỳ (lịch sử Trưởng/Phó đơn vị)                                 | Bắt buộc |
-| **FR-OS-007** | Quản lý đa cơ sở: Hà Nội (175 Tây Sơn), Phố Hiến (Hưng Yên), TP.HCM                                     | Bắt buộc |
-| **FR-OS-008** | Gán nhân viên vào đơn vị với vai trò (chính thức, kiêm nhiệm, biệt phái)                                | Bắt buộc |
-| **FR-OS-009** | Hỗ trợ chức vụ kiêm nhiệm: một người có thể giữ nhiều chức vụ ở nhiều đơn vị khác nhau                  | Bắt buộc |
-| **FR-OS-010** | Quản lý phòng thí nghiệm gắn với đơn vị: tên PTN, vị trí, trang thiết bị chính                          | Tùy chọn |
-| **FR-OS-011** | Hiển thị sơ đồ tổ chức dạng cây (organization chart)                                                    | Bắt buộc |
-| **FR-OS-012** | Thống kê số lượng nhân sự theo đơn vị, theo trình độ                                                    | Bắt buộc |
-| **FR-OS-013** | Quản lý ngành đào tạo gắn với đơn vị: đại học, thạc sĩ, tiến sĩ                                         | Tùy chọn |
+| ID            | Yêu cầu                                                                                            | Mức độ   |
+| ------------- | -------------------------------------------------------------------------------------------------- | -------- |
+| **FR-OS-001** | Quản lý các loại đơn vị: Khoa, Viện, Trung tâm, Phòng/Ban, Bộ môn, Phòng thí nghiệm                | Bắt buộc |
+| **FR-OS-002** | Hỗ trợ cấu trúc phân cấp: Trường → Khoa/Viện/Trung tâm → Bộ môn → Phòng thí nghiệm                 | Bắt buộc |
+| **FR-OS-003** | Quản lý mô hình Khoa-Viện song song (VD: Khoa Công trình + Viện Kỹ thuật Công trình cùng lãnh đạo) | Bắt buộc |
+| **FR-OS-004** | Lưu trữ thông tin đơn vị: tên, mã, địa chỉ văn phòng, email, điện thoại, website                   | Bắt buộc |
+| **FR-OS-005** | Quản lý lịch sử thành lập, sáp nhập, giải thể đơn vị                                               | Bắt buộc |
+| **FR-OS-006** | Quản lý ban lãnh đạo đơn vị qua các thời kỳ (lịch sử Trưởng/Phó đơn vị)                            | Bắt buộc |
+| **FR-OS-007** | Quản lý đa cơ sở: Hà Nội (175 Tây Sơn), Phố Hiến (Hưng Yên), TP.HCM                                | Bắt buộc |
+| **FR-OS-008** | Gán nhân viên vào đơn vị với vai trò (chính thức, kiêm nhiệm, biệt phái)                           | Bắt buộc |
+| **FR-OS-009** | Hỗ trợ chức vụ kiêm nhiệm: một người có thể giữ nhiều chức vụ ở nhiều đơn vị khác nhau             | Bắt buộc |
+| **FR-OS-010** | Quản lý phòng thí nghiệm gắn với đơn vị: tên PTN, vị trí, trang thiết bị chính                     | Tùy chọn |
+| **FR-OS-011** | Hiển thị sơ đồ tổ chức dạng cây (organization chart)                                               | Bắt buộc |
+| **FR-OS-012** | Thống kê số lượng nhân sự theo đơn vị, theo trình độ                                               | Bắt buộc |
+| **FR-OS-013** | Quản lý ngành đào tạo gắn với đơn vị: đại học, thạc sĩ, tiến sĩ                                    | Tùy chọn |
 
 > [!NOTE]
 > **Ví dụ cấu trúc thực tế từ website các Khoa:**
+>
 > - Khoa CNTT có 6 bộ môn: Công nghệ phần mềm, Hệ thống thông tin, Mạng và ATTT, Tin học và KTTT, Trí tuệ nhân tạo, Toán học
 > - Khoa Điện-Điện tử có 5 bộ môn + 4 phòng thí nghiệm
 > - Khoa Cơ khí: 62 cán bộ, 8 GS/PGS, 24 TS
@@ -526,27 +538,28 @@ Quản lý toàn bộ vòng đời hợp đồng lao động theo quy định B�
 
 > [!IMPORTANT]
 > **Nguyên tắc:**
+>
 > - Các loại hợp đồng, thời hạn, quy tắc chuyển đổi phải lấy từ Module Cấu hình
 > - Hệ thống tự động validate theo quy tắc được cấu hình
 > - Hỗ trợ thay đổi quy định mà không cần sửa mã nguồn
 
 #### 4.4.2 Yêu cầu chi tiết
 
-| ID            | Yêu cầu                                                                                                 | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------------- | -------- |
-| **FR-CM-001** | Quản lý các loại hợp đồng theo danh mục được cấu hình (FR-CF-012)                                       | Bắt buộc |
-| **FR-CM-002** | Lưu trữ thông tin hợp đồng: số HĐ, ngày ký, ngày hiệu lực, ngày hết hạn, nội dung công việc             | Bắt buộc |
-| **FR-CM-003** | Quản lý gia hạn hợp đồng                                                                                | Bắt buộc |
-| **FR-CM-004** | Quản lý chấm dứt hợp đồng: lý do, ngày chấm dứt, các khoản thanh toán                                   | Bắt buộc |
-| **FR-CM-005** | Cảnh báo hợp đồng sắp hết hạn (số ngày cảnh báo có thể cấu hình)                                        | Bắt buộc |
-| **FR-CM-006** | Quản lý hợp đồng thử việc với thời gian theo cấu hình (FR-CF-015)                                       | Bắt buộc |
-| **FR-CM-007** | Quản lý phụ lục hợp đồng                                                                                | Bắt buộc |
-| **FR-CM-008** | In hợp đồng theo mẫu chuẩn của trường                                                                   | Bắt buộc |
-| **FR-CM-009** | Quản lý hợp đồng với giảng viên/chuyên gia nước ngoài (gắn với work permit)                             | Bắt buộc |
-| **FR-CM-010** | Tính toán trợ cấp thôi việc theo quy định                                                               | Bắt buộc |
-| **FR-CM-011** | Validate thời hạn hợp đồng theo cấu hình min/max (FR-CF-013)                                            | Bắt buộc |
-| **FR-CM-012** | Tự động đề xuất chuyển đổi loại hợp đồng theo quy tắc được cấu hình (FR-CF-014, FR-CF-016)              | Bắt buộc |
-| **FR-CM-013** | Cảnh báo khi số lần ký HĐ xác định thời hạn đạt giới hạn (theo FR-CF-014)                               | Bắt buộc |
+| ID            | Yêu cầu                                                                                     | Mức độ   |
+| ------------- | ------------------------------------------------------------------------------------------- | -------- |
+| **FR-CM-001** | Quản lý các loại hợp đồng theo danh mục được cấu hình (FR-CF-012)                           | Bắt buộc |
+| **FR-CM-002** | Lưu trữ thông tin hợp đồng: số HĐ, ngày ký, ngày hiệu lực, ngày hết hạn, nội dung công việc | Bắt buộc |
+| **FR-CM-003** | Quản lý gia hạn hợp đồng                                                                    | Bắt buộc |
+| **FR-CM-004** | Quản lý chấm dứt hợp đồng: lý do, ngày chấm dứt, các khoản thanh toán                       | Bắt buộc |
+| **FR-CM-005** | Cảnh báo hợp đồng sắp hết hạn (số ngày cảnh báo có thể cấu hình)                            | Bắt buộc |
+| **FR-CM-006** | Quản lý hợp đồng thử việc với thời gian theo cấu hình (FR-CF-015)                           | Bắt buộc |
+| **FR-CM-007** | Quản lý phụ lục hợp đồng                                                                    | Bắt buộc |
+| **FR-CM-008** | In hợp đồng theo mẫu chuẩn của trường                                                       | Bắt buộc |
+| **FR-CM-009** | Quản lý hợp đồng với giảng viên/chuyên gia nước ngoài (gắn với work permit)                 | Bắt buộc |
+| **FR-CM-010** | Tính toán trợ cấp thôi việc theo quy định                                                   | Bắt buộc |
+| **FR-CM-011** | Validate thời hạn hợp đồng theo cấu hình min/max (FR-CF-013)                                | Bắt buộc |
+| **FR-CM-012** | Tự động đề xuất chuyển đổi loại hợp đồng theo quy tắc được cấu hình (FR-CF-014, FR-CF-016)  | Bắt buộc |
+| **FR-CM-013** | Cảnh báo khi số lần ký HĐ xác định thời hạn đạt giới hạn (theo FR-CF-014)                   | Bắt buộc |
 
 ### 4.5 Module Chấm công và Quản lý Nghỉ phép (Time & Attendance)
 
@@ -577,31 +590,32 @@ Tính toán và quản lý lương, các khoản phụ cấp, bảo hiểm theo 
 
 > [!IMPORTANT]
 > **Nguyên tắc:**
+>
 > - Tất cả các công thức tính lương, phụ cấp, bảo hiểm, thuế phải sử dụng tham số từ Module Cấu hình
 > - Không hardcode giá trị cố định trong logic tính toán
 > - Hỗ trợ tính toán hồi cố theo cấu hình tại thời điểm hiệu lực
 
 #### 4.6.2 Yêu cầu chi tiết
 
-| ID            | Yêu cầu                                                                                           | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------- | -------- |
-| **FR-PB-001** | Quản lý bảng lương theo ngạch, bậc công chức/viên chức (lấy từ cấu hình FR-CF-002, FR-CF-004)     | Bắt buộc |
-| **FR-PB-002** | Tính lương cơ bản = Hệ số lương × Mức lương cơ sở (lấy từ cấu hình FR-CF-001)                     | Bắt buộc |
-| **FR-PB-003** | Quản lý các loại phụ cấp theo danh mục được cấu hình (FR-CF-006)                                  | Bắt buộc |
-| **FR-PB-004** | Tính phụ cấp thâm niên nhà giáo theo công thức được cấu hình (FR-CF-009)                          | Bắt buộc |
-| **FR-PB-005** | Quản lý nâng bậc lương định kỳ và trước hạn                                                       | Bắt buộc |
-| **FR-PB-006** | Tính thu nhập tăng thêm (nếu có)                                                                  | Tùy chọn |
-| **FR-PB-007** | Tính tiền dạy vượt giờ cho giảng viên theo đơn giá được cấu hình (FR-CF-029)                      | Bắt buộc |
-| **FR-PB-008** | Trích BHXH, BHYT, BHTN theo tỷ lệ được cấu hình (FR-CF-017, FR-CF-018)                            | Bắt buộc |
-| **FR-PB-009** | Tính thuế TNCN tự động theo bảng thuế lũy tiến được cấu hình (FR-CF-020, FR-CF-021)               | Bắt buộc |
-| **FR-PB-010** | Quản lý các khoản tạm ứng, khấu trừ                                                               | Bắt buộc |
-| **FR-PB-011** | Tạo bảng lương hàng tháng                                                                         | Bắt buộc |
-| **FR-PB-012** | In phiếu lương và gửi email cho nhân viên                                                         | Bắt buộc |
-| **FR-PB-013** | Xuất file ngân hàng để chi lương                                                                  | Bắt buộc |
-| **FR-PB-014** | Kết nối cổng BHXH điện tử                                                                         | Tùy chọn |
-| **FR-PB-015** | Quản lý thưởng: Lễ, Tết, thành tích...                                                            | Bắt buộc |
-| **FR-PB-016** | Tính lương hồi cố khi có thay đổi cấu hình có hiệu lực từ trước                                   | Bắt buộc |
-| **FR-PB-017** | Mô phỏng tính lương khi thay đổi cấu hình (what-if analysis)                                      | Tùy chọn |
+| ID            | Yêu cầu                                                                                       | Mức độ   |
+| ------------- | --------------------------------------------------------------------------------------------- | -------- |
+| **FR-PB-001** | Quản lý bảng lương theo ngạch, bậc công chức/viên chức (lấy từ cấu hình FR-CF-002, FR-CF-004) | Bắt buộc |
+| **FR-PB-002** | Tính lương cơ bản = Hệ số lương × Mức lương cơ sở (lấy từ cấu hình FR-CF-001)                 | Bắt buộc |
+| **FR-PB-003** | Quản lý các loại phụ cấp theo danh mục được cấu hình (FR-CF-006)                              | Bắt buộc |
+| **FR-PB-004** | Tính phụ cấp thâm niên nhà giáo theo công thức được cấu hình (FR-CF-009)                      | Bắt buộc |
+| **FR-PB-005** | Quản lý nâng bậc lương định kỳ và trước hạn                                                   | Bắt buộc |
+| **FR-PB-006** | Tính thu nhập tăng thêm (nếu có)                                                              | Tùy chọn |
+| **FR-PB-007** | Tính tiền dạy vượt giờ cho giảng viên theo đơn giá được cấu hình (FR-CF-029)                  | Bắt buộc |
+| **FR-PB-008** | Trích BHXH, BHYT, BHTN theo tỷ lệ được cấu hình (FR-CF-017, FR-CF-018)                        | Bắt buộc |
+| **FR-PB-009** | Tính thuế TNCN tự động theo bảng thuế lũy tiến được cấu hình (FR-CF-020, FR-CF-021)           | Bắt buộc |
+| **FR-PB-010** | Quản lý các khoản tạm ứng, khấu trừ                                                           | Bắt buộc |
+| **FR-PB-011** | Tạo bảng lương hàng tháng                                                                     | Bắt buộc |
+| **FR-PB-012** | In phiếu lương và gửi email cho nhân viên                                                     | Bắt buộc |
+| **FR-PB-013** | Xuất file ngân hàng để chi lương                                                              | Bắt buộc |
+| **FR-PB-014** | Kết nối cổng BHXH điện tử                                                                     | Tùy chọn |
+| **FR-PB-015** | Quản lý thưởng: Lễ, Tết, thành tích...                                                        | Bắt buộc |
+| **FR-PB-016** | Tính lương hồi cố khi có thay đổi cấu hình có hiệu lực từ trước                               | Bắt buộc |
+| **FR-PB-017** | Mô phỏng tính lương khi thay đổi cấu hình (what-if analysis)                                  | Tùy chọn |
 
 ### 4.7 Module Tuyển dụng (Recruitment)
 
@@ -750,6 +764,7 @@ Quản lý các tham số cấu hình của hệ thống liên quan đến lươ
 
 > [!IMPORTANT]
 > **Nguyên tắc thiết kế:**
+>
 > - Tất cả các giá trị liên quan đến quy định pháp luật (lương cơ sở, hệ số, phụ cấp, thời hạn hợp đồng) phải được cấu hình thông qua giao diện quản trị
 > - Hệ thống phải lưu lịch sử thay đổi cấu hình để đảm bảo tính toán chính xác theo thời điểm
 > - Mỗi cấu hình phải có ngày hiệu lực để hỗ trợ tính toán hồi cố
@@ -758,82 +773,83 @@ Quản lý các tham số cấu hình của hệ thống liên quan đến lươ
 
 ##### 4.13.2.1 Cấu hình Lương và Hệ số
 
-| ID            | Yêu cầu                                                                                           | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------- | -------- |
-| **FR-CF-001** | Quản lý mức lương cơ sở (Mức lương cơ sở) với ngày hiệu lực                                       | Bắt buộc |
-| **FR-CF-002** | Quản lý bảng hệ số lương theo ngạch/bậc (Giảng viên, GV chính, GV cao cấp, Chuyên viên...)        | Bắt buộc |
-| **FR-CF-003** | Hỗ trợ thêm/sửa/xóa các ngạch lương mới khi có thay đổi quy định                                  | Bắt buộc |
-| **FR-CF-004** | Quản lý số bậc và hệ số tương ứng cho mỗi ngạch (VD: Giảng viên có 9 bậc, hệ số 2.34 - 4.98)      | Bắt buộc |
-| **FR-CF-005** | Lưu lịch sử thay đổi hệ số lương theo thời gian để tính lương hồi cố                              | Bắt buộc |
+| ID            | Yêu cầu                                                                                      | Mức độ   |
+| ------------- | -------------------------------------------------------------------------------------------- | -------- |
+| **FR-CF-001** | Quản lý mức lương cơ sở (Mức lương cơ sở) với ngày hiệu lực                                  | Bắt buộc |
+| **FR-CF-002** | Quản lý bảng hệ số lương theo ngạch/bậc (Giảng viên, GV chính, GV cao cấp, Chuyên viên...)   | Bắt buộc |
+| **FR-CF-003** | Hỗ trợ thêm/sửa/xóa các ngạch lương mới khi có thay đổi quy định                             | Bắt buộc |
+| **FR-CF-004** | Quản lý số bậc và hệ số tương ứng cho mỗi ngạch (VD: Giảng viên có 9 bậc, hệ số 2.34 - 4.98) | Bắt buộc |
+| **FR-CF-005** | Lưu lịch sử thay đổi hệ số lương theo thời gian để tính lương hồi cố                         | Bắt buộc |
 
 ##### 4.13.2.2 Cấu hình Phụ cấp
 
-| ID            | Yêu cầu                                                                                           | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------- | -------- |
-| **FR-CF-006** | Quản lý danh mục loại phụ cấp (chức vụ, thâm niên, ưu đãi ngành, trách nhiệm, độc hại, khu vực)   | Bắt buộc |
-| **FR-CF-007** | Cấu hình công thức tính phụ cấp cho từng loại (hệ số × lương cơ sở, % × lương ngạch bậc, v.v.)    | Bắt buộc |
-| **FR-CF-008** | Quản lý bảng hệ số phụ cấp chức vụ theo từng vị trí (Hiệu trưởng, Phó HT, Trưởng khoa, v.v.)      | Bắt buộc |
-| **FR-CF-009** | Cấu hình quy tắc phụ cấp thâm niên: số năm bắt đầu, tỷ lệ khởi điểm, tỷ lệ tăng thêm mỗi năm      | Bắt buộc |
-| **FR-CF-010** | Quản lý tỷ lệ phụ cấp ưu đãi ngành theo nhóm đối tượng                                            | Bắt buộc |
-| **FR-CF-011** | Hỗ trợ tạo loại phụ cấp mới theo yêu cầu nghiệp vụ                                                | Bắt buộc |
+| ID            | Yêu cầu                                                                                         | Mức độ   |
+| ------------- | ----------------------------------------------------------------------------------------------- | -------- |
+| **FR-CF-006** | Quản lý danh mục loại phụ cấp (chức vụ, thâm niên, ưu đãi ngành, trách nhiệm, độc hại, khu vực) | Bắt buộc |
+| **FR-CF-007** | Cấu hình công thức tính phụ cấp cho từng loại (hệ số × lương cơ sở, % × lương ngạch bậc, v.v.)  | Bắt buộc |
+| **FR-CF-008** | Quản lý bảng hệ số phụ cấp chức vụ theo từng vị trí (Hiệu trưởng, Phó HT, Trưởng khoa, v.v.)    | Bắt buộc |
+| **FR-CF-009** | Cấu hình quy tắc phụ cấp thâm niên: số năm bắt đầu, tỷ lệ khởi điểm, tỷ lệ tăng thêm mỗi năm    | Bắt buộc |
+| **FR-CF-010** | Quản lý tỷ lệ phụ cấp ưu đãi ngành theo nhóm đối tượng                                          | Bắt buộc |
+| **FR-CF-011** | Hỗ trợ tạo loại phụ cấp mới theo yêu cầu nghiệp vụ                                              | Bắt buộc |
 
 ##### 4.13.2.3 Cấu hình Hợp đồng
 
-| ID            | Yêu cầu                                                                                           | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------- | -------- |
-| **FR-CF-012** | Quản lý danh mục loại hợp đồng (không xác định thời hạn, xác định thời hạn, thử việc, thỉnh giảng)| Bắt buộc |
-| **FR-CF-013** | Cấu hình thời hạn tối thiểu/tối đa cho từng loại hợp đồng                                         | Bắt buộc |
-| **FR-CF-014** | Cấu hình số lần ký hợp đồng xác định thời hạn tối đa trước khi chuyển đổi                         | Bắt buộc |
-| **FR-CF-015** | Cấu hình thời gian thử việc theo vị trí/chức danh                                                 | Bắt buộc |
-| **FR-CF-016** | Cấu hình quy tắc chuyển đổi loại hợp đồng (từ thử việc → chính thức, từ có thời hạn → vô thời hạn)| Bắt buộc |
+| ID            | Yêu cầu                                                                                            | Mức độ   |
+| ------------- | -------------------------------------------------------------------------------------------------- | -------- |
+| **FR-CF-012** | Quản lý danh mục loại hợp đồng (không xác định thời hạn, xác định thời hạn, thử việc, thỉnh giảng) | Bắt buộc |
+| **FR-CF-013** | Cấu hình thời hạn tối thiểu/tối đa cho từng loại hợp đồng                                          | Bắt buộc |
+| **FR-CF-014** | Cấu hình số lần ký hợp đồng xác định thời hạn tối đa trước khi chuyển đổi                          | Bắt buộc |
+| **FR-CF-015** | Cấu hình thời gian thử việc theo vị trí/chức danh                                                  | Bắt buộc |
+| **FR-CF-016** | Cấu hình quy tắc chuyển đổi loại hợp đồng (từ thử việc → chính thức, từ có thời hạn → vô thời hạn) | Bắt buộc |
 
 ##### 4.13.2.4 Cấu hình Bảo hiểm và Thuế
 
-| ID            | Yêu cầu                                                                                           | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------- | -------- |
-| **FR-CF-017** | Cấu hình tỷ lệ đóng BHXH (phần người lao động và người sử dụng lao động)                          | Bắt buộc |
-| **FR-CF-018** | Cấu hình tỷ lệ đóng BHYT, BHTN                                                                    | Bắt buộc |
-| **FR-CF-019** | Cấu hình mức trần đóng BHXH (nếu có)                                                              | Bắt buộc |
-| **FR-CF-020** | Cấu hình bảng thuế TNCN lũy tiến (các bậc thu nhập và thuế suất tương ứng)                        | Bắt buộc |
-| **FR-CF-021** | Cấu hình mức giảm trừ gia cảnh bản thân và người phụ thuộc                                        | Bắt buộc |
+| ID            | Yêu cầu                                                                    | Mức độ   |
+| ------------- | -------------------------------------------------------------------------- | -------- |
+| **FR-CF-017** | Cấu hình tỷ lệ đóng BHXH (phần người lao động và người sử dụng lao động)   | Bắt buộc |
+| **FR-CF-018** | Cấu hình tỷ lệ đóng BHYT, BHTN                                             | Bắt buộc |
+| **FR-CF-019** | Cấu hình mức trần đóng BHXH (nếu có)                                       | Bắt buộc |
+| **FR-CF-020** | Cấu hình bảng thuế TNCN lũy tiến (các bậc thu nhập và thuế suất tương ứng) | Bắt buộc |
+| **FR-CF-021** | Cấu hình mức giảm trừ gia cảnh bản thân và người phụ thuộc                 | Bắt buộc |
 
 ##### 4.13.2.5 Cấu hình Nghỉ phép và Chấm công
 
-| ID            | Yêu cầu                                                                                           | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------- | -------- |
-| **FR-CF-022** | Cấu hình số ngày phép năm cơ bản và quy tắc cộng thêm theo thâm niên                              | Bắt buộc |
-| **FR-CF-023** | Quản lý danh mục loại nghỉ phép và số ngày tối đa cho từng loại                                   | Bắt buộc |
-| **FR-CF-024** | Cấu hình quy tắc chuyển phép năm sang năm sau (nếu cho phép)                                      | Tùy chọn |
-| **FR-CF-025** | Cấu hình giờ làm việc chuẩn theo ngày/tuần                                                        | Bắt buộc |
-| **FR-CF-026** | Cấu hình hệ số lương làm thêm giờ (ngày thường, cuối tuần, ngày lễ)                               | Bắt buộc |
+| ID            | Yêu cầu                                                              | Mức độ   |
+| ------------- | -------------------------------------------------------------------- | -------- |
+| **FR-CF-022** | Cấu hình số ngày phép năm cơ bản và quy tắc cộng thêm theo thâm niên | Bắt buộc |
+| **FR-CF-023** | Quản lý danh mục loại nghỉ phép và số ngày tối đa cho từng loại      | Bắt buộc |
+| **FR-CF-024** | Cấu hình quy tắc chuyển phép năm sang năm sau (nếu cho phép)         | Tùy chọn |
+| **FR-CF-025** | Cấu hình giờ làm việc chuẩn theo ngày/tuần                           | Bắt buộc |
+| **FR-CF-026** | Cấu hình hệ số lương làm thêm giờ (ngày thường, cuối tuần, ngày lễ)  | Bắt buộc |
 
 ##### 4.13.2.6 Cấu hình Giờ giảng (Đặc thù Đại học)
 
-| ID            | Yêu cầu                                                                                           | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------- | -------- |
-| **FR-CF-027** | Cấu hình định mức giờ giảng chuẩn theo chức danh/học hàm                                          | Bắt buộc |
-| **FR-CF-028** | Cấu hình hệ số quy đổi giờ giảng (lý thuyết, thực hành, hướng dẫn đồ án, hướng dẫn thực tập)      | Bắt buộc |
-| **FR-CF-029** | Cấu hình đơn giá giờ giảng vượt định mức theo chức danh                                           | Bắt buộc |
-| **FR-CF-030** | Cấu hình quy đổi hoạt động khác ra giờ giảng (NCKH, hướng dẫn NCS/cao học, chấm thi, v.v.)        | Bắt buộc |
+| ID            | Yêu cầu                                                                                      | Mức độ   |
+| ------------- | -------------------------------------------------------------------------------------------- | -------- |
+| **FR-CF-027** | Cấu hình định mức giờ giảng chuẩn theo chức danh/học hàm                                     | Bắt buộc |
+| **FR-CF-028** | Cấu hình hệ số quy đổi giờ giảng (lý thuyết, thực hành, hướng dẫn đồ án, hướng dẫn thực tập) | Bắt buộc |
+| **FR-CF-029** | Cấu hình đơn giá giờ giảng vượt định mức theo chức danh                                      | Bắt buộc |
+| **FR-CF-030** | Cấu hình quy đổi hoạt động khác ra giờ giảng (NCKH, hướng dẫn NCS/cao học, chấm thi, v.v.)   | Bắt buộc |
 
 ##### 4.13.2.7 Quản lý và Kiểm soát Cấu hình
 
-| ID            | Yêu cầu                                                                                           | Mức độ   |
-| ------------- | ------------------------------------------------------------------------------------------------- | -------- |
-| **FR-CF-031** | Phân quyền quản lý cấu hình (chỉ Quản trị viên hoặc Phòng TCCB/TCKT được cấp quyền)               | Bắt buộc |
-| **FR-CF-032** | Lưu đầy đủ lịch sử thay đổi cấu hình (ai thay đổi, thời gian, giá trị cũ/mới)                     | Bắt buộc |
-| **FR-CF-033** | Yêu cầu phê duyệt khi thay đổi cấu hình quan trọng (lương cơ sở, hệ số lương)                     | Bắt buộc |
-| **FR-CF-034** | Cảnh báo khi cấu hình sắp hết hiệu lực hoặc cần cập nhật theo quy định mới                        | Tùy chọn |
-| **FR-CF-035** | Hỗ trợ import/export cấu hình (Excel, JSON) để sao lưu và chuyển đổi                              | Tùy chọn |
-| **FR-CF-036** | Kiểm tra tính hợp lệ của cấu hình trước khi lưu (validate ranges, dependencies)                   | Bắt buộc |
+| ID            | Yêu cầu                                                                             | Mức độ   |
+| ------------- | ----------------------------------------------------------------------------------- | -------- |
+| **FR-CF-031** | Phân quyền quản lý cấu hình (chỉ Quản trị viên hoặc Phòng TCCB/TCKT được cấp quyền) | Bắt buộc |
+| **FR-CF-032** | Lưu đầy đủ lịch sử thay đổi cấu hình (ai thay đổi, thời gian, giá trị cũ/mới)       | Bắt buộc |
+| **FR-CF-033** | Yêu cầu phê duyệt khi thay đổi cấu hình quan trọng (lương cơ sở, hệ số lương)       | Bắt buộc |
+| **FR-CF-034** | Cảnh báo khi cấu hình sắp hết hiệu lực hoặc cần cập nhật theo quy định mới          | Tùy chọn |
+| **FR-CF-035** | Hỗ trợ import/export cấu hình (Excel, JSON) để sao lưu và chuyển đổi                | Tùy chọn |
+| **FR-CF-036** | Kiểm tra tính hợp lệ của cấu hình trước khi lưu (validate ranges, dependencies)     | Bắt buộc |
 
 > [!NOTE]
 > **Ví dụ cấu hình theo quy định hiện hành (2024):**
+>
 > - Mức lương cơ sở: 2,340,000 VND/tháng (Nghị định 73/2024/NĐ-CP, hiệu lực 01/07/2024)
 > - Phụ cấp thâm niên: 5% sau 5 năm, +1%/năm tiếp theo (Nghị định 54/2011/NĐ-CP)
 > - BHXH người lao động: 8%; BHYT: 1.5%; BHTN: 1%
-> 
-> *Các giá trị trên là ví dụ tham khảo, sẽ được nhập vào hệ thống thông qua Module Cấu hình khi triển khai.*
+>
+> _Các giá trị trên là ví dụ tham khảo, sẽ được nhập vào hệ thống thông qua Module Cấu hình khi triển khai._
 
 ---
 
@@ -1005,20 +1021,20 @@ flowchart TD
 
 ### 7.1 Danh mục loại hợp đồng (Dữ liệu cấu hình mẫu)
 
-> *Cấu hình tại: FR-CF-012, FR-CF-013, FR-CF-014*
+> _Cấu hình tại: FR-CF-012, FR-CF-013, FR-CF-014_
 
-| Mã   | Loại hợp đồng           | Thời hạn (cấu hình) | Ghi chú                    |
-| ---- | ----------------------- | ------------------- | -------------------------- |
-| HD01 | Không xác định thời hạn | Không giới hạn      | Cho viên chức chính thức   |
-| HD02 | Xác định thời hạn       | 12-60 tháng         | Tối đa 2 lần liên tiếp     |
-| HD03 | Thử việc                | 30-60 ngày          | Theo vị trí (cấu hình)     |
-| HD04 | Thỉnh giảng             | Theo học kỳ         | Cho GV thỉnh giảng         |
-| HD05 | Chuyên gia nước ngoài   | Theo work permit    | Cho GV/CG nước ngoài       |
+| Mã   | Loại hợp đồng           | Thời hạn (cấu hình) | Ghi chú                  |
+| ---- | ----------------------- | ------------------- | ------------------------ |
+| HD01 | Không xác định thời hạn | Không giới hạn      | Cho viên chức chính thức |
+| HD02 | Xác định thời hạn       | 12-60 tháng         | Tối đa 2 lần liên tiếp   |
+| HD03 | Thử việc                | 30-60 ngày          | Theo vị trí (cấu hình)   |
+| HD04 | Thỉnh giảng             | Theo học kỳ         | Cho GV thỉnh giảng       |
+| HD05 | Chuyên gia nước ngoài   | Theo work permit    | Cho GV/CG nước ngoài     |
 
 ### 7.2 Bảng hệ số lương viên chức (Dữ liệu cấu hình mẫu)
 
-> *Cấu hình tại: FR-CF-002, FR-CF-004*
-> *Tham chiếu: Thông tư 40/2020/TT-BGDĐT*
+> _Cấu hình tại: FR-CF-002, FR-CF-004_
+> _Tham chiếu: Thông tư 40/2020/TT-BGDĐT_
 
 | Chức danh           | Mã ngạch   | Bậc | Hệ số       |
 | ------------------- | ---------- | --- | ----------- |
@@ -1031,19 +1047,19 @@ flowchart TD
 
 ### 7.3 Danh mục phụ cấp (Dữ liệu cấu hình mẫu)
 
-> *Cấu hình tại: FR-CF-006, FR-CF-007, FR-CF-008, FR-CF-009, FR-CF-010*
+> _Cấu hình tại: FR-CF-006, FR-CF-007, FR-CF-008, FR-CF-009, FR-CF-010_
 
-| Mã   | Loại phụ cấp               | Công thức (cấu hình)          | Tham chiếu pháp lý     |
-| ---- | -------------------------- | ----------------------------- | ---------------------- |
-| PC01 | Phụ cấp chức vụ            | Hệ số × Lương cơ sở           | Nghị định 204/2004     |
-| PC02 | Phụ cấp thâm niên nhà giáo | 5% sau 5 năm + 1%/năm tiếp    | Nghị định 54/2011      |
-| PC03 | Phụ cấp ưu đãi ngành       | 25-30% × Lương ngạch bậc      | Nghị định 113/2015     |
-| PC04 | Phụ cấp trách nhiệm        | Theo quyết định               | Quy chế nội bộ         |
-| PC05 | Phụ cấp độc hại            | Theo quy định                 | Nghị định 204/2004     |
+| Mã   | Loại phụ cấp               | Công thức (cấu hình)       | Tham chiếu pháp lý |
+| ---- | -------------------------- | -------------------------- | ------------------ |
+| PC01 | Phụ cấp chức vụ            | Hệ số × Lương cơ sở        | Nghị định 204/2004 |
+| PC02 | Phụ cấp thâm niên nhà giáo | 5% sau 5 năm + 1%/năm tiếp | Nghị định 54/2011  |
+| PC03 | Phụ cấp ưu đãi ngành       | 25-30% × Lương ngạch bậc   | Nghị định 113/2015 |
+| PC04 | Phụ cấp trách nhiệm        | Theo quyết định            | Quy chế nội bộ     |
+| PC05 | Phụ cấp độc hại            | Theo quy định              | Nghị định 204/2004 |
 
 **Bảng hệ số phụ cấp chức vụ (tham khảo):**
 
-> *Cấu hình tại: FR-CF-008*
+> _Cấu hình tại: FR-CF-008_
 
 | Chức vụ         | Hệ số phụ cấp |
 | --------------- | ------------- |
@@ -1055,8 +1071,8 @@ flowchart TD
 
 ### 7.4 Quy định nghỉ phép (Dữ liệu cấu hình mẫu)
 
-> *Cấu hình tại: FR-CF-022, FR-CF-023*
-> *Tham chiếu: Bộ Luật Lao động 2019*
+> _Cấu hình tại: FR-CF-022, FR-CF-023_
+> _Tham chiếu: Bộ Luật Lao động 2019_
 
 | Loại                 | Số ngày (cấu hình) | Điều kiện                |
 | -------------------- | ------------------ | ------------------------ |
@@ -1069,32 +1085,32 @@ flowchart TD
 
 ### 7.5 Tỷ lệ Bảo hiểm và Thuế (Dữ liệu cấu hình mẫu)
 
-> *Cấu hình tại: FR-CF-017, FR-CF-018, FR-CF-019, FR-CF-020, FR-CF-021*
+> _Cấu hình tại: FR-CF-017, FR-CF-018, FR-CF-019, FR-CF-020, FR-CF-021_
 
 **Tỷ lệ đóng bảo hiểm (hiện hành 2024):**
 
-| Loại bảo hiểm | Người lao động | Người sử dụng LĐ | Tổng   |
-| ------------- | -------------- | ---------------- | ------ |
-| BHXH          | 8%             | 17.5%            | 25.5%  |
-| BHYT          | 1.5%           | 3%               | 4.5%   |
-| BHTN          | 1%             | 1%               | 2%     |
+| Loại bảo hiểm | Người lao động | Người sử dụng LĐ | Tổng    |
+| ------------- | -------------- | ---------------- | ------- |
+| BHXH          | 8%             | 17.5%            | 25.5%   |
+| BHYT          | 1.5%           | 3%               | 4.5%    |
+| BHTN          | 1%             | 1%               | 2%      |
 | **Tổng**      | **10.5%**      | **21.5%**        | **32%** |
 
 **Mức giảm trừ gia cảnh (hiện hành 2024):**
 
-| Đối tượng          | Mức giảm trừ/tháng |
-| ------------------ | ------------------ |
-| Bản thân           | 11,000,000 VND     |
-| Người phụ thuộc    | 4,400,000 VND/người|
+| Đối tượng       | Mức giảm trừ/tháng  |
+| --------------- | ------------------- |
+| Bản thân        | 11,000,000 VND      |
+| Người phụ thuộc | 4,400,000 VND/người |
 
 ### 7.6 Mức lương cơ sở (Dữ liệu cấu hình mẫu)
 
-> *Cấu hình tại: FR-CF-001*
+> _Cấu hình tại: FR-CF-001_
 
-| Thời điểm hiệu lực | Mức lương cơ sở | Căn cứ pháp lý           |
-| ------------------ | --------------- | ------------------------ |
-| 01/07/2024         | 2,340,000 VND   | Nghị định 73/2024/NĐ-CP  |
-| 01/07/2023         | 1,800,000 VND   | Nghị định 24/2023/NĐ-CP  |
+| Thời điểm hiệu lực | Mức lương cơ sở | Căn cứ pháp lý          |
+| ------------------ | --------------- | ----------------------- |
+| 01/07/2024         | 2,340,000 VND   | Nghị định 73/2024/NĐ-CP |
+| 01/07/2023         | 1,800,000 VND   | Nghị định 24/2023/NĐ-CP |
 
 ### 7.7 Thuật ngữ
 
@@ -1113,38 +1129,38 @@ flowchart TD
 
 ### 7.8 Danh mục văn bản pháp lý tham chiếu
 
-> *Các văn bản này là căn cứ để xây dựng dữ liệu cấu hình ban đầu. Khi có văn bản mới thay thế, quản trị viên cập nhật cấu hình tương ứng.*
+> _Các văn bản này là căn cứ để xây dựng dữ liệu cấu hình ban đầu. Khi có văn bản mới thay thế, quản trị viên cập nhật cấu hình tương ứng._
 
 #### 7.8.1 Văn bản về Lương và Phụ cấp
 
-| Số hiệu văn bản          | Tên văn bản                                               | Nội dung liên quan           |
-| ------------------------ | --------------------------------------------------------- | ---------------------------- |
-| Nghị định 73/2024/NĐ-CP  | Quy định mức lương cơ sở đối với cán bộ, công chức        | Mức lương cơ sở (FR-CF-001)  |
-| Nghị định 204/2004/NĐ-CP | Chế độ tiền lương đối với cán bộ, công chức, viên chức    | Hệ số lương, phụ cấp chức vụ |
-| Thông tư 40/2020/TT-BGDĐT| Quy định mã số, tiêu chuẩn chức danh nghề nghiệp giảng viên| Ngạch lương giảng viên       |
-| Nghị định 54/2011/NĐ-CP  | Chế độ phụ cấp thâm niên đối với nhà giáo                 | Phụ cấp thâm niên (FR-CF-009)|
-| Nghị định 113/2015/NĐ-CP | Quy định phụ cấp đặc thù, phụ cấp ưu đãi ngành giáo dục   | Phụ cấp ưu đãi (FR-CF-010)   |
+| Số hiệu văn bản           | Tên văn bản                                                 | Nội dung liên quan            |
+| ------------------------- | ----------------------------------------------------------- | ----------------------------- |
+| Nghị định 73/2024/NĐ-CP   | Quy định mức lương cơ sở đối với cán bộ, công chức          | Mức lương cơ sở (FR-CF-001)   |
+| Nghị định 204/2004/NĐ-CP  | Chế độ tiền lương đối với cán bộ, công chức, viên chức      | Hệ số lương, phụ cấp chức vụ  |
+| Thông tư 40/2020/TT-BGDĐT | Quy định mã số, tiêu chuẩn chức danh nghề nghiệp giảng viên | Ngạch lương giảng viên        |
+| Nghị định 54/2011/NĐ-CP   | Chế độ phụ cấp thâm niên đối với nhà giáo                   | Phụ cấp thâm niên (FR-CF-009) |
+| Nghị định 113/2015/NĐ-CP  | Quy định phụ cấp đặc thù, phụ cấp ưu đãi ngành giáo dục     | Phụ cấp ưu đãi (FR-CF-010)    |
 
 #### 7.8.2 Văn bản về Hợp đồng và Viên chức
 
-| Số hiệu văn bản             | Tên văn bản                                | Nội dung liên quan             |
-| --------------------------- | ------------------------------------------ | ------------------------------ |
-| Luật Viên chức 2010 (sửa đổi)| Luật Viên chức                            | Loại hợp đồng, quyền/nghĩa vụ  |
-| Bộ Luật Lao động 2019       | Bộ Luật Lao động                           | Thời hạn HĐ, nghỉ phép, BHXH   |
-| Nghị định 115/2020/NĐ-CP    | Tuyển dụng, sử dụng và quản lý viên chức   | Quy trình tuyển dụng, hợp đồng |
+| Số hiệu văn bản               | Tên văn bản                              | Nội dung liên quan             |
+| ----------------------------- | ---------------------------------------- | ------------------------------ |
+| Luật Viên chức 2010 (sửa đổi) | Luật Viên chức                           | Loại hợp đồng, quyền/nghĩa vụ  |
+| Bộ Luật Lao động 2019         | Bộ Luật Lao động                         | Thời hạn HĐ, nghỉ phép, BHXH   |
+| Nghị định 115/2020/NĐ-CP      | Tuyển dụng, sử dụng và quản lý viên chức | Quy trình tuyển dụng, hợp đồng |
 
 #### 7.8.3 Văn bản về Bảo hiểm và Thuế
 
-| Số hiệu văn bản             | Tên văn bản                                | Nội dung liên quan             |
-| --------------------------- | ------------------------------------------ | ------------------------------ |
-| Luật BHXH 2014              | Luật Bảo hiểm xã hội                       | Tỷ lệ đóng BHXH (FR-CF-017)    |
-| Luật BHYT 2008 (sửa đổi)    | Luật Bảo hiểm y tế                         | Tỷ lệ đóng BHYT (FR-CF-018)    |
-| Luật Thuế TNCN 2007 (sửa đổi)| Luật Thuế thu nhập cá nhân                | Bảng thuế lũy tiến (FR-CF-020) |
-| Nghị quyết 954/2020/UBTVQH14| Điều chỉnh mức giảm trừ gia cảnh          | Giảm trừ (FR-CF-021)           |
+| Số hiệu văn bản               | Tên văn bản                      | Nội dung liên quan             |
+| ----------------------------- | -------------------------------- | ------------------------------ |
+| Luật BHXH 2014                | Luật Bảo hiểm xã hội             | Tỷ lệ đóng BHXH (FR-CF-017)    |
+| Luật BHYT 2008 (sửa đổi)      | Luật Bảo hiểm y tế               | Tỷ lệ đóng BHYT (FR-CF-018)    |
+| Luật Thuế TNCN 2007 (sửa đổi) | Luật Thuế thu nhập cá nhân       | Bảng thuế lũy tiến (FR-CF-020) |
+| Nghị quyết 954/2020/UBTVQH14  | Điều chỉnh mức giảm trừ gia cảnh | Giảm trừ (FR-CF-021)           |
 
 ---
 
-> **Ghi chú:** Tài liệu này được xây dựng dựa trên nghiên cứu về cơ cấu tổ chức Trường Đại học Thủy lợi, các quy định pháp luật Việt Nam về lao động, viên chức, giáo dục, và các thực hành tốt nhất về hệ thống HRMS trong môi trường đại học. 
+> **Ghi chú:** Tài liệu này được xây dựng dựa trên nghiên cứu về cơ cấu tổ chức Trường Đại học Thủy lợi, các quy định pháp luật Việt Nam về lao động, viên chức, giáo dục, và các thực hành tốt nhất về hệ thống HRMS trong môi trường đại học.
 >
 > **Nguyên tắc thiết kế quan trọng:** Tất cả các giá trị liên quan đến quy định pháp luật (lương cơ sở, hệ số, phụ cấp, tỷ lệ bảo hiểm, thuế) được thiết kế là **cấu hình được quản lý** thông qua Module FR-CF, cho phép cập nhật khi quy định thay đổi mà không cần sửa mã nguồn.
 >
