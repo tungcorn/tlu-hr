@@ -1,126 +1,216 @@
-# BÁO CÁO DỰ ÁN: HỆ THỐNG QUẢN TRỊ NHÂN SỰ TLU-HRMS
-## (BÁO CÁO TỔNG HỢP TEAM 1 - TUẦN 2)
+# BÁO CÁO PHÂN TÍCH YÊU CẦU PHẦN MỀM (SRS)
+## HỆ THỐNG QUẢN TRỊ NHÂN SỰ TLU-HRMS
 
-**Học phần:** Phát triển Dự án Phần mềm  
-**Đơn vị:** Nhóm 01 - Team 1 (Yêu cầu & Lập kế hoạch)
-
----
-
-## CHƯƠNG 1: THU THẬP YÊU CẦU KHÁCH HÀNG VÀ LẬP KẾ HOẠCH
-
-### 1.1. Tổng quan
-#### 1.1.1. Giới thiệu dự án
-*   **Tên dự án:** Hệ thống Quản trị Nhân sự (TLU-HRMS).
-*   **Mục đích dự án:**
-    *   **Trải nghiệm người dùng:** Giao diện trực quan, hỗ trợ đa thiết bị giúp CBGV tra cứu lương, hồ sơ cá nhân.
-    *   **Cơ sở hạ tầng:** Kiến trúc phân tán (Spring Boot & Angular), hỗ trợ hàng nghìn người dùng đồng thời.
-    *   **Căn chỉnh nghiệp vụ:** Tích hợp quy trình Tuyển dụng, Hồ sơ, Lương, Đánh giá thành một luồng dữ liệu thông suốt.
-    *   **Phân tích nhân sự (HR Analytics):** Cung cấp báo cáo về hiệu suất, biến động nhân sự và năng suất làm việc.
-*   **Các module chính:** Hồ sơ (ER), Tiền lương (PB), Giờ giảng (TL), Đào tạo (TD), Đánh giá (PR), Giao tiếp (CM), Bảo mật & Đạo văn hồ sơ.
-
-#### 1.1.2. Phạm vi dự án
-*   **Phạm vi chức năng:** Các quy trình quản trị nhân sự tập trung của Trường Đại học Thủy lợi.
-*   **Phạm vi dữ liệu:** 1.200 bộ hồ sơ CBGV; Dữ liệu tài chính (Lương, Thuế, BHXH); Dữ liệu chuyên môn (Giờ dạy, NCKH).
-*   **Yêu cầu kỹ thuật:** Spring Boot, Angular, MySQL, Docker, OAuth 2.0.
-
-#### 1.1.3. Các bên tham gia
-*   **Khách hàng:** Trường Đại học Thủy lợi (Ban Giám hiệu, Phòng TCCB, TCKT).
-*   **Người dùng:** Giảng viên, Nhân viên, Sinh viên, Quản trị viên.
-*   **Nhóm sản xuất:** Nhóm 01 (14 người, 5 Team).
-*   **Các vai trò hỗ trợ:** Kỹ thuật viên IT, Đội hỗ trợ khách hàng, Đội QA/Tester, Database Administrators (DBA), Configuration Manager.
-
-#### 1.1.4. Tìm hiểu yêu cầu khách hàng
-##### 1.1.4.1. Tác nhân dự án
-Hệ thống xác định 5 tác nhân chính: Admin, Giảng viên/Nhân viên, Cán bộ TCCB, Cán bộ Kế toán, Lãnh đạo.
-
-##### 1.1.4.2. Yêu cầu chi tiết từ người dùng
-*   **Sinh viên/Giảng viên:** Tra cứu thông tin, nộp đơn nghỉ phép, nhận phản hồi tức thời về hồ sơ/lương.
-*   **Cán bộ TCCB/TCKT:** Quản lý hồ sơ 2C, tính lương tự động, xuất báo cáo bank, quản lý hợp đồng.
-*   **Quản trị viên (Admin):** Giám sát hệ thống, quản lý tài khoản, cấu hình bảo mật.
-
-#### 1.1.5. Điều lệ dự án
-*   **Thời gian:** 12/02/2025 – 16/03/2025.
-*   **Mô hình:** Waterfall cải tiến.
-*   **Vòng đời:** Phân tích (W1-2) -> Thiết kế (W3-5) -> Lập trình (W6-12) -> Kiểm thử (W13-14) -> Bàn giao (W15).
-
-### 1.2. Lập kế hoạch
-#### 1.2.1. Cấu trúc phân rã công việc (WBS)
-##### 1.2.1.1. Phân rã theo team thực hiện
-```mermaid
-graph TD
-    Project[TLU-HRMS Project] --> T1[Team 1: Yêu cầu & Kế hoạch]
-    Project --> T2[Team 2: Phân tích & Thiết kế]
-    Project --> T3[Team 3: Lập trình - Development]
-    Project --> T4[Team 4: Kiểm thử - QA]
-    Project --> T5[Team 5: Đóng gói & Triển khai]
-```
-
-##### 1.2.1.2. Biểu đồ Phân rã chức năng (FDD)
-```mermaid
-graph TD
-    System[Hệ thống TLU-HRMS] --> ER[Quản trị Nhân sự]
-    System --> Fin[Tài chính - Lương]
-    System --> Admin[Quản trị - Hệ thống]
-
-    ER --> Profiles[Hồ sơ cá nhân]
-    ER --> Contracts[Hợp đồng lao động]
-    
-    Fin --> Payroll[Lương & Phụ cấp]
-    Fin --> Workload[Giờ giảng & NCKH]
-    
-    Admin --> Auth[Xác thực & SSO]
-    Admin --> Security[Bảo mật & Nhật ký]
-```
-
-#### 1.2.2. Dự đoán chi phí & Nhân lực
-*   **FP (Function Point):** AFP = 388 -> Dự toán chi phí phần mềm: **388.000.000 VNĐ**. Tổng chi phí dự án (gồm nhân công): **648.000.000 VNĐ**.
-*   **COCOMO:** Ước tính **11-14 người** để hoàn thành 24.832 dòng code trong 2 tháng.
+**Nhóm thực hiện:** Nhóm 01 - Team 1 (Yêu cầu & Lập kế hoạch)  
+**Ngày lập:** 27/01/2026
 
 ---
 
-## CHƯƠNG 2: PHÂN TÍCH VÀ ĐẶC TẢ HỆ THỐNG (TEAM 1 ĐẢM NHIỆM)
+## MỞ ĐẦU (ĐẶT VẤN ĐỀ VÀ NÊU PHẠM VI BÀI TOÁN)
+### 1. Đặt vấn đề
+Hiện nay, công tác quản lý nhân sự tại Trường Đại học Thủy lợi đang gặp khó khăn do dữ liệu phân tán (Excel/Giấy), gây chậm trễ trong việc tính lương, tổng hợp giờ giảng và tra cứu hồ sơ. Nhu cầu cấp thiết là xây dựng một hệ thống tập trung (Centralized HRMS).
 
-### 2.1. Biểu đồ Use Case tổng quát
+### 2. Phạm vi bài toán
+*   **Phạm vi nghiệp vụ:** Quản lý vòng đời nhân sự (Tuyển dụng -> Hợp đồng -> Lương/Thưởng -> Nghỉ hưu).
+*   **Phạm vi dữ liệu:** 1.200 CBGV tại 3 cơ sở đào tạo.
+*   **Người dùng:** Toàn bộ giảng viên, nhân viên và lãnh đạo nhà trường.
+
+---
+
+## I. BẢN KẾ HOẠCH QUẢN LÝ YÊU CẦU
+### 1.1. Tổ chức đội ngũ (Team Roles)
+Dự án được phân chia thành 5 nhóm chuyên trách để xử lý yêu cầu:
+*   **Team 1 (BA/PM):** Thu thập, phân tích và tài liệu hóa yêu cầu.
+*   **Team 2 (SA/Design):** Chuyển đổi yêu cầu thành thiết kế hệ thống.
+*   **Team 3 (Dev):** Hiện thực hóa yêu cầu thành phần mềm.
+*   **Team 4 (Test):** Kiểm chứng yêu cầu trên sản phẩm thực tế.
+*   **Team 5 (Deploy):** Triển khai và hướng dẫn sử dụng.
+
+### 1.2. Quy trình quản lý thay đổi (Change Control)
+Mọi yêu cầu thay đổi (CR) từ phía Stakeholders phải được Team 1 đánh giá tác động (Impact Analysis) trước khi cập nhật vào tài liệu SRS và thông báo cho Team 2, 3.
+
+---
+
+## II. THU THẬP YÊU CẦU TỪ CÁC STAKEHOLDERS
+### 2.1. Xác định các Stakeholders
+1.  **Chủ đầu tư:** Ban Giám hiệu.
+2.  **Người dùng chính (Key Users):** Phòng TCCB (Quản lý hồ sơ), Phòng TCKT (Tính lương).
+3.  **Người dùng cuối (End Users):** Giảng viên, Nhân viên.
+4.  **Hỗ trợ kỹ thuật:** Trung tâm Tin học.
+
+### 2.2. Xác định yêu cầu cấp cao (STRQ & FEAT)
+*   **STRQ-01:** Hệ thống phải quản lý được hồ sơ viên chức theo mẫu nhà nước.
+    *   *FEAT-01:* Nhập liệu và xuất báo cáo mẫu 2C/BNV.
+    *   *FEAT-02:* Quản lý lịch sử diễn biến lương và quá trình công tác.
+*   **STRQ-02:** Hệ thống phải tính lương tự động chính xác 100%.
+    *   *FEAT-03:* Công thức tính lương động (Hệ số * Lương CS + Phụ cấp).
+    *   *FEAT-04:* Tự động trừ thuế TNCN và BHXH.
+*   **STRQ-03:** Giảng viên có thể tương tác trực tuyến.
+    *   *FEAT-05:* Cổng Self-Service xem Payslip và Hồ sơ.
+    *   *FEAT-06:* Đăng ký nghỉ phép và bù giờ dạy online.
+*   **STRQ-04:** Quản lý quy trình tuyển dụng và đào tạo.
+    *   *FEAT-07:* Đăng tin tuyển dụng và sàng lọc hồ sơ ứng viên.
+    *   *FEAT-08:* Quản lý kế hoạch bồi dưỡng chuyên môn và chứng chỉ.
+*   **STRQ-05:** Báo cáo quản trị thông minh.
+    *   *FEAT-09:* Dashboard biến động nhân sự, tỷ lệ thạc sĩ/tiến sĩ.
+    *   *FEAT-10:* Báo cáo quỹ lương dự kiến hàng năm.
+
+---
+
+## III. MÔ HÌNH HOÁ YÊU CẦU (USE CASE DIAGRAM)
+### 3.1. Sơ đồ Use Case tổng quát
 ```mermaid
 usecaseDiagram
-    actor "CBGV/Sinh viên" as USER
+    actor "CBGV/Nhân viên" as USER
     actor "Cán bộ TCCB" as TCCB
     actor "Cán bộ TCKT" as TCKT
-    actor "Admin" as AD
+    actor "Lãnh đạo" as ADMIN
 
-    rectangle "Hệ thống TLU-HRMS" {
-        usecase "Đăng nhập & Quản lý tài khoản" as UC5
-        usecase "Tra cứu thông tin & Nộp đơn" as UC1
-        usecase "Quản lý nhân sự & Hồ sơ" as UC2
-        usecase "Tính toán Lương & Thuế" as UC3
-        usecase "Phê duyệt & Điều hành" as UC4
+    rectangle "HỆ THỐNG TLU-HRMS" {
+        usecase "Đăng nhập/SSO" as UC_AUTH
+        usecase "Tra cứu Hồ sơ & Lương" as UC_VIEW
+        usecase "Đăng ký Nghỉ phép" as UC_LEAVE
+        usecase "Quản lý Hồ sơ Nhân sự" as UC_HRM
+        usecase "Quản lý Hợp đồng" as UC_CONT
+        usecase "Tính toán Lương & Thuế" as UC_PAY
+        usecase "Phê duyệt tờ trình" as UC_APR
     }
 
-    USER --> UC5
-    USER --> UC1
-    TCCB --> UC2
-    TCKT --> UC3
-    AD --> UC5
-    AD --> UC4
+    USER --> UC_AUTH
+    USER --> UC_VIEW
+    USER --> UC_LEAVE
+    TCCB --> UC_HRM
+    TCCB --> UC_CONT
+    TCKT --> UC_PAY
+    ADMIN --> UC_APR
 ```
 
-### 2.2. Danh sách Use Case chức năng
-Mọi yêu cầu FR-xxx từ URD được ánh xạ vào các Use Case sau:
-*   **UC-AUTH-01:** Đăng nhập & Xác thực người dùng.
-*   **UC-ER-01:** Cập nhật thông tin hồ sơ lý lịch.
-*   **UC-CM-01:** Quản lý hợp đồng lao động.
-*   **UC-TA-01:** Đăng ký và Phê duyệt nghỉ phép.
-*   **UC-PB-01:** Tính toán bảng lương hàng tháng.
+---
 
-### 2.3. Đặc tả mẫu Use Case chi tiết: Đăng nhập (UC-AUTH-01)
-*   **Actor:** Tất cả người dùng có tài khoản.
-*   **Tiền điều kiện:** Tài khoản đã được Admin cấp và đang ở trạng thái Hoạt động.
+## IV. LUỒNG SỰ KIỆN CHO CÁC USE CASE CHÍNH
+### 4.1. UC-AUTH: Đăng nhập hệ thống
+*   **Tác nhân:** Mọi người dùng.
+*   **Luồng chính:** (1) Nhập User/Pass -> (2) Hệ thống xác thực -> (3) Kiểm tra quyền -> (4) Hiển thị Dashboard.
+
+### 4.2. UC-TA-01: Đăng ký nghỉ phép
+*   **Tác nhân:** CBGV.
 *   **Luồng chính:**
-    1. Người dùng truy cập trang chủ và nhập thông tin xác thực.
-    2. Hệ thống kiểm tra thông tin đối chiếu với CSDL nhân sự.
-    3. Hệ thống xác định vai trò (Role) theo phân quyền của Team 1.
-    4. Điều hướng người dùng vào giao diện chức năng tương ứng.
-*   **Luồng ngoại lệ:** Nhập sai mật khẩu quá 5 lần -> Tài khoản bị khóa tạm thời.
+    1.  Người dùng chọn menu "Nghỉ phép" -> "Tạo mới".
+    2.  Nhập lý do, thời gian, người bàn giao.
+    3.  Hệ thống kiểm tra số ngày phép còn lại.
+    4.  Nhấn "Gửi". Hệ thống lưu đơn và gửi Email cho Trưởng đơn vị.
+*   **Luồng rẽ nhánh:** Nếu hết ngày phép -> Thông báo lỗi và gợi ý chuyển sang "Nghỉ không lương".
+
+### 4.3. UC-ER-01: Cập nhật Hồ sơ cá nhân (2C/BNV)
+*   **Tác nhân:** Cán bộ TCCB.
+*   **Luồng chính:**
+    1.  TCCB tìm kiếm nhân viên theo Mã hoặc Tên.
+    2.  Chọn tab "Sơ yếu lý lịch".
+    3.  Hệ thống hiển thị form nhập liệu chuẩn mẫu 2C (Thông tin chung, Quá trình đào tạo, Khen thưởng).
+    4.  TCCB nhập thông tin mới hoặc đính kèm file scan bằng cấp.
+    5.  Hệ thống validate định dạng ngày tháng và file upload.
+    6.  Lưu thông tin và ghi nhật ký hệ thống.
+*   **Luồng rẽ nhánh:** Nếu file đính kèm quá 5MB -> Cảnh báo lỗi.
+
+### 4.4. UC-PB-02: Tính lương hàng tháng
+*   **Tác nhân:** Cán bộ TCKT.
+*   **Luồng chính:**
+    1.  Hệ thống tự động chốt công vào ngày 25 hàng tháng.
+    2.  TCKT chọn "Lập bảng lương tháng X".
+    3.  Hệ thống quét toàn bộ hợp đồng đang hiệu lực để lấy Hệ số lương.
+    4.  Hệ thống cộng các khoản Phụ cấp (Chức vụ + Thâm niên + Độc hại).
+    5.  Hệ thống trừ các khoản trích nộp (BHXH 10.5% + Thuế TNCN lũy tiến).
+    6.  Xuất bảng lương nháp để TCKT kiểm tra.
+    7.  TCKT xác nhận -> Hệ thống gửi payslip qua email cho từng CBGV.
 
 ---
-**Kết luận của Team 1:** Toàn bộ Chương 1 và phần Đặc tả Use Case của Chương 2 đã hoàn tất, sẵn sàng làm đầu vào cho quy trình thiết kế database và class của **Team 2**.
+
+## V. XÁC ĐỊNH CÁC LỚP, XÂY DỰNG BIỂU ĐỒ LỚP (DOMAIN MODEL)
+*Ghi chú: Đây là Mô hình Lớp Lĩnh vực (Business Domain Class Diagram) dùng để phân tích các thực thể nghiệp vụ và mối quan hệ giữa chúng, chưa phải là biểu đồ thiết kế chi tiết (Design Class Diagram).*
+
+### 5.1. Phân tích các thực thể chính
+1.  **NhanVien (Employee):** Thông tin cơ bản của nhân sự.
+2.  **HopDong (Contract):** Một nhân viên có thể có nhiều hợp đồng theo thời gian.
+3.  **DonVi (Department):** Phòng ban/Khoa mà nhân viên thuộc về.
+4.  **BangLuong (Payroll):** Bảng chi tiết lương hàng tháng của nhân viên.
+5.  **DonNghiPhep (LeaveRequest):** Đơn xin nghỉ cần phê duyệt.
+
+### 5.2. Biểu đồ Lớp Lĩnh vực (Domain Class Diagram)
+```mermaid
+classDiagram
+    %% Định nghĩa các lớp thực thể (Entities)
+    class DonVi {
+        +MaDonVi
+        +TenDonVi
+        +TruongDonVi
+    }
+
+    class NhanVien {
+        +MaNV
+        +HoTen
+        +NgaySinh
+        +ChucVu
+        +HeSoLuong
+    }
+
+    class HopDong {
+        +SoHopDong
+        +LoaiHopDong
+        +NgayKy
+        +NgayHetHan
+    }
+
+    class BangLuong {
+        +ThangNam
+        +LuongCoBan
+        +PhuCap
+        +ThueTNCN
+        +ThucLinh
+    }
+
+    class DonNghiPhep {
+        +MaDon
+        +LoaiNghi
+        +NgayBatDau
+        +SoNgay
+        +TrangThai
+    }
+
+    %% Định nghĩa mối quan hệ
+    DonVi "1" -- "*" NhanVien : Thuộc về
+    NhanVien "1" -- "*" HopDong : Có
+    NhanVien "1" -- "*" BangLuong : Nhận
+    NhanVien "1" -- "*" DonNghiPhep : Tạo
+    DonVi "1" -- "*" DonNghiPhep : Phê duyệt (Trưởng đơn vị)
+```
+
+**Giải thích ý nghĩa:**
+*   Sơ đồ trên cho thấy cấu trúc dữ liệu logic của bài toán HRMS.
+*   Một **Nhân viên** thuộc về một **Đơn vi**, có nhiều **Hợp đồng** lịch sử.
+*   Hàng tháng, hệ thống sinh ra một **Bảng lương** cho mỗi nhân viên.
+*   Nhân viên có thể tạo nhiều **Đơn nghỉ phép**, đơn này được quản lý bởi Đơn vị.
+
+---
+
+## VI. CÁC YÊU CẦU BỔ SUNG (NON-FUNCTIONAL REQUIREMENTS)
+### 6.1. Hiệu năng (Performance)
+*   Hệ thống phải chịu tải được 500 người dùng truy cập cùng lúc (giờ cao điểm chốt công).
+*   Thời gian tính lương cho 1.200 nhân sự không quá 5 phút.
+
+### 6.2. Bảo mật (Security)
+*   Mật khẩu phải được mã hóa (Hashing).
+*   Mọi thao tác thay đổi lương phải được ghi log (Audit Trail).
+
+### 6.3. Tính khả dụng (Availability)
+*   Hệ thống hoạt động 24/7, thời gian uptime cam kết 99.9%.
+
+---
+
+## VII. TÀI LIỆU ĐẶC TẢ YÊU CẦU SRS (SUMMARY)
+Tài liệu này (Chương I đến VI) cấu thành nên bộ Đặc tả Yêu cầu Phần mềm (SRS) phiên bản 1.0 cho dự án TLU-HRMS. Nó là cơ sở pháp lý và kỹ thuật để:
+1.  **Team 2:** Thực hiện thiết kế CSDL và Kiến trúc hệ thống.
+2.  **Team 3:** Lập trình tính năng.
+3.  **Team 4:** Viết Test Case kiểm thử nghiệm thu (UAT).
+
+---
+*Người lập báo cáo: Team 1 (Nhóm 01)*
