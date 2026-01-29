@@ -1,48 +1,107 @@
 # Hệ thống Quản lý Nhân sự (HRMS) - Trường Đại học Thủy lợi
 
-Dự án này tập trung vào việc **Phân tích và Thiết kế Hệ thống Quản lý Nhân sự (HRMS)** dành riêng cho **Trường Đại học Thủy lợi (TLU)**. Hệ thống được thiết kế để quản lý toàn diện vòng đời nhân sự của hơn 1,200 cán bộ, giảng viên và nhân viên tại cả 3 cơ sở (Hà Nội, Hưng Yên, TP.HCM).
+Dự án **Phân tích và Thiết kế Hệ thống Quản lý Nhân sự (HRMS)** dành cho **Trường Đại học Thủy lợi (TLU)**. Hệ thống quản lý hơn 1,200 cán bộ, giảng viên, nhân viên tại 3 cơ sở: Hà Nội, Phố Hiến (Hưng Yên), TP.HCM.
 
 ---
 
 ## 📌 Tổng quan dự án
 
-- **Tên dự án:** TLU-HRMS
-- **Mục tiêu:** Xây dựng giải pháp quản trị nhân sự hiện đại, tự động hóa các quy trình nghiệp vụ đặc thù của môi trường đại học công lập tại Việt Nam.
-- **Đối tượng quản lý:** Giảng viên cơ hữu, giảng viên thỉnh giảng, cán bộ quản lý, nhân viên hành chính và nghiên cứu sinh.
+| Thông tin | Chi tiết |
+|-----------|----------|
+| **Tên dự án** | TLU-HRMS |
+| **Phạm vi Phase 1** | MVP - 8 Modules cốt lõi |
+| **Thời gian** | 2 tháng |
+| **Nhân lực** | 14 thành viên (5 Team) |
+| **Số yêu cầu** | 119 STRQ → 62 FEAT |
+| **Số Use Case** | 10 UC |
 
-## 🚀 Các Module Chức năng Chính
+---
 
-Hệ thống bao gồm 14 module nghiệp vụ cốt lõi:
+## 🚀 Các Module Phase 1 (MVP)
 
-1.  **Quản lý Hồ sơ (FR-ER):** Lưu trữ thông tin cá nhân, gia đình, quá trình công tác.
-2.  **Trình độ & Chức danh (FR-QM):** Quản lý bằng cấp, học hàm (GS, PGS), học vị (TS, ThS) và ngạch viên chức.
-3.  **Cơ cấu Tổ chức (FR-OS):** Mô hình hóa cấu trúc Trường - Khoa/Viện - Bộ môn - Phòng thí nghiệm.
-4.  **Hợp đồng Lao động (FR-CM):** Quản lý hợp đồng làm việc xác định thời hạn và không xác định thời hạn.
-5.  **Chấm công & Nghỉ phép (FR-TA):** Theo dõi lịch làm việc và quản lý đơn nghỉ phép online.
-6.  **Tiền lương & Phúc lợi (FR-PB):** Tính lương theo ngạch bậc, phụ cấp thâm niên, thuê TNCN và BHXH.
-7.  **Tuyển dụng (FR-RC):** Quy trình từ đăng tin, nhận hồ sơ ứng viên đến khi tiếp nhận thử việc.
-8.  **Đánh giá & Khen thưởng (FR-PR):** Đánh giá viên chức hàng năm và quản lý lịch sử kỷ luật/khen thưởng.
-9.  **Đào tạo & Phát triển (FR-TD):** Quản lý kế hoạch cử đi học và cam kết đào tạo.
-10. **Nghiên cứu Khoa học (FR-RM):** Theo dõi danh mục các đề tài và công bố khoa học của CBGV.
-11. **Giờ giảng (FR-TL):** Quản lý định mức và tính giờ giảng dạy vượt định mức.
-12. **Báo cáo & Thống kê (FR-RP):** Hệ thống báo cáo tổng hợp phục vụ lãnh đạo và các Bộ ngành.
-13. **Cổng thông tin Nhân viên (FR-SS):** Self-service portal cho phép CBGV xem lương và cập nhật thông tin.
-14. **Cấu hình Hệ thống (FR-CF):** Quản lý linh hoạt các tham số nghiệp vụ (mức lương cơ sở, tỷ lệ bảo hiểm, v.v.).
+| # | Module | Mã | Mô tả | Ưu tiên |
+|---|--------|-----|-------|---------|
+| 1 | Tài khoản & Phân quyền | AU | Đăng nhập, phân quyền theo vai trò | ⭐⭐⭐ |
+| 2 | Hồ sơ Nhân sự | ER | Thông tin cá nhân, gia đình, Đảng viên | ⭐⭐⭐ |
+| 3 | Trình độ, Chức danh | QM | Bằng cấp, học hàm, học vị, ngạch | ⭐⭐⭐ |
+| 4 | Cơ cấu Tổ chức | OS | Cây đơn vị (Trường → Khoa → Bộ môn) | ⭐⭐⭐ |
+| 5 | Hợp đồng Lao động | CM | 4 loại HĐ, gia hạn, chuyển đổi | ⭐⭐⭐ |
+| 6 | Bậc lương | PB | Ngạch/bậc, 6 loại phụ cấp | ⭐⭐ |
+| 7 | Báo cáo Thống kê | RP | Thống kê nhân sự, xuất PDF/Excel | ⭐⭐ |
+| 8 | Self-Service Portal | SS | CBGV tra cứu thông tin cá nhân | ⭐ |
 
-## 📂 Cấu trúc dự án
+**Phase 2 (Mở rộng):** Tuyển dụng, Đào tạo, Chấm công, NCKH, Giờ giảng, Đánh giá viên chức, Tính lương tự động.
 
-- [wireframes/](file:///d:/Hoc/PTDAPM/tlu-hr/wireframes/): Chứa các bản thiết kế giao diện chi tiết cho từng module.
-- [user_requirements_hrms.md](file:///d:/Hoc/PTDAPM/tlu-hr/user_requirements_hrms.md): Tài liệu đặc tả yêu cầu người dùng (URD) chi tiết gần 1400 dòng.
-- [hrms_database.dbml](file:///d:/Hoc/PTDAPM/tlu-hr/hrms_database.dbml): Thiết kế lược đồ cơ sở dữ liệu.
-- [.gitignore](file:///d:/Hoc/PTDAPM/tlu-hr/.gitignore): Quy tắc loại bỏ các tệp không cần thiết khi push Git.
+---
+
+## 👥 Các tác nhân hệ thống (Actors)
+
+| Actor | Mô tả |
+|-------|-------|
+| Quản trị viên (Admin) | Quản trị hệ thống, phân quyền |
+| Cán bộ TCCB | Quản lý hồ sơ, hợp đồng |
+| Cán bộ TCKT | Quản lý bậc lương, phụ cấp |
+| Lãnh đạo | Xem báo cáo, phê duyệt |
+| Trưởng đơn vị | Quản lý nhân sự đơn vị |
+| CBGV/NV | Tra cứu thông tin cá nhân |
+
+---
+
+## 🛠️ Công nghệ sử dụng
+
+| Thành phần | Công nghệ |
+|------------|-----------|
+| Frontend | React.js 18.x |
+| Backend | Spring Boot 3.x |
+| Database | PostgreSQL 15.x |
+| Authentication | Spring Security + JWT |
+| API Docs | Swagger/OpenAPI 3.0 |
+| Version Control | Git + GitHub |
+
+---
+
+## 📂 Cấu trúc tài liệu
+
+| File | Mô tả |
+|------|-------|
+| [BAO_CAO_CHUONG_1.md](BAO_CAO_CHUONG_1.md) | 📄 Báo cáo Chương 1 đầy đủ (~850 dòng) |
+| [user_requirements_mvp.md](user_requirements_mvp.md) | 📋 Yêu cầu MVP: 119 STRQ → 62 FEAT |
+| [user_requirements_hrms.md](user_requirements_hrms.md) | 📚 Yêu cầu đầy đủ (bản gốc ~1400 dòng) |
+
+---
+
+## 📊 Thống kê dự án
+
+| Tiêu chí | Giá trị |
+|----------|---------|
+| Tổng số STRQ | **119** |
+| Tổng số FEAT | **62** |
+| Số Module (MVP) | **8** |
+| Số Use Case | **10** |
+| Số Actor | **6** |
+
+---
 
 ## ⚖️ Cơ sở pháp lý
 
-Hệ thống được thiết kế tuân thủ các văn bản pháp luật hiện hành:
-- Luật Viên chức 2019.
-- Bộ Luật Lao động 2019.
-- Luật Giáo dục & Luật Giáo dục Đại học.
-- Các quy chế chi tiêu nội bộ đặc thù của TLU.
+- Bộ Luật Lao động 2019
+- Luật Viên chức và các văn bản hướng dẫn
+- Luật Giáo dục Đại học
+- Quy chế chi tiêu nội bộ TLU
 
 ---
-*Dự án đang trong giai đoạn Phân tích & Thiết kế.*
+
+## 👨‍💻 Đội phát triển
+
+| Team | Vai trò | Số lượng |
+|------|---------|----------|
+| Team 1 | BA/PM | 3 |
+| Team 2 | SA/Design | 3 |
+| Team 3 | Developer | 5 |
+| Team 4 | Tester | 2 |
+| Team 5 | DevOps | 1 |
+| **Tổng** | | **14** |
+
+---
+
+*Dự án đang trong giai đoạn: **Phân tích & Lập kế hoạch (Phase 1 - MVP)***
