@@ -446,52 +446,310 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 
 ---
 
-### 1.1.10. Luồng sự kiện cho các UC chính
+### 1.1.10. Đặc tả Use Case
 
-#### 1.1.10.1. UC-04: Tạo hồ sơ nhân sự mới
+#### 1.1.10.1. UC-01: Đăng nhập hệ thống
 
-**Actor:** Cán bộ TCCB
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-01 |
+| **Use Case Name** | Đăng nhập hệ thống |
+| **Actor** | Tất cả người dùng (Admin, TCCB, TCKT, Lãnh đạo, CBGV/NV) |
+| **Description** | Người dùng đăng nhập vào hệ thống bằng tài khoản và mật khẩu để sử dụng các chức năng được phân quyền |
+| **Trigger** | Người dùng truy cập URL hệ thống |
+| **Pre-conditions** | - Người dùng có tài khoản hợp lệ trong hệ thống<br>- Tài khoản chưa bị khóa |
+| **Post-conditions** | - Người dùng được xác thực thành công<br>- Session được tạo<br>- Chuyển đến trang chủ theo vai trò |
 
-| Bước | Hành động của Actor | Phản hồi của hệ thống |
-|------|--------------------|-----------------------|
-| 1 | Chọn menu "Hồ sơ nhân sự" | Hiển thị danh sách hồ sơ |
-| 2 | Nhấn nút "Thêm mới" | Hiển thị form nhập hồ sơ |
-| 3 | Nhập thông tin cá nhân | Validate dữ liệu real-time |
-| 4 | Upload ảnh chân dung | Kiểm tra định dạng, kích thước |
-| 5 | Nhấn nút "Lưu" | Sinh mã cán bộ tự động, lưu CSDL |
+**Flow of Events (Luồng chính):**
 
-*(Hình 1.7: Sequence Diagram - Tạo hồ sơ nhân sự - Cần bổ sung)*
-
----
-
-#### 1.1.10.2. UC-07: Tạo hợp đồng lao động
-
-**Actor:** Cán bộ TCCB
-
-| Bước | Hành động của Actor | Phản hồi của hệ thống |
-|------|--------------------|-----------------------|
-| 1 | Chọn menu "Hợp đồng" | Hiển thị danh sách HĐ |
-| 2 | Nhấn nút "Thêm mới" | Hiển thị form tạo HĐ |
-| 3 | Chọn nhân sự | Load thông tin nhân sự |
-| 4 | Chọn loại hợp đồng | Hiển thị các trường tương ứng |
-| 5 | Nhập thông tin HĐ | Validate |
-| 6 | Nhấn "Lưu" | Lưu HĐ, hiển thị thông báo |
-
-*(Hình 1.8: Sequence Diagram - Tạo hợp đồng - Cần bổ sung)*
-
----
-
-#### 1.1.10.3. UC-01: Đăng nhập hệ thống
-
-**Actor:** Tất cả người dùng
-
-| Bước | Hành động của Actor | Phản hồi của hệ thống |
-|------|--------------------|-----------------------|
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
 | 1 | Truy cập URL hệ thống | Hiển thị trang đăng nhập |
-| 2 | Nhập tên đăng nhập, mật khẩu | - |
-| 3 | Nhấn "Đăng nhập" | Xác thực, chuyển trang chủ |
+| 2 | Nhập tên đăng nhập | - |
+| 3 | Nhập mật khẩu | - |
+| 4 | Nhấn nút "Đăng nhập" | Xác thực thông tin |
+| 5 | - | Tạo JWT token và session |
+| 6 | - | Ghi log đăng nhập |
+| 7 | - | Chuyển đến trang chủ theo vai trò |
 
-*(Hình 1.9: Sequence Diagram - Đăng nhập - Cần bổ sung)*
+**Alternative Flow (Luồng thay thế):**
+
+| Bước | Điều kiện | Xử lý |
+|------|-----------|-------|
+| 4a | Sai mật khẩu lần 1-4 | Hiển thị "Sai tên đăng nhập hoặc mật khẩu", tăng đếm |
+| 4b | Sai mật khẩu lần 5 | Khóa tài khoản 15 phút, gửi email cảnh báo |
+| 4c | Tài khoản bị khóa | Hiển thị "Tài khoản đã bị khóa, liên hệ Admin" |
+
+**Exceptions:**
+
+| Mã | Ngoại lệ | Xử lý |
+|----|----------|-------|
+| E01 | Lỗi kết nối database | Hiển thị "Hệ thống đang bảo trì" |
+| E02 | Token hết hạn | Chuyển về trang đăng nhập |
+
+---
+
+#### 1.1.10.2. UC-02: Quản lý tài khoản người dùng
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-02 |
+| **Use Case Name** | Quản lý tài khoản người dùng |
+| **Actor** | Quản trị viên (Admin) |
+| **Description** | Admin tạo, sửa, khóa/mở khóa, reset mật khẩu tài khoản người dùng |
+| **Trigger** | Admin chọn menu "Quản lý tài khoản" |
+| **Pre-conditions** | - Admin đã đăng nhập<br>- Có quyền quản lý tài khoản |
+| **Post-conditions** | - Tài khoản được tạo/cập nhật trong CSDL<br>- Log ghi nhận thao tác |
+
+**Flow of Events (Tạo tài khoản mới):**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Chọn menu "Tài khoản" | Hiển thị danh sách tài khoản |
+| 2 | Nhấn "Thêm mới" | Hiển thị form tạo tài khoản |
+| 3 | Nhập username, email | Validate unique |
+| 4 | Chọn vai trò | Load danh sách role |
+| 5 | Liên kết với nhân sự | Dropdown chọn nhân sự |
+| 6 | Nhấn "Lưu" | Tạo tài khoản, gửi email mật khẩu tạm |
+
+**Alternative Flow:**
+
+| Điều kiện | Xử lý |
+|-----------|-------|
+| Username đã tồn tại | Báo lỗi "Username đã được sử dụng" |
+| Email đã tồn tại | Báo lỗi "Email đã được đăng ký" |
+| Reset mật khẩu | Sinh mật khẩu ngẫu nhiên, gửi email |
+
+---
+
+#### 1.1.10.3. UC-03: Phân quyền hệ thống
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-03 |
+| **Use Case Name** | Phân quyền hệ thống |
+| **Actor** | Quản trị viên (Admin) |
+| **Description** | Admin tạo vai trò (role), gán quyền truy cập cho từng chức năng |
+| **Trigger** | Admin chọn menu "Phân quyền" |
+| **Pre-conditions** | Admin có quyền Super Admin |
+| **Post-conditions** | Role và permission được lưu vào CSDL |
+
+**Flow of Events:**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Chọn menu "Vai trò & Quyền" | Hiển thị danh sách role |
+| 2 | Nhấn "Thêm vai trò" | Form tạo role |
+| 3 | Nhập tên role, mô tả | Validate |
+| 4 | Tick chọn các quyền | Hiển thị tree chức năng |
+| 5 | Nhấn "Lưu" | Lưu role + permissions |
+
+---
+
+#### 1.1.10.4. UC-04: Quản lý hồ sơ nhân sự
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-04 |
+| **Use Case Name** | Quản lý hồ sơ nhân sự |
+| **Actor** | Cán bộ TCCB |
+| **Description** | Tạo mới, cập nhật, tìm kiếm, xuất hồ sơ nhân sự |
+| **Trigger** | Cán bộ TCCB chọn menu "Hồ sơ nhân sự" |
+| **Pre-conditions** | - Đã đăng nhập<br>- Có quyền quản lý hồ sơ |
+| **Post-conditions** | - Hồ sơ được lưu vào CSDL<br>- Mã cán bộ được sinh tự động |
+
+**Flow of Events (Tạo hồ sơ mới):**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Chọn menu "Hồ sơ nhân sự" | Hiển thị danh sách |
+| 2 | Nhấn "Thêm mới" | Hiển thị form nhập hồ sơ |
+| 3 | Nhập thông tin cá nhân (họ tên, ngày sinh, CCCD...) | Validate real-time |
+| 4 | Nhập thông tin liên hệ (địa chỉ, SĐT, email) | Validate format |
+| 5 | Nhập thông tin gia đình | - |
+| 6 | Upload ảnh chân dung | Kiểm tra định dạng (JPG, PNG), kích thước (<5MB) |
+| 7 | Nhấn "Lưu" | Sinh mã cán bộ, lưu CSDL |
+| 8 | - | Hiển thị thông báo thành công |
+
+**Alternative Flow:**
+
+| Điều kiện | Xử lý |
+|-----------|-------|
+| CCCD đã tồn tại | Báo lỗi "CCCD đã được sử dụng" |
+| File ảnh >5MB | Báo lỗi "File vượt quá kích thước cho phép" |
+| Thiếu trường bắt buộc | Highlight trường lỗi |
+
+**Exceptions:**
+
+| Mã | Ngoại lệ | Xử lý |
+|----|----------|-------|
+| E01 | Upload ảnh thất bại | Cho phép lưu hồ sơ, bổ sung ảnh sau |
+
+---
+
+#### 1.1.10.5. UC-05: Quản lý trình độ, chức danh
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-05 |
+| **Use Case Name** | Quản lý trình độ, chức danh |
+| **Actor** | Cán bộ TCCB |
+| **Description** | Cập nhật bằng cấp, chức danh khoa học, ngạch viên chức, chức vụ cho nhân sự |
+| **Trigger** | Cán bộ TCCB mở hồ sơ nhân sự |
+| **Pre-conditions** | Nhân sự đã có hồ sơ trong hệ thống |
+| **Post-conditions** | Thông tin trình độ được cập nhật |
+
+**Flow of Events:**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Mở hồ sơ nhân sự | Hiển thị chi tiết hồ sơ |
+| 2 | Chọn tab "Trình độ" | Hiển thị danh sách bằng cấp, chứng chỉ |
+| 3 | Nhấn "Thêm bằng cấp" | Form nhập bằng cấp |
+| 4 | Nhập thông tin (tên bằng, trường, năm, xếp loại) | Validate |
+| 5 | Upload file scan | Lưu file |
+| 6 | Nhấn "Lưu" | Cập nhật CSDL |
+
+---
+
+#### 1.1.10.6. UC-06: Quản lý cơ cấu tổ chức
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-06 |
+| **Use Case Name** | Quản lý cơ cấu tổ chức |
+| **Actor** | Cán bộ TCCB, Lãnh đạo |
+| **Description** | Tạo, sửa, xóa đơn vị; phân bổ nhân sự vào đơn vị; xem sơ đồ tổ chức |
+| **Trigger** | Chọn menu "Cơ cấu tổ chức" |
+| **Pre-conditions** | Có quyền quản lý đơn vị |
+| **Post-conditions** | Cây tổ chức được cập nhật |
+
+**Flow of Events (Tạo đơn vị mới):**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Chọn menu "Đơn vị" | Hiển thị cây tổ chức |
+| 2 | Nhấn "Thêm đơn vị" | Form tạo đơn vị |
+| 3 | Chọn đơn vị cha | Load dropdown đơn vị |
+| 4 | Nhập tên, mã, ngày thành lập | Validate |
+| 5 | Chọn loại đơn vị (Khoa/Phòng/Bộ môn) | - |
+| 6 | Nhấn "Lưu" | Thêm vào cây tổ chức |
+
+---
+
+#### 1.1.10.7. UC-07: Quản lý hợp đồng lao động
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-07 |
+| **Use Case Name** | Quản lý hợp đồng lao động |
+| **Actor** | Cán bộ TCCB |
+| **Description** | Tạo, gia hạn, chuyển đổi, in hợp đồng lao động |
+| **Trigger** | Cán bộ TCCB chọn menu "Hợp đồng" hoặc từ hồ sơ nhân sự |
+| **Pre-conditions** | Nhân sự đã có hồ sơ |
+| **Post-conditions** | Hợp đồng được lưu, liên kết với hồ sơ nhân sự |
+
+**Flow of Events (Tạo hợp đồng mới):**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Chọn menu "Hợp đồng" | Hiển thị danh sách HĐ |
+| 2 | Nhấn "Thêm mới" | Form tạo HĐ |
+| 3 | Chọn nhân sự | Load thông tin nhân sự |
+| 4 | Chọn loại HĐ (Vô hạn/Có hạn/Thử việc/Thỉnh giảng) | Hiển thị các trường tương ứng |
+| 5 | Nhập số HĐ, ngày ký, ngày hiệu lực | Validate |
+| 6 | Nhập nội dung công việc | - |
+| 7 | Nhấn "Lưu" | Lưu HĐ vào CSDL |
+
+**Alternative Flow:**
+
+| Điều kiện | Xử lý |
+|-----------|-------|
+| Chọn "Thử việc" | Tự động tính thời gian thử việc theo ngạch |
+| Chọn "Thỉnh giảng" | Hiển thị thêm trường "Số giờ giảng" |
+| Gia hạn HĐ | Copy thông tin cũ, cho sửa ngày mới |
+| Chuyển đổi HĐ | Đánh dấu HĐ cũ kết thúc, tạo HĐ mới |
+
+---
+
+#### 1.1.10.8. UC-08: Quản lý bậc lương, phụ cấp
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-08 |
+| **Use Case Name** | Quản lý bậc lương, phụ cấp |
+| **Actor** | Cán bộ TCCB, Cán bộ TCKT |
+| **Description** | Cập nhật ngạch/bậc lương, các loại phụ cấp cho nhân sự |
+| **Trigger** | Mở hồ sơ nhân sự → Tab "Lương" |
+| **Pre-conditions** | Nhân sự có hợp đồng chính thức |
+| **Post-conditions** | Thông tin lương được cập nhật |
+
+**Flow of Events:**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Mở hồ sơ nhân sự | Hiển thị chi tiết |
+| 2 | Chọn tab "Lương" | Hiển thị thông tin lương hiện tại |
+| 3 | Nhấn "Cập nhật lương" | Form cập nhật |
+| 4 | Chọn ngạch viên chức | Load bậc lương tương ứng |
+| 5 | Chọn bậc (1-9) | Tự động tính hệ số |
+| 6 | Nhập các phụ cấp | - |
+| 7 | Nhấn "Lưu" | Lưu và lưu lịch sử lương |
+
+---
+
+#### 1.1.10.9. UC-09: Xem báo cáo thống kê
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-09 |
+| **Use Case Name** | Xem báo cáo thống kê |
+| **Actor** | Lãnh đạo (Ban Giám hiệu) |
+| **Description** | Xem thống kê nhân sự theo đơn vị, xuất báo cáo PDF/Excel |
+| **Trigger** | Lãnh đạo chọn menu "Báo cáo" |
+| **Pre-conditions** | Có quyền xem báo cáo |
+| **Post-conditions** | Báo cáo hiển thị hoặc file được tải về |
+
+**Flow of Events:**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Chọn menu "Báo cáo" | Hiển thị danh sách báo cáo |
+| 2 | Chọn "Thống kê nhân sự" | Hiển thị form lọc |
+| 3 | Chọn đơn vị, loại nhân sự | - |
+| 4 | Nhấn "Xem báo cáo" | Query và hiển thị bảng thống kê |
+| 5 | (Tùy chọn) Nhấn "Xuất Excel" | Tạo file và download |
+| 6 | (Tùy chọn) Nhấn "Xuất PDF" | Tạo file và download |
+
+---
+
+#### 1.1.10.10. UC-10: Tra cứu thông tin cá nhân
+
+| Thuộc tính | Mô tả |
+|------------|-------|
+| **Use Case ID** | UC-10 |
+| **Use Case Name** | Tra cứu thông tin cá nhân (Self-Service) |
+| **Actor** | CBGV/NV (Cán bộ, giảng viên, nhân viên) |
+| **Description** | Nhân viên tự xem thông tin cá nhân, lịch sử hợp đồng, bậc lương |
+| **Trigger** | CBGV/NV đăng nhập và chọn "Thông tin cá nhân" |
+| **Pre-conditions** | - Đã đăng nhập<br>- Tài khoản liên kết với hồ sơ nhân sự |
+| **Post-conditions** | Hiển thị thông tin chỉ đọc |
+
+**Flow of Events:**
+
+| Bước | Actor | Hệ thống |
+|------|-------|----------|
+| 1 | Chọn menu "Thông tin cá nhân" | Load hồ sơ của user hiện tại |
+| 2 | - | Hiển thị thông tin cá nhân (chỉ đọc) |
+| 3 | Chọn tab "Hợp đồng" | Hiển thị danh sách HĐ đã ký |
+| 4 | Chọn tab "Lương" | Hiển thị ngạch/bậc, phụ cấp |
+| 5 | Chọn tab "Trình độ" | Hiển thị bằng cấp, chức vụ |
+
+**Alternative Flow:**
+
+| Điều kiện | Xử lý |
+|-----------|-------|
+| Tài khoản chưa liên kết hồ sơ | Hiển thị thông báo "Vui lòng liên hệ Phòng TCCB" |
 
 ---
 
