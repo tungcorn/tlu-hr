@@ -11,14 +11,14 @@
 
 ### 1.1. Người dùng hệ thống
 
-| Vai trò | Đơn vị | Mô tả |
-|---------|--------|-------|
-| Quản trị hệ thống | Phòng CNTT | Quản trị, phân quyền |
-| Cán bộ TCCB | Phòng TCCB | Quản lý hồ sơ nhân sự |
-| Cán bộ TCKT | Phòng TCKT | Quản lý lương, phụ cấp |
-| Lãnh đạo | Ban Giám hiệu | Phê duyệt, báo cáo |
-| Trưởng đơn vị | Khoa/Phòng | Quản lý nhân sự đơn vị |
-| CBGV/NV | Toàn trường | Tra cứu, cập nhật thông tin |
+| STT | Vai trò | Đơn vị | Mô tả |
+|-----|---------|--------|-------|
+| 1 | Quản trị hệ thống | Phòng CNTT | Quản trị, phân quyền |
+| 2 | Cán bộ TCCB | Phòng TCCB | Quản lý hồ sơ nhân sự |
+| 3 | Cán bộ TCKT | Phòng TCKT | Quản lý lương, phụ cấp |
+| 4 | Lãnh đạo | Ban Giám hiệu | Phê duyệt, báo cáo |
+| 5 | Trưởng đơn vị | Khoa/Phòng | Quản lý nhân sự đơn vị |
+| 6 | CBGV/NV | Toàn trường | Tra cứu, cập nhật thông tin |
 
 ### 1.2. Các bên liên quan khác
 
@@ -29,171 +29,253 @@
 
 ---
 
-## 2. Các yêu cầu của Stakeholders (Needs) và Tính năng (Features)
+## 2. Thu thập yêu cầu từ các Stakeholders (STRQ → FEAT)
 
 ### 2.1. Quản lý Hồ sơ Nhân sự
 
-**Needs:**
-- Ban giám hiệu muốn quản lý toàn diện thông tin của tất cả cán bộ, giảng viên, nhân viên trong trường.
-- Phòng nhân sự muốn tạo lập hồ sơ cá nhân.
-- Phòng nhân sự muốn hồ sơ cá nhân lưu trữ thông tin cá nhân: họ tên, ngày sinh, giới tính, CCCD/CMT, nơi sinh, quê quán, dân tộc, tôn giáo.
-- Phòng nhân sự muốn lưu trữ thông tin liên hệ: địa chỉ thường trú, địa chỉ tạm trú, số điện thoại, email cá nhân, email công việc.
-- Phòng nhân sự muốn lưu trữ thông tin gia đình: tình trạng hôn nhân, thông tin vợ/chồng, con cái, người phụ thuộc (để tính giảm trừ thuế TNCN).
-- Phòng nhân sự muốn lưu trữ ảnh chân dung cán bộ (3x4, 4x6).
-- Phòng nhân sự muốn lưu trữ thông tin ngân hàng: tên ngân hàng, số tài khoản, chi nhánh.
-- Phòng nhân sự muốn lưu trữ quá trình công tác trước khi vào trường.
-- Phòng nhân sự muốn lưu trữ thông tin Đảng viên: ngày vào Đảng, ngày chính thức, đảng bộ trực thuộc.
-- Phòng nhân sự muốn lưu trữ thông tin đoàn viên công đoàn.
-- Phòng nhân sự muốn mã cán bộ có thể được tạo tự động.
-- Khách hàng muốn cho phép tìm kiếm, lọc hồ sơ theo nhiều tiêu chí.
-- Khách hàng muốn xuất hồ sơ ra file (PDF, Excel, Word) theo mẫu.
-- Phòng nhân sự muốn thông tin được hỗ trợ hiển thị dạng học hàm, học vị.
-
-**Features:**
-
-| Mã | Tính năng | Mô tả |
-|----|-----------|-------|
-| FEAT-ER-01 | Tạo hồ sơ nhân sự | Form nhập liệu thông tin cá nhân, liên hệ, gia đình |
-| FEAT-ER-02 | Upload ảnh chân dung | Upload và lưu trữ ảnh 3x4, 4x6 |
-| FEAT-ER-03 | Quản lý thông tin ngân hàng | Nhập/sửa thông tin tài khoản ngân hàng |
-| FEAT-ER-04 | Quản lý quá trình công tác | Nhập lịch sử công tác trước khi vào trường |
-| FEAT-ER-05 | Quản lý thông tin Đảng viên | Nhập thông tin Đảng: ngày vào, ngày chính thức, đảng bộ |
-| FEAT-ER-06 | Quản lý thông tin Công đoàn | Nhập thông tin đoàn viên công đoàn |
-| FEAT-ER-07 | Sinh mã cán bộ tự động | Tự động tạo mã theo quy tắc định sẵn |
-| FEAT-ER-08 | Tìm kiếm, lọc hồ sơ | Tìm kiếm theo tên, mã, đơn vị, trình độ... |
-| FEAT-ER-09 | Xuất hồ sơ | Xuất ra PDF, Excel, Word theo mẫu |
-| FEAT-ER-10 | Hiển thị học hàm/học vị | Format hiển thị: PGS.TS. Nguyễn Văn A |
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 1 | Ban Giám hiệu | Phỏng vấn | STRQ-ER-01 | Ban giám hiệu muốn quản lý toàn diện thông tin của tất cả CBGV trong trường | → FEAT-ER-01 |
+| 2 | Phòng TCCB | Phỏng vấn | STRQ-ER-02 | Phòng nhân sự muốn tạo lập hồ sơ cá nhân mới | → FEAT-ER-01 |
+| 3 | Phòng TCCB | Phỏng vấn | STRQ-ER-03 | Phòng nhân sự muốn lưu trữ họ tên đầy đủ của nhân sự | → FEAT-ER-01.1 |
+| 4 | Phòng TCCB | Phỏng vấn | STRQ-ER-04 | Phòng nhân sự muốn lưu trữ ngày tháng năm sinh | → FEAT-ER-01.2 |
+| 5 | Phòng TCCB | Phỏng vấn | STRQ-ER-05 | Phòng nhân sự muốn lưu trữ giới tính | → FEAT-ER-01.3 |
+| 6 | Phòng TCCB | Phỏng vấn | STRQ-ER-06 | Phòng nhân sự muốn lưu trữ số CCCD/CMT | → FEAT-ER-01.4 |
+| 7 | Phòng TCCB | Phỏng vấn | STRQ-ER-07 | Phòng nhân sự muốn lưu trữ nơi sinh, quê quán | → FEAT-ER-01.5 |
+| 8 | Phòng TCCB | Phỏng vấn | STRQ-ER-08 | Phòng nhân sự muốn lưu trữ dân tộc, tôn giáo | → FEAT-ER-01.6 |
+| 9 | Phòng TCCB | Phỏng vấn | STRQ-ER-09 | Phòng nhân sự muốn lưu trữ địa chỉ thường trú | → FEAT-ER-02.1 |
+| 10 | Phòng TCCB | Phỏng vấn | STRQ-ER-10 | Phòng nhân sự muốn lưu trữ địa chỉ tạm trú | → FEAT-ER-02.2 |
+| 11 | Phòng TCCB | Phỏng vấn | STRQ-ER-11 | Phòng nhân sự muốn lưu trữ số điện thoại liên hệ | → FEAT-ER-02.3 |
+| 12 | Phòng TCCB | Phỏng vấn | STRQ-ER-12 | Phòng nhân sự muốn lưu trữ email cá nhân | → FEAT-ER-02.4 |
+| 13 | Phòng TCCB | Phỏng vấn | STRQ-ER-13 | Phòng nhân sự muốn lưu trữ email công việc | → FEAT-ER-02.5 |
+| 14 | Phòng TCCB | Phỏng vấn | STRQ-ER-14 | Phòng nhân sự muốn lưu trữ tình trạng hôn nhân | → FEAT-ER-03.1 |
+| 15 | Phòng TCCB | Phỏng vấn | STRQ-ER-15 | Phòng nhân sự muốn lưu trữ thông tin vợ/chồng | → FEAT-ER-03.2 |
+| 16 | Phòng TCCB | Phỏng vấn | STRQ-ER-16 | Phòng nhân sự muốn lưu trữ thông tin con cái | → FEAT-ER-03.3 |
+| 17 | Phòng TCCB | Phỏng vấn | STRQ-ER-17 | Phòng nhân sự muốn lưu trữ người phụ thuộc (để tính giảm trừ thuế TNCN) | → FEAT-ER-03.4 |
+| 18 | Phòng TCCB | Phỏng vấn | STRQ-ER-18 | Phòng nhân sự muốn upload và lưu trữ ảnh chân dung 3x4 | → FEAT-ER-04.1 |
+| 19 | Phòng TCCB | Phỏng vấn | STRQ-ER-19 | Phòng nhân sự muốn upload và lưu trữ ảnh chân dung 4x6 | → FEAT-ER-04.2 |
+| 20 | Phòng TCCB | Phỏng vấn | STRQ-ER-20 | Phòng nhân sự muốn lưu trữ tên ngân hàng | → FEAT-ER-05.1 |
+| 21 | Phòng TCCB | Phỏng vấn | STRQ-ER-21 | Phòng nhân sự muốn lưu trữ số tài khoản ngân hàng | → FEAT-ER-05.2 |
+| 22 | Phòng TCCB | Phỏng vấn | STRQ-ER-22 | Phòng nhân sự muốn lưu trữ chi nhánh ngân hàng | → FEAT-ER-05.3 |
+| 23 | Phòng TCCB | Phỏng vấn | STRQ-ER-23 | Phòng nhân sự muốn lưu trữ quá trình công tác trước khi vào trường | → FEAT-ER-06 |
+| 24 | Phòng TCCB | Phỏng vấn | STRQ-ER-24 | Phòng nhân sự muốn lưu trữ ngày vào Đảng | → FEAT-ER-07.1 |
+| 25 | Phòng TCCB | Phỏng vấn | STRQ-ER-25 | Phòng nhân sự muốn lưu trữ ngày chính thức vào Đảng | → FEAT-ER-07.2 |
+| 26 | Phòng TCCB | Phỏng vấn | STRQ-ER-26 | Phòng nhân sự muốn lưu trữ đảng bộ trực thuộc | → FEAT-ER-07.3 |
+| 27 | Phòng TCCB | Phỏng vấn | STRQ-ER-27 | Phòng nhân sự muốn lưu trữ thông tin đoàn viên công đoàn | → FEAT-ER-08 |
+| 28 | Phòng TCCB | Phỏng vấn | STRQ-ER-28 | Phòng nhân sự muốn mã cán bộ được tạo tự động theo quy tắc | → FEAT-ER-09 |
+| 29 | Phòng TCCB | Brainstorming | STRQ-ER-29 | Khách hàng muốn tìm kiếm hồ sơ theo tên | → FEAT-ER-10.1 |
+| 30 | Phòng TCCB | Brainstorming | STRQ-ER-30 | Khách hàng muốn tìm kiếm hồ sơ theo mã cán bộ | → FEAT-ER-10.2 |
+| 31 | Phòng TCCB | Brainstorming | STRQ-ER-31 | Khách hàng muốn lọc hồ sơ theo đơn vị | → FEAT-ER-10.3 |
+| 32 | Phòng TCCB | Brainstorming | STRQ-ER-32 | Khách hàng muốn lọc hồ sơ theo trình độ | → FEAT-ER-10.4 |
+| 33 | Phòng TCCB | Brainstorming | STRQ-ER-33 | Khách hàng muốn xuất hồ sơ ra file PDF | → FEAT-ER-11.1 |
+| 34 | Phòng TCCB | Brainstorming | STRQ-ER-34 | Khách hàng muốn xuất hồ sơ ra file Excel | → FEAT-ER-11.2 |
+| 35 | Phòng TCCB | Brainstorming | STRQ-ER-35 | Khách hàng muốn xuất hồ sơ ra file Word | → FEAT-ER-11.3 |
+| 36 | Phòng TCCB | Phỏng vấn | STRQ-ER-36 | Phòng nhân sự muốn hiển thị thông tin dạng học hàm, học vị (VD: PGS.TS.) | → FEAT-ER-12 |
 
 ---
 
 ### 2.2. Quản lý Trình độ Học vấn, Chức danh
 
-**Needs:**
-- Phòng nhân sự muốn lưu trữ chi tiết bằng cấp: tên bằng, chuyên ngành, trường cấp, năm tốt nghiệp, xếp loại.
-- Phòng nhân sự muốn lưu các chức danh khoa học.
-- Phòng nhân sự muốn lưu thông tin về chức danh, ngạch viên chức.
-- Phòng nhân sự muốn lưu thông tin về chức vụ có lưu quá trình bổ nhiệm, miễn nhiệm chức vụ.
-- Phòng nhân sự muốn lưu các chứng chỉ và có thể biết ngày hết hạn.
-
-**Features:**
-
-| Mã | Tính năng | Mô tả |
-|----|-----------|-------|
-| FEAT-QM-01 | Quản lý bằng cấp | Nhập/sửa thông tin bằng cấp, chuyên ngành, xếp loại |
-| FEAT-QM-02 | Quản lý chức danh khoa học | Lưu GS, PGS, TS, ThS... |
-| FEAT-QM-03 | Quản lý ngạch viên chức | Lưu ngạch: Giảng viên, GV chính, GV cao cấp... |
-| FEAT-QM-04 | Quản lý chức vụ | Lưu quá trình bổ nhiệm, miễn nhiệm |
-| FEAT-QM-05 | Quản lý chứng chỉ | Lưu chứng chỉ + ngày hết hạn, cảnh báo sắp hết hạn |
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 37 | Phòng TCCB | Phỏng vấn | STRQ-QM-01 | Phòng nhân sự muốn lưu trữ tên bằng cấp | → FEAT-QM-01.1 |
+| 38 | Phòng TCCB | Phỏng vấn | STRQ-QM-02 | Phòng nhân sự muốn lưu trữ chuyên ngành đào tạo | → FEAT-QM-01.2 |
+| 39 | Phòng TCCB | Phỏng vấn | STRQ-QM-03 | Phòng nhân sự muốn lưu trữ trường cấp bằng | → FEAT-QM-01.3 |
+| 40 | Phòng TCCB | Phỏng vấn | STRQ-QM-04 | Phòng nhân sự muốn lưu trữ năm tốt nghiệp | → FEAT-QM-01.4 |
+| 41 | Phòng TCCB | Phỏng vấn | STRQ-QM-05 | Phòng nhân sự muốn lưu trữ xếp loại tốt nghiệp | → FEAT-QM-01.5 |
+| 42 | Phòng TCCB | Phỏng vấn | STRQ-QM-06 | Phòng nhân sự muốn lưu chức danh khoa học (GS, PGS) | → FEAT-QM-02 |
+| 43 | Phòng TCCB | Phỏng vấn | STRQ-QM-07 | Phòng nhân sự muốn lưu trình độ học vị (TS, ThS, CN) | → FEAT-QM-03 |
+| 44 | Phòng TCCB | Phỏng vấn | STRQ-QM-08 | Phòng nhân sự muốn lưu thông tin ngạch viên chức | → FEAT-QM-04 |
+| 45 | Phòng TCCB | Phỏng vấn | STRQ-QM-09 | Phòng nhân sự muốn lưu thông tin chức vụ hiện tại | → FEAT-QM-05.1 |
+| 46 | Phòng TCCB | Phỏng vấn | STRQ-QM-10 | Phòng nhân sự muốn lưu ngày bổ nhiệm chức vụ | → FEAT-QM-05.2 |
+| 47 | Phòng TCCB | Phỏng vấn | STRQ-QM-11 | Phòng nhân sự muốn lưu ngày miễn nhiệm chức vụ | → FEAT-QM-05.3 |
+| 48 | Phòng TCCB | Phỏng vấn | STRQ-QM-12 | Phòng nhân sự muốn lưu quá trình bổ nhiệm chức vụ | → FEAT-QM-05.4 |
+| 49 | Phòng TCCB | Phỏng vấn | STRQ-QM-13 | Phòng nhân sự muốn lưu tên chứng chỉ | → FEAT-QM-06.1 |
+| 50 | Phòng TCCB | Phỏng vấn | STRQ-QM-14 | Phòng nhân sự muốn lưu ngày cấp chứng chỉ | → FEAT-QM-06.2 |
+| 51 | Phòng TCCB | Phỏng vấn | STRQ-QM-15 | Phòng nhân sự muốn lưu ngày hết hạn chứng chỉ | → FEAT-QM-06.3 |
+| 52 | Phòng TCCB | Brainstorming | STRQ-QM-16 | Phòng nhân sự muốn cảnh báo chứng chỉ sắp hết hạn | → FEAT-QM-06.4 |
 
 ---
 
 ### 2.3. Quản lý Cơ cấu Tổ chức
 
-**Needs:**
-- Ban giám hiệu muốn thông tin cơ cấu tổ chức là hệ thống phân cấp theo quan hệ cha con, được xây dựng theo hướng hội đồng trường, hội đồng đảng ủy, các phòng ban quản lý, các khoa (dưới các khoa là các bộ môn).
-- Ban giám hiệu muốn có thể phân bổ nhân sự, chuyển công tác vào các khoa, các phòng, các bộ môn qua phần mềm.
-- Ban giám hiệu muốn một người có thể kiêm nhiệm nhiều chức vụ ở nhiều đơn vị.
-- Phòng nhân sự muốn các đơn vị có thể được lưu lịch sử thành lập, sáp nhập, giải thể đơn vị, có thể đánh dấu trạng thái tồn tại hay đã giải thể.
-
-**Features:**
-
-| Mã | Tính năng | Mô tả |
-|----|-----------|-------|
-| FEAT-OS-01 | Quản lý đơn vị phân cấp | Cây tổ chức: Trường → Khoa → Bộ môn |
-| FEAT-OS-02 | Phân bổ nhân sự | Gán nhân viên vào đơn vị |
-| FEAT-OS-03 | Quản lý kiêm nhiệm | Một người nhiều chức vụ ở nhiều đơn vị |
-| FEAT-OS-04 | Lịch sử đơn vị | Lưu thành lập, sáp nhập, giải thể |
-| FEAT-OS-05 | Sơ đồ tổ chức | Hiển thị sơ đồ cây trực quan |
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 53 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-01 | Ban giám hiệu muốn cơ cấu tổ chức phân cấp cha-con | → FEAT-OS-01 |
+| 54 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-02 | Ban giám hiệu muốn quản lý cấp Hội đồng trường | → FEAT-OS-01.1 |
+| 55 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-03 | Ban giám hiệu muốn quản lý cấp Đảng ủy | → FEAT-OS-01.2 |
+| 56 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-04 | Ban giám hiệu muốn quản lý các Phòng/Ban | → FEAT-OS-01.3 |
+| 57 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-05 | Ban giám hiệu muốn quản lý các Khoa | → FEAT-OS-01.4 |
+| 58 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-06 | Ban giám hiệu muốn quản lý các Bộ môn thuộc Khoa | → FEAT-OS-01.5 |
+| 59 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-07 | Ban giám hiệu muốn phân bổ nhân sự vào đơn vị | → FEAT-OS-02 |
+| 60 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-08 | Ban giám hiệu muốn chuyển công tác nhân sự giữa các đơn vị | → FEAT-OS-03 |
+| 61 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-09 | Ban giám hiệu muốn một người kiêm nhiệm nhiều chức vụ | → FEAT-OS-04 |
+| 62 | Phòng TCCB | Phỏng vấn | STRQ-OS-10 | Phòng nhân sự muốn lưu ngày thành lập đơn vị | → FEAT-OS-05.1 |
+| 63 | Phòng TCCB | Phỏng vấn | STRQ-OS-11 | Phòng nhân sự muốn lưu lịch sử sáp nhập đơn vị | → FEAT-OS-05.2 |
+| 64 | Phòng TCCB | Phỏng vấn | STRQ-OS-12 | Phòng nhân sự muốn lưu lịch sử giải thể đơn vị | → FEAT-OS-05.3 |
+| 65 | Phòng TCCB | Phỏng vấn | STRQ-OS-13 | Phòng nhân sự muốn đánh dấu trạng thái đơn vị (hoạt động/giải thể) | → FEAT-OS-05.4 |
+| 66 | Ban Giám hiệu | Brainstorming | STRQ-OS-14 | Ban giám hiệu muốn xem sơ đồ tổ chức dạng cây | → FEAT-OS-06 |
 
 ---
 
 ### 2.4. Quản lý Hợp đồng Lao động
 
-**Needs:**
-- Phòng nhân sự muốn phần mềm cho phép tạo lập 4 loại hợp đồng lao động: không xác định thời hạn, xác định thời hạn, thử việc, thỉnh giảng.
-- Phòng nhân sự muốn hợp đồng lao động có thể lưu trữ các thông tin: số HĐ, ngày ký, ngày hiệu lực, ngày hết hạn, nội dung công việc, phụ lục.
-- Phòng nhân sự muốn hợp đồng thỉnh giảng cho phép gia hạn và có cảnh báo hết hạn.
-- Phòng nhân sự muốn hợp đồng thử việc có thời gian dựa trên bậc hay ngạch tương ứng.
-- Phòng nhân sự muốn hợp đồng có thể in theo chuẩn mẫu.
-- Phòng nhân sự muốn hợp đồng có thể chuyển đổi theo quy tắc (từ thử việc → chính thức, từ có thời hạn → vô thời hạn).
-- Phòng nhân sự muốn cho phép lập hồ sơ từ các nhân sự đã được ký hợp đồng.
-
-**Features:**
-
-| Mã | Tính năng | Mô tả |
-|----|-----------|-------|
-| FEAT-CM-01 | Tạo hợp đồng | Form tạo HĐ với 4 loại |
-| FEAT-CM-02 | Lưu thông tin HĐ | Số HĐ, ngày ký, hiệu lực, hết hạn, phụ lục |
-| FEAT-CM-03 | Gia hạn HĐ thỉnh giảng | Chức năng gia hạn + cảnh báo |
-| FEAT-CM-04 | Cảnh báo hết hạn | Thông báo HĐ sắp hết hạn |
-| FEAT-CM-05 | In hợp đồng | Xuất HĐ theo mẫu chuẩn |
-| FEAT-CM-06 | Chuyển đổi HĐ | Thử việc → Chính thức |
-| FEAT-CM-07 | Tạo hồ sơ từ HĐ | Tự động tạo hồ sơ nhân sự khi ký HĐ |
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 67 | Phòng TCCB | Phỏng vấn | STRQ-CM-01 | Phòng nhân sự muốn tạo HĐ không xác định thời hạn | → FEAT-CM-01.1 |
+| 68 | Phòng TCCB | Phỏng vấn | STRQ-CM-02 | Phòng nhân sự muốn tạo HĐ xác định thời hạn | → FEAT-CM-01.2 |
+| 69 | Phòng TCCB | Phỏng vấn | STRQ-CM-03 | Phòng nhân sự muốn tạo HĐ thử việc | → FEAT-CM-01.3 |
+| 70 | Phòng TCCB | Phỏng vấn | STRQ-CM-04 | Phòng nhân sự muốn tạo HĐ thỉnh giảng | → FEAT-CM-01.4 |
+| 71 | Phòng TCCB | Phỏng vấn | STRQ-CM-05 | Phòng nhân sự muốn lưu số hợp đồng | → FEAT-CM-02.1 |
+| 72 | Phòng TCCB | Phỏng vấn | STRQ-CM-06 | Phòng nhân sự muốn lưu ngày ký hợp đồng | → FEAT-CM-02.2 |
+| 73 | Phòng TCCB | Phỏng vấn | STRQ-CM-07 | Phòng nhân sự muốn lưu ngày hiệu lực hợp đồng | → FEAT-CM-02.3 |
+| 74 | Phòng TCCB | Phỏng vấn | STRQ-CM-08 | Phòng nhân sự muốn lưu ngày hết hạn hợp đồng | → FEAT-CM-02.4 |
+| 75 | Phòng TCCB | Phỏng vấn | STRQ-CM-09 | Phòng nhân sự muốn lưu nội dung công việc trong HĐ | → FEAT-CM-02.5 |
+| 76 | Phòng TCCB | Phỏng vấn | STRQ-CM-10 | Phòng nhân sự muốn lưu phụ lục hợp đồng | → FEAT-CM-02.6 |
+| 77 | Phòng TCCB | Phỏng vấn | STRQ-CM-11 | Phòng nhân sự muốn gia hạn HĐ thỉnh giảng | → FEAT-CM-03 |
+| 78 | Phòng TCCB | Brainstorming | STRQ-CM-12 | Phòng nhân sự muốn cảnh báo HĐ sắp hết hạn | → FEAT-CM-04 |
+| 79 | Phòng TCCB | Phỏng vấn | STRQ-CM-13 | Phòng nhân sự muốn HĐ thử việc có thời gian theo ngạch | → FEAT-CM-05 |
+| 80 | Phòng TCCB | Phỏng vấn | STRQ-CM-14 | Phòng nhân sự muốn in HĐ theo mẫu chuẩn | → FEAT-CM-06 |
+| 81 | Phòng TCCB | Phỏng vấn | STRQ-CM-15 | Phòng nhân sự muốn chuyển đổi HĐ thử việc sang chính thức | → FEAT-CM-07.1 |
+| 82 | Phòng TCCB | Phỏng vấn | STRQ-CM-16 | Phòng nhân sự muốn chuyển đổi HĐ có thời hạn sang vô thời hạn | → FEAT-CM-07.2 |
+| 83 | Phòng TCCB | Phỏng vấn | STRQ-CM-17 | Phòng nhân sự muốn tạo hồ sơ nhân sự từ HĐ đã ký | → FEAT-CM-08 |
 
 ---
 
-### 2.5. Quản lý Bậc lương (Cơ bản - Chỉ lưu trữ)
+### 2.5. Quản lý Bậc lương (Cơ bản)
 
-**Needs:**
-- Phòng nhân sự muốn mỗi nhân sự sở hữu một hệ số lương và mức lương cơ sở, lương lấy theo ngạch bậc công chức, viên chức.
-- Phòng nhân sự muốn mỗi nhân sự cũng được lưu các loại phụ cấp.
-- Phòng nhân sự muốn có một bảng hệ số lương theo ngạch/bậc (Giảng viên, GV chính, GV cao cấp, Chuyên viên...) để tiện thay đổi bậc và ngạch.
-- Phòng nhân sự muốn lưu số bậc và hệ số tương ứng cho mỗi ngạch (VD: Giảng viên có 9 bậc, hệ số 2.34 - 4.98).
-- Phòng nhân sự muốn lưu hệ số phụ cấp chức vụ theo từng vị trí.
-- Phòng nhân sự muốn yêu cầu có các loại phụ cấp mặc định sau: chức vụ, thâm niên, ưu đãi ngành, trách nhiệm, độc hại, khu vực.
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 84 | Phòng TCCB | Phỏng vấn | STRQ-PB-01 | Phòng nhân sự muốn lưu hệ số lương của nhân sự | → FEAT-PB-01 |
+| 85 | Phòng TCCB | Phỏng vấn | STRQ-PB-02 | Phòng nhân sự muốn lưu mức lương cơ sở | → FEAT-PB-02 |
+| 86 | Phòng TCCB | Phỏng vấn | STRQ-PB-03 | Phòng nhân sự muốn lưu ngạch viên chức (GV, GV chính, GV cao cấp...) | → FEAT-PB-03.1 |
+| 87 | Phòng TCCB | Phỏng vấn | STRQ-PB-04 | Phòng nhân sự muốn lưu bậc lương (1-9) | → FEAT-PB-03.2 |
+| 88 | Phòng TCCB | Phỏng vấn | STRQ-PB-05 | Phòng nhân sự muốn có bảng hệ số lương theo ngạch/bậc | → FEAT-PB-04 |
+| 89 | Phòng TCCB | Phỏng vấn | STRQ-PB-06 | Phòng nhân sự muốn lưu phụ cấp chức vụ | → FEAT-PB-05.1 |
+| 90 | Phòng TCCB | Phỏng vấn | STRQ-PB-07 | Phòng nhân sự muốn lưu phụ cấp thâm niên | → FEAT-PB-05.2 |
+| 91 | Phòng TCCB | Phỏng vấn | STRQ-PB-08 | Phòng nhân sự muốn lưu phụ cấp ưu đãi ngành | → FEAT-PB-05.3 |
+| 92 | Phòng TCCB | Phỏng vấn | STRQ-PB-09 | Phòng nhân sự muốn lưu phụ cấp trách nhiệm | → FEAT-PB-05.4 |
+| 93 | Phòng TCCB | Phỏng vấn | STRQ-PB-10 | Phòng nhân sự muốn lưu phụ cấp độc hại | → FEAT-PB-05.5 |
+| 94 | Phòng TCCB | Phỏng vấn | STRQ-PB-11 | Phòng nhân sự muốn lưu phụ cấp khu vực | → FEAT-PB-05.6 |
+| 95 | Phòng TCCB | Phỏng vấn | STRQ-PB-12 | Phòng nhân sự muốn lưu hệ số phụ cấp chức vụ theo vị trí | → FEAT-PB-06 |
 
-**Features:**
-
-| Mã | Tính năng | Mô tả |
-|----|-----------|-------|
-| FEAT-PB-01 | Quản lý bảng ngạch/bậc | Danh mục ngạch, bậc và hệ số lương |
-| FEAT-PB-02 | Gán ngạch/bậc cho nhân sự | Lưu hệ số lương của từng người |
-| FEAT-PB-03 | Quản lý danh mục phụ cấp | 6 loại: chức vụ, thâm niên, ưu đãi, trách nhiệm, độc hại, khu vực |
-| FEAT-PB-04 | Gán phụ cấp cho nhân sự | Lưu các khoản phụ cấp của từng người |
-
-> **Lưu ý MVP:** Phase 1 chỉ lưu trữ thông tin lương, KHÔNG tính lương tự động và KHÔNG thông báo tăng bậc tự động.
+> **Lưu ý MVP:** Phase 1 chỉ lưu trữ thông tin lương, KHÔNG tính lương tự động.
 
 ---
 
 ### 2.6. Báo cáo Thống kê (Cơ bản)
 
-**Needs:**
-- Lãnh đạo muốn thống kê nhân sự theo toàn trường, theo đơn vị dạng bảng.
-- Lãnh đạo muốn có thể xuất thống kê ra PDF, Excel.
-
-**Features:**
-
-| Mã | Tính năng | Mô tả |
-|----|-----------|-------|
-| FEAT-RP-01 | Thống kê nhân sự | Báo cáo số lượng theo đơn vị, toàn trường |
-| FEAT-RP-02 | Xuất báo cáo | Xuất ra PDF, Excel |
-
-> **Lưu ý MVP:** Phase 1 không bao gồm thống kê biến động nhân sự phức tạp.
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 96 | Ban Giám hiệu | Phỏng vấn | STRQ-RP-01 | Lãnh đạo muốn xem thống kê nhân sự toàn trường | → FEAT-RP-01.1 |
+| 97 | Ban Giám hiệu | Phỏng vấn | STRQ-RP-02 | Lãnh đạo muốn xem thống kê nhân sự theo đơn vị | → FEAT-RP-01.2 |
+| 98 | Ban Giám hiệu | Phỏng vấn | STRQ-RP-03 | Lãnh đạo muốn xuất thống kê ra PDF | → FEAT-RP-02.1 |
+| 99 | Ban Giám hiệu | Phỏng vấn | STRQ-RP-04 | Lãnh đạo muốn xuất thống kê ra Excel | → FEAT-RP-02.2 |
 
 ---
 
 ### 2.7. Self-Service Portal (Cơ bản)
 
-**Needs:**
-- CBGV/NV muốn xem thông tin cá nhân.
-- CBGV/NV muốn xem lịch sử hợp đồng.
-- CBGV/NV muốn xem thông tin chức vụ, chức danh, học vấn, thông tin bậc lương.
-
-**Features:**
-
-| Mã | Tính năng | Mô tả |
-|----|-----------|-------|
-| FEAT-SS-01 | Xem hồ sơ cá nhân | Trang xem thông tin của chính mình |
-| FEAT-SS-02 | Xem lịch sử hợp đồng | Danh sách các HĐ đã ký |
-| FEAT-SS-03 | Xem thông tin lương | Xem ngạch/bậc, phụ cấp hiện tại |
-
-> **Lưu ý MVP:** Phase 1 không bao gồm chức năng yêu cầu cập nhật thông tin online.
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 100 | CBGV/NV | Phỏng vấn | STRQ-SS-01 | CBGV/NV muốn xem thông tin cá nhân của mình | → FEAT-SS-01 |
+| 101 | CBGV/NV | Phỏng vấn | STRQ-SS-02 | CBGV/NV muốn xem lịch sử hợp đồng của mình | → FEAT-SS-02 |
+| 102 | CBGV/NV | Phỏng vấn | STRQ-SS-03 | CBGV/NV muốn xem thông tin chức vụ, chức danh | → FEAT-SS-03.1 |
+| 103 | CBGV/NV | Phỏng vấn | STRQ-SS-04 | CBGV/NV muốn xem thông tin học vấn | → FEAT-SS-03.2 |
+| 104 | CBGV/NV | Phỏng vấn | STRQ-SS-05 | CBGV/NV muốn xem thông tin bậc lương | → FEAT-SS-03.3 |
 
 ---
 
-## 3. Yêu cầu Chung
+## 3. Bảng tổng hợp Features (FEAT)
 
-- Với mỗi nhân sự có thể xem thông tin cá nhân.
+### 3.1. Module Hồ sơ Nhân sự (FEAT-ER)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-ER-01 | Tạo hồ sơ nhân sự | Form nhập thông tin cơ bản | STRQ-ER-01, 02 |
+| FEAT-ER-01.1 | Nhập họ tên | Trường nhập họ tên đầy đủ | STRQ-ER-03 |
+| FEAT-ER-01.2 | Nhập ngày sinh | Trường nhập ngày tháng năm sinh | STRQ-ER-04 |
+| FEAT-ER-01.3 | Chọn giới tính | Dropdown chọn giới tính | STRQ-ER-05 |
+| FEAT-ER-01.4 | Nhập CCCD/CMT | Trường nhập số CCCD | STRQ-ER-06 |
+| FEAT-ER-01.5 | Nhập nơi sinh, quê quán | Trường nhập địa chỉ | STRQ-ER-07 |
+| FEAT-ER-01.6 | Chọn dân tộc, tôn giáo | Dropdown chọn từ danh mục | STRQ-ER-08 |
+| FEAT-ER-02 | Quản lý thông tin liên hệ | Nhập/sửa địa chỉ, SĐT, email | STRQ-ER-09 → 13 |
+| FEAT-ER-03 | Quản lý thông tin gia đình | Nhập/sửa hôn nhân, người phụ thuộc | STRQ-ER-14 → 17 |
+| FEAT-ER-04 | Upload ảnh chân dung | Upload ảnh 3x4, 4x6 | STRQ-ER-18, 19 |
+| FEAT-ER-05 | Quản lý thông tin ngân hàng | Nhập tài khoản, chi nhánh | STRQ-ER-20 → 22 |
+| FEAT-ER-06 | Quản lý quá trình công tác | Nhập lịch sử công tác | STRQ-ER-23 |
+| FEAT-ER-07 | Quản lý thông tin Đảng viên | Nhập thông tin Đảng | STRQ-ER-24 → 26 |
+| FEAT-ER-08 | Quản lý thông tin Công đoàn | Nhập thông tin đoàn viên | STRQ-ER-27 |
+| FEAT-ER-09 | Sinh mã cán bộ tự động | Tự động tạo mã theo quy tắc | STRQ-ER-28 |
+| FEAT-ER-10 | Tìm kiếm, lọc hồ sơ | Tìm theo tên, mã, đơn vị | STRQ-ER-29 → 32 |
+| FEAT-ER-11 | Xuất hồ sơ | Xuất PDF, Excel, Word | STRQ-ER-33 → 35 |
+| FEAT-ER-12 | Hiển thị học hàm/học vị | Format: PGS.TS. Nguyễn Văn A | STRQ-ER-36 |
+
+### 3.2. Module Trình độ, Chức danh (FEAT-QM)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-QM-01 | Quản lý bằng cấp | Nhập/sửa thông tin bằng cấp | STRQ-QM-01 → 05 |
+| FEAT-QM-02 | Quản lý chức danh khoa học | Lưu GS, PGS | STRQ-QM-06 |
+| FEAT-QM-03 | Quản lý học vị | Lưu TS, ThS, CN | STRQ-QM-07 |
+| FEAT-QM-04 | Quản lý ngạch viên chức | Lưu ngạch công chức | STRQ-QM-08 |
+| FEAT-QM-05 | Quản lý chức vụ | Lưu quá trình bổ nhiệm | STRQ-QM-09 → 12 |
+| FEAT-QM-06 | Quản lý chứng chỉ | Lưu + cảnh báo hết hạn | STRQ-QM-13 → 16 |
+
+### 3.3. Module Cơ cấu Tổ chức (FEAT-OS)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-OS-01 | Quản lý đơn vị phân cấp | Cây tổ chức Trường → Khoa → Bộ môn | STRQ-OS-01 → 06 |
+| FEAT-OS-02 | Phân bổ nhân sự | Gán nhân viên vào đơn vị | STRQ-OS-07 |
+| FEAT-OS-03 | Chuyển công tác | Di chuyển nhân sự giữa đơn vị | STRQ-OS-08 |
+| FEAT-OS-04 | Quản lý kiêm nhiệm | Một người nhiều chức vụ | STRQ-OS-09 |
+| FEAT-OS-05 | Lịch sử đơn vị | Thành lập/sáp nhập/giải thể | STRQ-OS-10 → 13 |
+| FEAT-OS-06 | Sơ đồ tổ chức | Hiển thị cây trực quan | STRQ-OS-14 |
+
+### 3.4. Module Hợp đồng Lao động (FEAT-CM)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-CM-01 | Tạo hợp đồng | Form tạo 4 loại HĐ | STRQ-CM-01 → 04 |
+| FEAT-CM-02 | Lưu thông tin HĐ | Số, ngày, hiệu lực, phụ lục | STRQ-CM-05 → 10 |
+| FEAT-CM-03 | Gia hạn HĐ thỉnh giảng | Chức năng gia hạn | STRQ-CM-11 |
+| FEAT-CM-04 | Cảnh báo hết hạn | Thông báo HĐ sắp hết | STRQ-CM-12 |
+| FEAT-CM-05 | Thời gian thử việc theo ngạch | Tự động tính theo ngạch | STRQ-CM-13 |
+| FEAT-CM-06 | In hợp đồng | Xuất theo mẫu chuẩn | STRQ-CM-14 |
+| FEAT-CM-07 | Chuyển đổi HĐ | Thử việc → Chính thức | STRQ-CM-15, 16 |
+| FEAT-CM-08 | Tạo hồ sơ từ HĐ | Tự động tạo hồ sơ | STRQ-CM-17 |
+
+### 3.5. Module Bậc lương (FEAT-PB)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-PB-01 | Lưu hệ số lương | Hệ số theo ngạch/bậc | STRQ-PB-01 |
+| FEAT-PB-02 | Lưu lương cơ sở | Mức lương cơ sở hiện hành | STRQ-PB-02 |
+| FEAT-PB-03 | Gán ngạch/bậc | Lưu ngạch và bậc của nhân sự | STRQ-PB-03, 04 |
+| FEAT-PB-04 | Bảng hệ số lương | Danh mục ngạch/bậc/hệ số | STRQ-PB-05 |
+| FEAT-PB-05 | Quản lý phụ cấp | 6 loại phụ cấp | STRQ-PB-06 → 11 |
+| FEAT-PB-06 | Hệ số phụ cấp chức vụ | Theo vị trí | STRQ-PB-12 |
+
+### 3.6. Module Báo cáo (FEAT-RP)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-RP-01 | Thống kê nhân sự | Theo toàn trường/đơn vị | STRQ-RP-01, 02 |
+| FEAT-RP-02 | Xuất báo cáo | PDF, Excel | STRQ-RP-03, 04 |
+
+### 3.7. Module Self-Service (FEAT-SS)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-SS-01 | Xem hồ sơ cá nhân | Trang xem thông tin | STRQ-SS-01 |
+| FEAT-SS-02 | Xem lịch sử HĐ | Danh sách HĐ đã ký | STRQ-SS-02 |
+| FEAT-SS-03 | Xem thông tin lương | Ngạch/bậc, phụ cấp | STRQ-SS-03 → 05 |
+
+---
+
+## 4. Yêu cầu Chung
+
 - Trước khi lưu một mục phải có kiểm tra tính hợp lệ của dữ liệu.
 - Mỗi danh mục hỗ trợ: thêm/sửa, đánh dấu active/inactive, sắp xếp thứ tự hiển thị.
 - Hỗ trợ danh mục phân cấp cho một số loại (VD: Quốc gia → Tỉnh/Thành phố).
@@ -201,7 +283,7 @@
 
 ---
 
-## 4. Yêu cầu Phi chức năng
+## 5. Yêu cầu Phi chức năng
 
 **Hiệu năng:**
 - Trang thông thường < 2 giây, báo cáo phức tạp < 10 giây.
@@ -225,34 +307,28 @@
 
 ---
 
-## 5. Tổng hợp Features (Phase 1)
+## 6. Tổng kết
 
-| Module | Số FEAT | Mã FEAT |
-|--------|---------|---------|
-| Hồ sơ nhân sự | 10 | FEAT-ER-01 → FEAT-ER-10 |
-| Trình độ, Chức danh | 5 | FEAT-QM-01 → FEAT-QM-05 |
-| Cơ cấu tổ chức | 5 | FEAT-OS-01 → FEAT-OS-05 |
-| Hợp đồng lao động | 7 | FEAT-CM-01 → FEAT-CM-07 |
-| Bậc lương | 4 | FEAT-PB-01 → FEAT-PB-04 |
-| Báo cáo thống kê | 2 | FEAT-RP-01 → FEAT-RP-02 |
-| Self-Service | 3 | FEAT-SS-01 → FEAT-SS-03 |
-| **Tổng cộng** | **36 FEAT** | |
+| Tiêu chí | Giá trị |
+|----------|---------|
+| Tổng số STRQ | **105** |
+| Tổng số FEAT | **48** |
+| Số module | **7** |
+| Thời gian triển khai | **2 tháng (Phase 1)** |
 
 ---
 
-## 6. Phạm vi KHÔNG nằm trong Phase 1
+## 7. Phạm vi Phase 2 (Không làm trong 2 tháng)
 
-Các module sau sẽ được phát triển trong Phase 2:
-
-- **Quản lý Tuyển dụng:** Lập hồ sơ ứng tuyển, lịch phỏng vấn → Hoãn.
-- **Quản lý Đào tạo:** Khóa đào tạo, cam kết, chi phí → Hoãn.
-- **Chấm công:** Cần tích hợp máy chấm công → Hoãn.
-- **Nghiên cứu khoa học:** Quy tắc quy đổi phức tạp → Hoãn.
-- **Giờ giảng:** Nhiều quy tắc đặc thù → Hoãn.
-- **Đánh giá viên chức:** Ưu tiên thấp hơn → Hoãn.
-- **Tính lương tự động:** Chỉ lưu trữ trong Phase 1 → Hoãn.
-- **Thông báo tăng bậc lương tự động:** → Hoãn.
+- Quản lý Tuyển dụng
+- Quản lý Đào tạo chi tiết
+- Chấm công
+- Nghiên cứu khoa học
+- Giờ giảng
+- Đánh giá viên chức
+- Tính lương tự động
+- Thông báo tăng bậc lương tự động
 
 ---
 
-> *Tài liệu này là phiên bản rút gọn MVP với 36 Features. Các yêu cầu bị hoãn sẽ được triển khai trong Phase 2.*
+> *Tài liệu này chứa 105 yêu cầu STRQ ánh xạ sang 48 Features. Phase 2 sẽ triển khai các tính năng còn lại.*
