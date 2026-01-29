@@ -8,8 +8,8 @@ Hệ thống Quản lý Nhân sự (HRMS - Human Resource Management System) là
 
 **Bối cảnh thực hiện:**
 - Trường Đại học Thủy lợi hiện có khoảng 1.200 cán bộ, giảng viên, nhân viên làm việc tại 3 cơ sở: Hà Nội, Phố Hiến (Hưng Yên) và TP. Hồ Chí Minh.
-- Công tác quản lý nhân sự hiện tại chủ yếu dựa trên hồ sơ giấy và các file Excel rời rạc, gây khó khăn trong việc tra cứu, thống kê và báo cáo.
-- Nhu cầu cấp thiết về một hệ thống tập trung để quản lý toàn bộ thông tin nhân sự một cách khoa học và hiệu quả.
+- Công tác quản lý nhân sự hiện tại chủ yếu dựa trên hồ sơ giấy và các file Excel rời rạc.
+- Nhu cầu cấp thiết về một hệ thống tập trung để quản lý toàn bộ thông tin nhân sự.
 
 ### 1.1.2. Mục tiêu dự án
 
@@ -43,36 +43,20 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 | Self-Service Portal | Tra cứu thông tin cá nhân | ⭐ |
 
 **Phạm vi Phase 2 (Mở rộng - Sau MVP):**
-- Quản lý Tuyển dụng
-- Quản lý Đào tạo
-- Quản lý Chấm công
-- Quản lý Nghiên cứu khoa học
-- Quản lý Giờ giảng
-- Đánh giá viên chức
-- Tính lương tự động
+- Quản lý Tuyển dụng, Đào tạo, Chấm công, NCKH, Giờ giảng, Đánh giá viên chức, Tính lương tự động
 
 ### 1.1.4. Công nghệ sử dụng
 
-| Thành phần | Công nghệ | Phiên bản | Lý do lựa chọn |
-|------------|-----------|-----------|----------------|
-| **Frontend** | React.js | 18.x | SPA, hiệu năng cao, cộng đồng lớn |
-| **Backend** | Spring Boot | 3.x | Java ecosystem, bảo mật tốt |
-| **Database** | PostgreSQL | 15.x | Open source, hỗ trợ JSON, full-text search |
-| **ORM** | Hibernate | 6.x | JPA standard, mapping linh hoạt |
-| **Authentication** | Spring Security + JWT | - | Stateless, phù hợp microservices |
-| **API Docs** | Swagger/OpenAPI | 3.0 | Tạo tài liệu API tự động |
-| **Build Tool** | Maven | 3.9.x | Quản lý dependencies chuẩn |
-| **Version Control** | Git + GitHub | - | Quản lý source code |
-| **CI/CD** | GitHub Actions | - | Tự động build, test, deploy |
-| **Containerization** | Docker | - | Đóng gói ứng dụng |
-
-**Kiến trúc hệ thống:**
-
-```
-[Browser] → [React SPA] → [Spring Boot API] → [PostgreSQL]
-                ↓
-         [JWT Auth]
-```
+| Thành phần | Công nghệ | Lý do lựa chọn |
+|------------|-----------|----------------|
+| Frontend | React.js 18.x | SPA, hiệu năng cao |
+| Backend | Spring Boot 3.x | Java ecosystem, bảo mật tốt |
+| Database | PostgreSQL 15.x | Open source, hỗ trợ JSON |
+| Authentication | Spring Security + JWT | Stateless |
+| API Docs | Swagger/OpenAPI 3.0 | Tài liệu API tự động |
+| Version Control | Git + GitHub | Quản lý source code |
+| CI/CD | GitHub Actions | Tự động build, test, deploy |
+| Containerization | Docker | Đóng gói ứng dụng |
 
 *(Hình 1.1: Sơ đồ kiến trúc tổng quan - Cần bổ sung)*
 
@@ -80,45 +64,25 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 
 #### 1.1.5.1. Người dùng hệ thống
 
-| STT | Vai trò | Đơn vị | Mô tả | Số lượng ước tính |
-|-----|---------|--------|-------|-------------------|
-| 1 | Quản trị hệ thống | Phòng CNTT | Quản trị, phân quyền, backup | 2-3 người |
-| 2 | Cán bộ TCCB | Phòng TCCB | Quản lý hồ sơ nhân sự | 5-10 người |
-| 3 | Cán bộ TCKT | Phòng TCKT | Quản lý lương, phụ cấp | 3-5 người |
-| 4 | Lãnh đạo | Ban Giám hiệu | Phê duyệt, xem báo cáo | 5-10 người |
-| 5 | Trưởng đơn vị | Khoa/Phòng/Ban | Quản lý nhân sự đơn vị | 30-50 người |
-| 6 | CBGV/NV | Toàn trường | Tra cứu, cập nhật thông tin cá nhân | ~1.200 người |
+| STT | Vai trò | Đơn vị | Mô tả |
+|-----|---------|--------|-------|
+| 1 | Quản trị hệ thống | Phòng CNTT | Quản trị, phân quyền |
+| 2 | Cán bộ TCCB | Phòng TCCB | Quản lý hồ sơ nhân sự |
+| 3 | Cán bộ TCKT | Phòng TCKT | Quản lý lương, phụ cấp |
+| 4 | Lãnh đạo | Ban Giám hiệu | Phê duyệt, báo cáo |
+| 5 | Trưởng đơn vị | Khoa/Phòng | Quản lý nhân sự đơn vị |
+| 6 | CBGV/NV | Toàn trường | Tra cứu, cập nhật thông tin |
 
 #### 1.1.5.2. Các bên liên quan khác
 
-| STT | Bên liên quan | Vai trò | Tương tác với hệ thống |
-|-----|---------------|---------|------------------------|
-| 1 | Bộ Nông nghiệp và Môi trường | Cơ quan chủ quản | Nhận báo cáo định kỳ |
-| 2 | Bộ Giáo dục và Đào tạo | Quản lý ngành | Báo cáo theo mẫu |
-| 3 | Cơ quan Bảo hiểm xã hội | Đối tác | Đối chiếu dữ liệu BHXH |
-| 4 | Cơ quan Thuế | Đối tác | Kê khai thuế TNCN |
+- Bộ Nông nghiệp và Môi trường
+- Bộ Giáo dục và Đào tạo
+- Cơ quan Bảo hiểm xã hội
+- Cơ quan Thuế
 
-### 1.1.6. Mô tả yêu cầu khách hàng, người dùng (Needs)
+---
 
-*(Nội dung chi tiết đã có trong file user_requirements_mvp.md - Phần 2)*
-
-**Tóm tắt các nhóm yêu cầu chính:**
-
-| STT | Nhóm yêu cầu | Số lượng Needs | Đối tượng chính |
-|-----|--------------|----------------|-----------------|
-| 1 | Quản lý Tài khoản & Phân quyền | 14 | Phòng CNTT |
-| 2 | Quản lý Hồ sơ Nhân sự | 36 | Phòng TCCB |
-| 3 | Quản lý Trình độ, Chức danh | 16 | Phòng TCCB |
-| 4 | Quản lý Cơ cấu Tổ chức | 14 | Ban Giám hiệu |
-| 5 | Quản lý Hợp đồng Lao động | 17 | Phòng TCCB |
-| 6 | Quản lý Bậc lương | 12 | Phòng TCCB, TCKT |
-| 7 | Báo cáo Thống kê | 4 | Ban Giám hiệu |
-| 8 | Self-Service Portal | 5 | CBGV/NV |
-| | **Tổng cộng** | **119 Needs** | |
-
-### 1.1.7. Thu thập yêu cầu từ các Stakeholders (Xác định STRQ, FEAT)
-
-*(Nội dung chi tiết đã có trong file user_requirements_mvp.md - Phần 2 và 3)*
+### 1.1.6. Thu thập yêu cầu từ các Stakeholders (Xác định STRQ, FEAT)
 
 **Phương pháp thu thập yêu cầu:**
 
@@ -129,7 +93,187 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 | Phân tích tài liệu | Nghiên cứu quy trình hiện tại | Biểu mẫu, văn bản |
 | Quan sát | Theo dõi quy trình thực tế | Phòng TCCB |
 
-**Bảng tổng hợp STRQ → FEAT:**
+---
+
+#### 1.1.6.1. Quản lý Tài khoản & Phân quyền
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 1 | Tất cả người dùng | Phỏng vấn | STRQ-AU-01 | Người dùng muốn đăng nhập bằng tài khoản/mật khẩu | → FEAT-AU-01.1 |
+| 2 | Tất cả người dùng | Phỏng vấn | STRQ-AU-02 | Người dùng muốn đăng xuất khỏi hệ thống | → FEAT-AU-01.2 |
+| 3 | Tất cả người dùng | Phỏng vấn | STRQ-AU-03 | Người dùng muốn đổi mật khẩu của mình | → FEAT-AU-01.3 |
+| 4 | Tất cả người dùng | Phỏng vấn | STRQ-AU-04 | Người dùng muốn lấy lại mật khẩu khi quên | → FEAT-AU-01.4 |
+| 5 | Phòng CNTT | Phỏng vấn | STRQ-AU-05 | Quản trị viên muốn tạo tài khoản mới cho người dùng | → FEAT-AU-02.1 |
+| 6 | Phòng CNTT | Phỏng vấn | STRQ-AU-06 | Quản trị viên muốn sửa thông tin tài khoản | → FEAT-AU-02.2 |
+| 7 | Phòng CNTT | Phỏng vấn | STRQ-AU-07 | Quản trị viên muốn khóa/mở khóa tài khoản | → FEAT-AU-02.3 |
+| 8 | Phòng CNTT | Phỏng vấn | STRQ-AU-08 | Quản trị viên muốn reset mật khẩu cho người dùng | → FEAT-AU-02.4 |
+| 9 | Phòng CNTT | Phỏng vấn | STRQ-AU-09 | Quản trị viên muốn tạo các vai trò (role) trong hệ thống | → FEAT-AU-03.1 |
+| 10 | Phòng CNTT | Phỏng vấn | STRQ-AU-10 | Quản trị viên muốn phân quyền chức năng cho từng vai trò | → FEAT-AU-03.2 |
+| 11 | Phòng CNTT | Phỏng vấn | STRQ-AU-11 | Quản trị viên muốn gán vai trò cho người dùng | → FEAT-AU-03.3 |
+| 12 | Phòng CNTT | Brainstorming | STRQ-AU-12 | Hệ thống cần ghi log tất cả các lần đăng nhập/đăng xuất | → FEAT-AU-04.1 |
+| 13 | Phòng CNTT | Brainstorming | STRQ-AU-13 | Hệ thống cần ghi log các thao tác quan trọng của người dùng | → FEAT-AU-04.2 |
+| 14 | Phòng CNTT | Brainstorming | STRQ-AU-14 | Quản trị viên muốn xem lịch sử đăng nhập của người dùng | → FEAT-AU-04.3 |
+
+---
+
+#### 1.1.6.2. Quản lý Hồ sơ Nhân sự
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 1 | Ban Giám hiệu | Phỏng vấn | STRQ-ER-01 | Ban giám hiệu muốn quản lý toàn diện thông tin của tất cả CBGV trong trường | → FEAT-ER-01 |
+| 2 | Phòng TCCB | Phỏng vấn | STRQ-ER-02 | Phòng nhân sự muốn tạo lập hồ sơ cá nhân mới | → FEAT-ER-01 |
+| 3 | Phòng TCCB | Phỏng vấn | STRQ-ER-03 | Phòng nhân sự muốn lưu trữ họ tên đầy đủ của nhân sự | → FEAT-ER-01.1 |
+| 4 | Phòng TCCB | Phỏng vấn | STRQ-ER-04 | Phòng nhân sự muốn lưu trữ ngày tháng năm sinh | → FEAT-ER-01.2 |
+| 5 | Phòng TCCB | Phỏng vấn | STRQ-ER-05 | Phòng nhân sự muốn lưu trữ giới tính | → FEAT-ER-01.3 |
+| 6 | Phòng TCCB | Phỏng vấn | STRQ-ER-06 | Phòng nhân sự muốn lưu trữ số CCCD/CMT | → FEAT-ER-01.4 |
+| 7 | Phòng TCCB | Phỏng vấn | STRQ-ER-07 | Phòng nhân sự muốn lưu trữ nơi sinh, quê quán | → FEAT-ER-01.5 |
+| 8 | Phòng TCCB | Phỏng vấn | STRQ-ER-08 | Phòng nhân sự muốn lưu trữ dân tộc, tôn giáo | → FEAT-ER-01.6 |
+| 9 | Phòng TCCB | Phỏng vấn | STRQ-ER-09 | Phòng nhân sự muốn lưu trữ địa chỉ thường trú | → FEAT-ER-02.1 |
+| 10 | Phòng TCCB | Phỏng vấn | STRQ-ER-10 | Phòng nhân sự muốn lưu trữ địa chỉ tạm trú | → FEAT-ER-02.2 |
+| 11 | Phòng TCCB | Phỏng vấn | STRQ-ER-11 | Phòng nhân sự muốn lưu trữ số điện thoại liên hệ | → FEAT-ER-02.3 |
+| 12 | Phòng TCCB | Phỏng vấn | STRQ-ER-12 | Phòng nhân sự muốn lưu trữ email cá nhân | → FEAT-ER-02.4 |
+| 13 | Phòng TCCB | Phỏng vấn | STRQ-ER-13 | Phòng nhân sự muốn lưu trữ email công việc | → FEAT-ER-02.5 |
+| 14 | Phòng TCCB | Phỏng vấn | STRQ-ER-14 | Phòng nhân sự muốn lưu trữ tình trạng hôn nhân | → FEAT-ER-03.1 |
+| 15 | Phòng TCCB | Phỏng vấn | STRQ-ER-15 | Phòng nhân sự muốn lưu trữ thông tin vợ/chồng | → FEAT-ER-03.2 |
+| 16 | Phòng TCCB | Phỏng vấn | STRQ-ER-16 | Phòng nhân sự muốn lưu trữ thông tin con cái | → FEAT-ER-03.3 |
+| 17 | Phòng TCCB | Phỏng vấn | STRQ-ER-17 | Phòng nhân sự muốn lưu trữ người phụ thuộc (để tính giảm trừ thuế TNCN) | → FEAT-ER-03.4 |
+| 18 | Phòng TCCB | Phỏng vấn | STRQ-ER-18 | Phòng nhân sự muốn upload và lưu trữ ảnh chân dung 3x4 | → FEAT-ER-04.1 |
+| 19 | Phòng TCCB | Phỏng vấn | STRQ-ER-19 | Phòng nhân sự muốn upload và lưu trữ ảnh chân dung 4x6 | → FEAT-ER-04.2 |
+| 20 | Phòng TCCB | Phỏng vấn | STRQ-ER-20 | Phòng nhân sự muốn lưu trữ tên ngân hàng | → FEAT-ER-05.1 |
+| 21 | Phòng TCCB | Phỏng vấn | STRQ-ER-21 | Phòng nhân sự muốn lưu trữ số tài khoản ngân hàng | → FEAT-ER-05.2 |
+| 22 | Phòng TCCB | Phỏng vấn | STRQ-ER-22 | Phòng nhân sự muốn lưu trữ chi nhánh ngân hàng | → FEAT-ER-05.3 |
+| 23 | Phòng TCCB | Phỏng vấn | STRQ-ER-23 | Phòng nhân sự muốn lưu trữ quá trình công tác trước khi vào trường | → FEAT-ER-06 |
+| 24 | Phòng TCCB | Phỏng vấn | STRQ-ER-24 | Phòng nhân sự muốn lưu trữ ngày vào Đảng | → FEAT-ER-07.1 |
+| 25 | Phòng TCCB | Phỏng vấn | STRQ-ER-25 | Phòng nhân sự muốn lưu trữ ngày chính thức vào Đảng | → FEAT-ER-07.2 |
+| 26 | Phòng TCCB | Phỏng vấn | STRQ-ER-26 | Phòng nhân sự muốn lưu trữ đảng bộ trực thuộc | → FEAT-ER-07.3 |
+| 27 | Phòng TCCB | Phỏng vấn | STRQ-ER-27 | Phòng nhân sự muốn lưu trữ thông tin đoàn viên công đoàn | → FEAT-ER-08 |
+| 28 | Phòng TCCB | Phỏng vấn | STRQ-ER-28 | Phòng nhân sự muốn mã cán bộ được tạo tự động theo quy tắc | → FEAT-ER-09 |
+| 29 | Phòng TCCB | Brainstorming | STRQ-ER-29 | Khách hàng muốn tìm kiếm hồ sơ theo tên | → FEAT-ER-10.1 |
+| 30 | Phòng TCCB | Brainstorming | STRQ-ER-30 | Khách hàng muốn tìm kiếm hồ sơ theo mã cán bộ | → FEAT-ER-10.2 |
+| 31 | Phòng TCCB | Brainstorming | STRQ-ER-31 | Khách hàng muốn lọc hồ sơ theo đơn vị | → FEAT-ER-10.3 |
+| 32 | Phòng TCCB | Brainstorming | STRQ-ER-32 | Khách hàng muốn lọc hồ sơ theo trình độ | → FEAT-ER-10.4 |
+| 33 | Phòng TCCB | Brainstorming | STRQ-ER-33 | Khách hàng muốn xuất hồ sơ ra file PDF | → FEAT-ER-11.1 |
+| 34 | Phòng TCCB | Brainstorming | STRQ-ER-34 | Khách hàng muốn xuất hồ sơ ra file Excel | → FEAT-ER-11.2 |
+| 35 | Phòng TCCB | Brainstorming | STRQ-ER-35 | Khách hàng muốn xuất hồ sơ ra file Word | → FEAT-ER-11.3 |
+| 36 | Phòng TCCB | Phỏng vấn | STRQ-ER-36 | Phòng nhân sự muốn hiển thị thông tin dạng học hàm, học vị (VD: PGS.TS.) | → FEAT-ER-12 |
+
+---
+
+#### 1.1.6.3. Quản lý Trình độ Học vấn, Chức danh
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 37 | Phòng TCCB | Phỏng vấn | STRQ-QM-01 | Phòng nhân sự muốn lưu trữ tên bằng cấp | → FEAT-QM-01.1 |
+| 38 | Phòng TCCB | Phỏng vấn | STRQ-QM-02 | Phòng nhân sự muốn lưu trữ chuyên ngành đào tạo | → FEAT-QM-01.2 |
+| 39 | Phòng TCCB | Phỏng vấn | STRQ-QM-03 | Phòng nhân sự muốn lưu trữ trường cấp bằng | → FEAT-QM-01.3 |
+| 40 | Phòng TCCB | Phỏng vấn | STRQ-QM-04 | Phòng nhân sự muốn lưu trữ năm tốt nghiệp | → FEAT-QM-01.4 |
+| 41 | Phòng TCCB | Phỏng vấn | STRQ-QM-05 | Phòng nhân sự muốn lưu trữ xếp loại tốt nghiệp | → FEAT-QM-01.5 |
+| 42 | Phòng TCCB | Phỏng vấn | STRQ-QM-06 | Phòng nhân sự muốn lưu chức danh khoa học (GS, PGS) | → FEAT-QM-02 |
+| 43 | Phòng TCCB | Phỏng vấn | STRQ-QM-07 | Phòng nhân sự muốn lưu trình độ học vị (TS, ThS, CN) | → FEAT-QM-03 |
+| 44 | Phòng TCCB | Phỏng vấn | STRQ-QM-08 | Phòng nhân sự muốn lưu thông tin ngạch viên chức | → FEAT-QM-04 |
+| 45 | Phòng TCCB | Phỏng vấn | STRQ-QM-09 | Phòng nhân sự muốn lưu thông tin chức vụ hiện tại | → FEAT-QM-05.1 |
+| 46 | Phòng TCCB | Phỏng vấn | STRQ-QM-10 | Phòng nhân sự muốn lưu ngày bổ nhiệm chức vụ | → FEAT-QM-05.2 |
+| 47 | Phòng TCCB | Phỏng vấn | STRQ-QM-11 | Phòng nhân sự muốn lưu ngày miễn nhiệm chức vụ | → FEAT-QM-05.3 |
+| 48 | Phòng TCCB | Phỏng vấn | STRQ-QM-12 | Phòng nhân sự muốn lưu quá trình bổ nhiệm chức vụ | → FEAT-QM-05.4 |
+| 49 | Phòng TCCB | Phỏng vấn | STRQ-QM-13 | Phòng nhân sự muốn lưu tên chứng chỉ | → FEAT-QM-06.1 |
+| 50 | Phòng TCCB | Phỏng vấn | STRQ-QM-14 | Phòng nhân sự muốn lưu ngày cấp chứng chỉ | → FEAT-QM-06.2 |
+| 51 | Phòng TCCB | Phỏng vấn | STRQ-QM-15 | Phòng nhân sự muốn lưu ngày hết hạn chứng chỉ | → FEAT-QM-06.3 |
+| 52 | Phòng TCCB | Brainstorming | STRQ-QM-16 | Phòng nhân sự muốn cảnh báo chứng chỉ sắp hết hạn | → FEAT-QM-06.4 |
+
+---
+
+#### 1.1.6.4. Quản lý Cơ cấu Tổ chức
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 53 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-01 | Ban giám hiệu muốn cơ cấu tổ chức phân cấp cha-con | → FEAT-OS-01 |
+| 54 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-02 | Ban giám hiệu muốn quản lý cấp Hội đồng trường | → FEAT-OS-01.1 |
+| 55 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-03 | Ban giám hiệu muốn quản lý cấp Đảng ủy | → FEAT-OS-01.2 |
+| 56 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-04 | Ban giám hiệu muốn quản lý các Phòng/Ban | → FEAT-OS-01.3 |
+| 57 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-05 | Ban giám hiệu muốn quản lý các Khoa | → FEAT-OS-01.4 |
+| 58 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-06 | Ban giám hiệu muốn quản lý các Bộ môn thuộc Khoa | → FEAT-OS-01.5 |
+| 59 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-07 | Ban giám hiệu muốn phân bổ nhân sự vào đơn vị | → FEAT-OS-02 |
+| 60 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-08 | Ban giám hiệu muốn chuyển công tác nhân sự giữa các đơn vị | → FEAT-OS-03 |
+| 61 | Ban Giám hiệu | Phỏng vấn | STRQ-OS-09 | Ban giám hiệu muốn một người kiêm nhiệm nhiều chức vụ | → FEAT-OS-04 |
+| 62 | Phòng TCCB | Phỏng vấn | STRQ-OS-10 | Phòng nhân sự muốn lưu ngày thành lập đơn vị | → FEAT-OS-05.1 |
+| 63 | Phòng TCCB | Phỏng vấn | STRQ-OS-11 | Phòng nhân sự muốn lưu lịch sử sáp nhập đơn vị | → FEAT-OS-05.2 |
+| 64 | Phòng TCCB | Phỏng vấn | STRQ-OS-12 | Phòng nhân sự muốn lưu lịch sử giải thể đơn vị | → FEAT-OS-05.3 |
+| 65 | Phòng TCCB | Phỏng vấn | STRQ-OS-13 | Phòng nhân sự muốn đánh dấu trạng thái đơn vị (hoạt động/giải thể) | → FEAT-OS-05.4 |
+| 66 | Ban Giám hiệu | Brainstorming | STRQ-OS-14 | Ban giám hiệu muốn xem sơ đồ tổ chức dạng cây | → FEAT-OS-06 |
+
+---
+
+#### 1.1.6.5. Quản lý Hợp đồng Lao động
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 67 | Phòng TCCB | Phỏng vấn | STRQ-CM-01 | Phòng nhân sự muốn tạo HĐ không xác định thời hạn | → FEAT-CM-01.1 |
+| 68 | Phòng TCCB | Phỏng vấn | STRQ-CM-02 | Phòng nhân sự muốn tạo HĐ xác định thời hạn | → FEAT-CM-01.2 |
+| 69 | Phòng TCCB | Phỏng vấn | STRQ-CM-03 | Phòng nhân sự muốn tạo HĐ thử việc | → FEAT-CM-01.3 |
+| 70 | Phòng TCCB | Phỏng vấn | STRQ-CM-04 | Phòng nhân sự muốn tạo HĐ thỉnh giảng | → FEAT-CM-01.4 |
+| 71 | Phòng TCCB | Phỏng vấn | STRQ-CM-05 | Phòng nhân sự muốn lưu số hợp đồng | → FEAT-CM-02.1 |
+| 72 | Phòng TCCB | Phỏng vấn | STRQ-CM-06 | Phòng nhân sự muốn lưu ngày ký hợp đồng | → FEAT-CM-02.2 |
+| 73 | Phòng TCCB | Phỏng vấn | STRQ-CM-07 | Phòng nhân sự muốn lưu ngày hiệu lực hợp đồng | → FEAT-CM-02.3 |
+| 74 | Phòng TCCB | Phỏng vấn | STRQ-CM-08 | Phòng nhân sự muốn lưu ngày hết hạn hợp đồng | → FEAT-CM-02.4 |
+| 75 | Phòng TCCB | Phỏng vấn | STRQ-CM-09 | Phòng nhân sự muốn lưu nội dung công việc trong HĐ | → FEAT-CM-02.5 |
+| 76 | Phòng TCCB | Phỏng vấn | STRQ-CM-10 | Phòng nhân sự muốn lưu phụ lục hợp đồng | → FEAT-CM-02.6 |
+| 77 | Phòng TCCB | Phỏng vấn | STRQ-CM-11 | Phòng nhân sự muốn gia hạn HĐ thỉnh giảng | → FEAT-CM-03 |
+| 78 | Phòng TCCB | Brainstorming | STRQ-CM-12 | Phòng nhân sự muốn cảnh báo HĐ sắp hết hạn | → FEAT-CM-04 |
+| 79 | Phòng TCCB | Phỏng vấn | STRQ-CM-13 | Phòng nhân sự muốn HĐ thử việc có thời gian theo ngạch | → FEAT-CM-05 |
+| 80 | Phòng TCCB | Phỏng vấn | STRQ-CM-14 | Phòng nhân sự muốn in HĐ theo mẫu chuẩn | → FEAT-CM-06 |
+| 81 | Phòng TCCB | Phỏng vấn | STRQ-CM-15 | Phòng nhân sự muốn chuyển đổi HĐ thử việc sang chính thức | → FEAT-CM-07.1 |
+| 82 | Phòng TCCB | Phỏng vấn | STRQ-CM-16 | Phòng nhân sự muốn chuyển đổi HĐ có thời hạn sang vô thời hạn | → FEAT-CM-07.2 |
+| 83 | Phòng TCCB | Phỏng vấn | STRQ-CM-17 | Phòng nhân sự muốn tạo hồ sơ nhân sự từ HĐ đã ký | → FEAT-CM-08 |
+
+---
+
+#### 1.1.6.6. Quản lý Bậc lương (Cơ bản)
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 84 | Phòng TCCB | Phỏng vấn | STRQ-PB-01 | Phòng nhân sự muốn lưu hệ số lương của nhân sự | → FEAT-PB-01 |
+| 85 | Phòng TCCB | Phỏng vấn | STRQ-PB-02 | Phòng nhân sự muốn lưu mức lương cơ sở | → FEAT-PB-02 |
+| 86 | Phòng TCCB | Phỏng vấn | STRQ-PB-03 | Phòng nhân sự muốn lưu ngạch viên chức (GV, GV chính, GV cao cấp...) | → FEAT-PB-03.1 |
+| 87 | Phòng TCCB | Phỏng vấn | STRQ-PB-04 | Phòng nhân sự muốn lưu bậc lương (1-9) | → FEAT-PB-03.2 |
+| 88 | Phòng TCCB | Phỏng vấn | STRQ-PB-05 | Phòng nhân sự muốn có bảng hệ số lương theo ngạch/bậc | → FEAT-PB-04 |
+| 89 | Phòng TCCB | Phỏng vấn | STRQ-PB-06 | Phòng nhân sự muốn lưu phụ cấp chức vụ | → FEAT-PB-05.1 |
+| 90 | Phòng TCCB | Phỏng vấn | STRQ-PB-07 | Phòng nhân sự muốn lưu phụ cấp thâm niên | → FEAT-PB-05.2 |
+| 91 | Phòng TCCB | Phỏng vấn | STRQ-PB-08 | Phòng nhân sự muốn lưu phụ cấp ưu đãi ngành | → FEAT-PB-05.3 |
+| 92 | Phòng TCCB | Phỏng vấn | STRQ-PB-09 | Phòng nhân sự muốn lưu phụ cấp trách nhiệm | → FEAT-PB-05.4 |
+| 93 | Phòng TCCB | Phỏng vấn | STRQ-PB-10 | Phòng nhân sự muốn lưu phụ cấp độc hại | → FEAT-PB-05.5 |
+| 94 | Phòng TCCB | Phỏng vấn | STRQ-PB-11 | Phòng nhân sự muốn lưu phụ cấp khu vực | → FEAT-PB-05.6 |
+| 95 | Phòng TCCB | Phỏng vấn | STRQ-PB-12 | Phòng nhân sự muốn lưu hệ số phụ cấp chức vụ theo vị trí | → FEAT-PB-06 |
+
+> **Lưu ý MVP:** Phase 1 chỉ lưu trữ thông tin lương, KHÔNG tính lương tự động.
+
+---
+
+#### 1.1.6.7. Báo cáo Thống kê (Cơ bản)
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 96 | Ban Giám hiệu | Phỏng vấn | STRQ-RP-01 | Lãnh đạo muốn xem thống kê nhân sự toàn trường | → FEAT-RP-01.1 |
+| 97 | Ban Giám hiệu | Phỏng vấn | STRQ-RP-02 | Lãnh đạo muốn xem thống kê nhân sự theo đơn vị | → FEAT-RP-01.2 |
+| 98 | Ban Giám hiệu | Phỏng vấn | STRQ-RP-03 | Lãnh đạo muốn xuất thống kê ra PDF | → FEAT-RP-02.1 |
+| 99 | Ban Giám hiệu | Phỏng vấn | STRQ-RP-04 | Lãnh đạo muốn xuất thống kê ra Excel | → FEAT-RP-02.2 |
+
+---
+
+#### 1.1.6.8. Self-Service Portal (Cơ bản)
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 100 | CBGV/NV | Phỏng vấn | STRQ-SS-01 | CBGV/NV muốn xem thông tin cá nhân của mình | → FEAT-SS-01 |
+| 101 | CBGV/NV | Phỏng vấn | STRQ-SS-02 | CBGV/NV muốn xem lịch sử hợp đồng của mình | → FEAT-SS-02 |
+| 102 | CBGV/NV | Phỏng vấn | STRQ-SS-03 | CBGV/NV muốn xem thông tin chức vụ, chức danh | → FEAT-SS-03.1 |
+| 103 | CBGV/NV | Phỏng vấn | STRQ-SS-04 | CBGV/NV muốn xem thông tin học vấn | → FEAT-SS-03.2 |
+| 104 | CBGV/NV | Phỏng vấn | STRQ-SS-05 | CBGV/NV muốn xem thông tin bậc lương | → FEAT-SS-03.3 |
+
+---
+
+### 1.1.7. Bảng tổng hợp Features (FEAT)
+
+**Tổng hợp STRQ → FEAT:**
 
 | Module | Số STRQ | Số FEAT |
 |--------|---------|---------|
@@ -142,6 +286,8 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 | Báo cáo (RP) | 4 | 2 |
 | Self-Service (SS) | 5 | 3 |
 | **Tổng cộng** | **119** | **62** |
+
+---
 
 ### 1.1.8. Mô hình hóa yêu cầu
 
@@ -156,7 +302,7 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 | 3 | Cán bộ TCKT | Phòng TCKT | Quản lý lương |
 | 4 | Lãnh đạo | Ban Giám hiệu | Xem báo cáo, phê duyệt |
 | 5 | Trưởng đơn vị | Khoa/Phòng | Quản lý nhân sự đơn vị |
-| 6 | CBGV/NV (Người dùng cuối) | Toàn trường | Tra cứu thông tin cá nhân |
+| 6 | CBGV/NV | Toàn trường | Tra cứu thông tin cá nhân |
 
 **Danh sách Use Case chính:**
 
@@ -175,203 +321,56 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 
 #### 1.1.8.2. Vẽ Biểu đồ Use Case
 
-##### 1.1.8.2.1. Biểu đồ Use Case tổng quát
-
 *(Hình 1.2: Biểu đồ Use Case tổng quát - Cần bổ sung)*
 
-```
-+--------------------------------------------------+
-|               HỆ THỐNG HRMS                       |
-|                                                   |
-|  [UC-01: Đăng nhập/Đăng xuất]                    |
-|  [UC-02: Quản lý tài khoản]                      |
-|  [UC-03: Phân quyền]                             |
-|  [UC-04: Quản lý hồ sơ nhân sự]                  |
-|  [UC-05: Quản lý trình độ, chức danh]            |
-|  [UC-06: Quản lý cơ cấu tổ chức]                 |
-|  [UC-07: Quản lý hợp đồng]                       |
-|  [UC-08: Quản lý bậc lương]                      |
-|  [UC-09: Xem báo cáo]                            |
-|  [UC-10: Tra cứu thông tin cá nhân]              |
-|                                                   |
-+--------------------------------------------------+
-      ↑        ↑        ↑         ↑         ↑
-    Admin   TCCB     TCKT     Lãnh đạo   CBGV/NV
-```
+*(Hình 1.3-1.6: Phân rã Use Case theo từng tác nhân - Cần bổ sung)*
 
-##### 1.1.8.2.2. Phân rã Use Case theo tác nhân
+---
 
-###### 1.1.8.2.2.1. Phân rã Use Case theo Quản trị viên (Admin)
+### 1.1.9. Các yêu cầu ràng buộc
 
-*(Hình 1.3: Use Case Admin - Cần bổ sung)*
+| Loại | Yêu cầu | Mô tả |
+|------|---------|-------|
+| Giao diện | Ngôn ngữ tiếng Việt | 100% tiếng Việt |
+| Giao diện | Responsive | Desktop, Tablet, Mobile |
+| Chức năng | Validate dữ liệu | Kiểm tra trước khi lưu |
+| Chức năng | Soft delete | Không xóa vật lý |
+| Chức năng | Audit log | Ghi lại mọi thao tác |
+| Bổ sung | Đa cơ sở | Hà Nội, Phố Hiến, TP.HCM |
+| Bổ sung | Kiêm nhiệm | Một người nhiều chức vụ |
 
-| UC | Tên | Mô tả |
-|----|-----|-------|
-| UC-01 | Đăng nhập/Đăng xuất | Xác thực vào hệ thống |
-| UC-02.1 | Tạo tài khoản | Tạo mới tài khoản cho người dùng |
-| UC-02.2 | Sửa tài khoản | Cập nhật thông tin tài khoản |
-| UC-02.3 | Khóa/Mở khóa tài khoản | Vô hiệu hóa tài khoản |
-| UC-02.4 | Reset mật khẩu | Đặt lại mật khẩu cho người dùng |
-| UC-03.1 | Tạo vai trò | Tạo role mới trong hệ thống |
-| UC-03.2 | Phân quyền chức năng | Gán quyền cho role |
-| UC-03.3 | Gán vai trò cho người dùng | Gán role cho tài khoản |
+---
 
-###### 1.1.8.2.2.2. Phân rã Use Case theo Cán bộ TCCB
+### 1.1.10. Luồng sự kiện cho các UC chính
 
-*(Hình 1.4: Use Case Cán bộ TCCB - Cần bổ sung)*
-
-| UC | Tên | Mô tả |
-|----|-----|-------|
-| UC-04.1 | Tạo hồ sơ nhân sự | Nhập thông tin nhân sự mới |
-| UC-04.2 | Sửa hồ sơ nhân sự | Cập nhật thông tin |
-| UC-04.3 | Tìm kiếm hồ sơ | Tìm theo nhiều tiêu chí |
-| UC-04.4 | Xuất hồ sơ | Xuất PDF, Excel, Word |
-| UC-05.1 | Quản lý bằng cấp | CRUD bằng cấp |
-| UC-05.2 | Quản lý chứng chỉ | CRUD chứng chỉ |
-| UC-05.3 | Quản lý chức vụ | Bổ nhiệm/Miễn nhiệm |
-| UC-06.1 | Quản lý đơn vị | CRUD đơn vị |
-| UC-06.2 | Phân bổ nhân sự | Gán nhân viên vào đơn vị |
-| UC-07.1 | Tạo hợp đồng | Lập HĐ mới |
-| UC-07.2 | Gia hạn hợp đồng | Gia hạn HĐ thỉnh giảng |
-| UC-07.3 | Chuyển đổi hợp đồng | Thử việc → Chính thức |
-| UC-07.4 | In hợp đồng | Xuất HĐ theo mẫu |
-
-###### 1.1.8.2.2.3. Phân rã Use Case theo Lãnh đạo
-
-*(Hình 1.5: Use Case Lãnh đạo - Cần bổ sung)*
-
-| UC | Tên | Mô tả |
-|----|-----|-------|
-| UC-09.1 | Xem thống kê nhân sự | Thống kê theo đơn vị |
-| UC-09.2 | Xuất báo cáo | Xuất PDF, Excel |
-| UC-06.3 | Xem sơ đồ tổ chức | Xem cây đơn vị |
-
-###### 1.1.8.2.2.4. Phân rã Use Case theo CBGV/NV
-
-*(Hình 1.6: Use Case CBGV/NV - Cần bổ sung)*
-
-| UC | Tên | Mô tả |
-|----|-----|-------|
-| UC-01 | Đăng nhập/Đăng xuất | Xác thực |
-| UC-10.1 | Xem thông tin cá nhân | Xem hồ sơ của mình |
-| UC-10.2 | Xem lịch sử hợp đồng | Xem các HĐ đã ký |
-| UC-10.3 | Xem thông tin lương | Xem ngạch/bậc, phụ cấp |
-| UC-01.3 | Đổi mật khẩu | Tự đổi mật khẩu |
-
-### 1.1.9. Các yêu cầu ràng buộc cụ thể
-
-#### 1.1.9.1. Các yêu cầu về giao diện
-
-| STT | Yêu cầu | Mô tả |
-|-----|---------|-------|
-| UI-01 | Ngôn ngữ | Giao diện tiếng Việt 100% |
-| UI-02 | Responsive | Hiển thị tốt trên Desktop, Tablet, Mobile |
-| UI-03 | Trình duyệt | Hỗ trợ Chrome, Firefox, Edge, Safari |
-| UI-04 | Accessibility | Tuân thủ WCAG 2.1 Level AA |
-| UI-05 | Theme | Hỗ trợ Light/Dark mode |
-| UI-06 | Font | Sử dụng font tiếng Việt chuẩn (Roboto, Open Sans) |
-
-#### 1.1.9.2. Các yêu cầu về chức năng
-
-| STT | Yêu cầu | Mô tả |
-|-----|---------|-------|
-| FN-01 | Validate dữ liệu | Kiểm tra tính hợp lệ trước khi lưu |
-| FN-02 | Soft delete | Không xóa vật lý, chỉ đánh dấu inactive |
-| FN-03 | Audit log | Ghi lại mọi thao tác quan trọng |
-| FN-04 | Sinh mã tự động | Mã cán bộ, mã HĐ tự động |
-| FN-05 | Cảnh báo | Thông báo HĐ/Chứng chỉ sắp hết hạn |
-| FN-06 | Xuất file | Hỗ trợ PDF, Excel, Word |
-| FN-07 | Danh mục phân cấp | Quốc gia → Tỉnh → Huyện |
-
-#### 1.1.9.3. Các yêu cầu bổ sung
-
-| STT | Yêu cầu | Mô tả |
-|-----|---------|-------|
-| AD-01 | Đa cơ sở | Quản lý 3 cơ sở: Hà Nội, Phố Hiến, TP.HCM |
-| AD-02 | Kiêm nhiệm | Một người có thể giữ nhiều chức vụ |
-| AD-03 | Lịch sử đơn vị | Lưu thành lập/sáp nhập/giải thể |
-| AD-04 | Hiển thị học hàm | Format: PGS.TS. Nguyễn Văn A |
-| AD-05 | Lưu trữ 10 năm | Dữ liệu lưu tối thiểu 10 năm |
-
-#### 1.1.9.4. Các yêu cầu khác
-
-| STT | Yêu cầu | Mô tả |
-|-----|---------|-------|
-| OT-01 | Tài liệu | Có hướng dẫn sử dụng đầy đủ |
-| OT-02 | Đào tạo | Người dùng thành thạo sau 4h |
-| OT-03 | Backup | Backup dữ liệu hàng ngày |
-| OT-04 | Recovery | Khôi phục trong 4h nếu sự cố |
-
-### 1.1.10. Luồng sự kiện cho các Use Case chính
-
-#### 1.1.10.1. UC-04.1: Tạo hồ sơ nhân sự mới
-
-**Mô tả:** Cán bộ TCCB tạo mới hồ sơ cho nhân sự vừa được tuyển dụng.
+#### 1.1.10.1. UC-04: Tạo hồ sơ nhân sự mới
 
 **Actor:** Cán bộ TCCB
-
-**Tiền điều kiện:** 
-- Cán bộ TCCB đã đăng nhập hệ thống
-- Có quyền truy cập module Quản lý Hồ sơ
-
-**Luồng sự kiện chính:**
 
 | Bước | Hành động của Actor | Phản hồi của hệ thống |
 |------|--------------------|-----------------------|
 | 1 | Chọn menu "Hồ sơ nhân sự" | Hiển thị danh sách hồ sơ |
 | 2 | Nhấn nút "Thêm mới" | Hiển thị form nhập hồ sơ |
-| 3 | Nhập thông tin cá nhân (họ tên, ngày sinh, CCCD...) | Validate dữ liệu real-time |
-| 4 | Nhập thông tin liên hệ (địa chỉ, SĐT, email) | Validate định dạng |
-| 5 | Nhập thông tin gia đình (hôn nhân, người phụ thuộc) | Validate |
-| 6 | Upload ảnh chân dung | Kiểm tra định dạng, kích thước |
-| 7 | Nhấn nút "Lưu" | Validate toàn bộ, sinh mã cán bộ tự động |
-| 8 | - | Lưu vào CSDL, hiển thị thông báo thành công |
-
-**Luồng sự kiện thay thế:**
-
-| Bước | Điều kiện | Xử lý |
-|------|-----------|-------|
-| 3a | CCCD đã tồn tại | Hiển thị lỗi "CCCD đã được sử dụng" |
-| 6a | File quá lớn (>5MB) | Hiển thị lỗi "File vượt quá 5MB" |
-| 7a | Thiếu trường bắt buộc | Highlight các trường lỗi |
-
-**Hậu điều kiện:**
-- Hồ sơ nhân sự mới được tạo thành công
-- Mã cán bộ được sinh tự động
-- Log ghi nhận thao tác
+| 3 | Nhập thông tin cá nhân | Validate dữ liệu real-time |
+| 4 | Upload ảnh chân dung | Kiểm tra định dạng, kích thước |
+| 5 | Nhấn nút "Lưu" | Sinh mã cán bộ tự động, lưu CSDL |
 
 *(Hình 1.7: Sequence Diagram - Tạo hồ sơ nhân sự - Cần bổ sung)*
 
 ---
 
-#### 1.1.10.2. UC-07.1: Tạo hợp đồng lao động
-
-**Mô tả:** Cán bộ TCCB tạo hợp đồng lao động cho nhân sự.
+#### 1.1.10.2. UC-07: Tạo hợp đồng lao động
 
 **Actor:** Cán bộ TCCB
 
-**Tiền điều kiện:**
-- Cán bộ TCCB đã đăng nhập
-- Nhân sự đã có hồ sơ trong hệ thống
-
-**Luồng sự kiện chính:**
-
 | Bước | Hành động của Actor | Phản hồi của hệ thống |
 |------|--------------------|-----------------------|
-| 1 | Chọn menu "Hợp đồng lao động" | Hiển thị danh sách HĐ |
+| 1 | Chọn menu "Hợp đồng" | Hiển thị danh sách HĐ |
 | 2 | Nhấn nút "Thêm mới" | Hiển thị form tạo HĐ |
-| 3 | Chọn nhân sự từ danh sách | Load thông tin nhân sự |
+| 3 | Chọn nhân sự | Load thông tin nhân sự |
 | 4 | Chọn loại hợp đồng | Hiển thị các trường tương ứng |
-| 5 | Nhập thông tin HĐ (số HĐ, ngày ký, ngày hiệu lực...) | Validate |
-| 6 | Nhập nội dung công việc | - |
-| 7 | Nhấn "Lưu" | Lưu HĐ, hiển thị thông báo |
-
-**Luồng thay thế:**
-
-| Bước | Điều kiện | Xử lý |
-|------|-----------|-------|
-| 4a | Chọn "Thử việc" | Tự động tính thời gian thử việc theo ngạch |
-| 4b | Chọn "Thỉnh giảng" | Hiển thị thêm trường "Số giờ giảng" |
+| 5 | Nhập thông tin HĐ | Validate |
+| 6 | Nhấn "Lưu" | Lưu HĐ, hiển thị thông báo |
 
 *(Hình 1.8: Sequence Diagram - Tạo hợp đồng - Cần bổ sung)*
 
@@ -379,81 +378,32 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 
 #### 1.1.10.3. UC-01: Đăng nhập hệ thống
 
-**Mô tả:** Người dùng đăng nhập vào hệ thống.
-
 **Actor:** Tất cả người dùng
-
-**Tiền điều kiện:** Người dùng có tài khoản hợp lệ
-
-**Luồng sự kiện chính:**
 
 | Bước | Hành động của Actor | Phản hồi của hệ thống |
 |------|--------------------|-----------------------|
 | 1 | Truy cập URL hệ thống | Hiển thị trang đăng nhập |
-| 2 | Nhập tên đăng nhập | - |
-| 3 | Nhập mật khẩu | - |
-| 4 | Nhấn "Đăng nhập" | Xác thực thông tin |
-| 5 | - | Chuyển đến trang chủ theo vai trò |
-
-**Luồng thay thế:**
-
-| Bước | Điều kiện | Xử lý |
-|------|-----------|-------|
-| 4a | Sai mật khẩu | Hiển thị lỗi, tăng số lần thử |
-| 4b | Sai 5 lần liên tiếp | Khóa tài khoản 15 phút |
-| 4c | Tài khoản bị khóa | Hiển thị thông báo liên hệ Admin |
+| 2 | Nhập tên đăng nhập, mật khẩu | - |
+| 3 | Nhấn "Đăng nhập" | Xác thực, chuyển trang chủ |
 
 *(Hình 1.9: Sequence Diagram - Đăng nhập - Cần bổ sung)*
 
 ---
 
-#### 1.1.10.4. UC-09.1: Xem thống kê nhân sự
-
-**Mô tả:** Lãnh đạo xem báo cáo thống kê nhân sự.
-
-**Actor:** Lãnh đạo
-
-**Luồng sự kiện chính:**
-
-| Bước | Hành động của Actor | Phản hồi của hệ thống |
-|------|--------------------|-----------------------|
-| 1 | Chọn menu "Báo cáo" | Hiển thị danh sách báo cáo |
-| 2 | Chọn "Thống kê nhân sự" | Hiển thị form lọc |
-| 3 | Chọn tiêu chí (đơn vị, loại nhân sự...) | - |
-| 4 | Nhấn "Xem báo cáo" | Hiển thị bảng thống kê |
-| 5 | (Tùy chọn) Nhấn "Xuất Excel" | Tải file Excel |
-
-*(Hình 1.10: Sequence Diagram - Xem thống kê - Cần bổ sung)*
-
 ### 1.1.11. Các yêu cầu phi chức năng
 
-#### 1.1.11.1. Danh sách yêu cầu phi chức năng
-
-| Mã | Loại | Yêu cầu |
-|----|------|---------|
-| NFR-01 | Hiệu năng | Trang thông thường load < 2 giây |
-| NFR-02 | Hiệu năng | Báo cáo phức tạp < 10 giây |
-| NFR-03 | Hiệu năng | Hỗ trợ 200 người dùng đồng thời |
-| NFR-04 | Bảo mật | Mã hóa dữ liệu nhạy cảm (AES-256) |
-| NFR-05 | Bảo mật | HTTPS cho toàn bộ kết nối |
-| NFR-06 | Bảo mật | Ghi log tất cả thao tác quan trọng |
-| NFR-07 | Bảo mật | Session timeout sau 30 phút không hoạt động |
-| NFR-08 | Khả dụng | Uptime 99.5% (trong giờ hành chính) |
-| NFR-09 | Khả dụng | Backup dữ liệu hàng ngày |
-| NFR-10 | Mở rộng | Kiến trúc module hóa, dễ thêm tính năng |
-| NFR-11 | Pháp lý | Tuân thủ Bộ Luật Lao động 2019 |
-| NFR-12 | Pháp lý | Tuân thủ Luật Viên chức |
-
-#### 1.1.11.2. Bảng đo các yêu cầu phi chức năng
-
-| Mã | Yêu cầu | Thang đo | Giá trị mục tiêu | Cách đo |
-|----|---------|----------|------------------|---------|
-| NFR-01 | Thời gian load trang | Giây | < 2s | Performance testing |
-| NFR-02 | Thời gian báo cáo | Giây | < 10s | Performance testing |
-| NFR-03 | Người dùng đồng thời | Số lượng | 200 | Load testing |
-| NFR-04 | Mã hóa dữ liệu | Thuật toán | AES-256 | Code review |
-| NFR-05 | Kết nối bảo mật | Giao thức | HTTPS/TLS 1.3 | Security scan |
-| NFR-08 | Uptime | Phần trăm | 99.5% | Monitoring |
+| Mã | Loại | Yêu cầu | Giá trị mục tiêu |
+|----|------|---------|------------------|
+| NFR-01 | Hiệu năng | Thời gian load trang | < 2 giây |
+| NFR-02 | Hiệu năng | Thời gian báo cáo | < 10 giây |
+| NFR-03 | Hiệu năng | Người dùng đồng thời | 200 |
+| NFR-04 | Bảo mật | Mã hóa dữ liệu nhạy cảm | AES-256 |
+| NFR-05 | Bảo mật | Kết nối | HTTPS/TLS 1.3 |
+| NFR-06 | Bảo mật | Session timeout | 30 phút |
+| NFR-07 | Khả dụng | Uptime | 99.5% |
+| NFR-08 | Khả dụng | Backup | Hàng ngày |
+| NFR-09 | Pháp lý | Tuân thủ | Bộ Luật Lao động 2019 |
+| NFR-10 | Pháp lý | Tuân thủ | Luật Viên chức |
 
 ---
 
@@ -461,250 +411,76 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 
 ### 1.2.1. Đội phát triển dự án
 
-| STT | Vai trò | Số lượng | Nhiệm vụ chính |
-|-----|---------|----------|----------------|
-| 1 | PM (Project Manager) | 1 | Quản lý dự án, điều phối |
-| 2 | BA (Business Analyst) | 2 | Phân tích yêu cầu, viết SRS |
-| 3 | SA (System Analyst) | 2 | Thiết kế hệ thống, kiến trúc |
-| 4 | UI/UX Designer | 1 | Thiết kế giao diện |
-| 5 | Backend Developer | 3 | Phát triển API, logic |
-| 6 | Frontend Developer | 2 | Phát triển giao diện |
-| 7 | Tester (QA) | 2 | Kiểm thử, đảm bảo chất lượng |
-| 8 | DevOps | 1 | Triển khai, CI/CD |
-| | **Tổng cộng** | **14** | |
+| Team | Vai trò | Số lượng | Nhiệm vụ chính |
+|------|---------|----------|----------------|
+| Team 1 | BA/PM | 3 | Phân tích yêu cầu, quản lý dự án |
+| Team 2 | SA/Design | 3 | Thiết kế hệ thống, UI/UX |
+| Team 3 | Dev | 5 | Phát triển Backend, Frontend |
+| Team 4 | Test | 2 | Kiểm thử |
+| Team 5 | Deploy | 1 | Triển khai, CI/CD |
+| | **Tổng** | **14** | |
 
-**Phân công theo Team:**
+### 1.2.2. Phạm vi công việc
 
-| Team | Thành viên | Tuần 1-2 | Tuần 3-4 | Tuần 5-6 | Tuần 7-8 |
-|------|------------|----------|----------|----------|----------|
-| Team 1 (BA) | 3 | Phân tích | Review | Hỗ trợ Test | Tài liệu |
-| Team 2 (Design) | 3 | Thiết kế | Review | Hỗ trợ Test | Tài liệu |
-| Team 3 (Dev) | 5 | - | Code | Code | Fix bugs |
-| Team 4 (Test) | 2 | - | - | Test | Test |
-| Team 5 (Deploy) | 1 | - | - | - | Deploy |
+| Giai đoạn | Công việc | Team | Thời gian |
+|-----------|-----------|------|-----------|
+| Phân tích | Thu thập yêu cầu, viết SRS | Team 1 | Tuần 1-2 |
+| Thiết kế | Thiết kế DB, API, UI | Team 2 | Tuần 3-4 |
+| Phát triển | Code Backend, Frontend | Team 3 | Tuần 5-6 |
+| Kiểm thử | Test, fix bugs | Team 4 | Tuần 7-8 |
+| Triển khai | Deploy, tài liệu | Team 5 | Tuần 8 |
 
-### 1.2.2. Quy định phạm vi dự án
+### 1.2.3. Ước lượng chi phí (Function Point)
 
-#### 1.2.2.1. Phạm vi công việc
+| Loại | Số lượng | FP |
+|------|----------|-----|
+| External Inputs (EI) | 8 | 34 |
+| External Outputs (EO) | 4 | 26 |
+| External Inquiries (EQ) | 4 | 14 |
+| Internal Logical Files (ILF) | 6 | 70 |
+| External Interface Files (EIF) | 2 | 10 |
+| **Tổng UFP** | | **154** |
 
-##### 1.2.2.1.1. Phạm vi công việc phân tích yêu cầu (Team 1)
+AFP = 154 × 1.09 = **168 FP**
 
-| STT | Công việc | Đầu ra | Thời gian |
-|-----|-----------|--------|-----------|
-| 1 | Khảo sát nghiệp vụ | Biên bản khảo sát | Tuần 1 |
-| 2 | Thu thập yêu cầu | Danh sách STRQ | Tuần 1 |
-| 3 | Phân tích yêu cầu | Tài liệu SRS | Tuần 2 |
-| 4 | Vẽ Use Case Diagram | Biểu đồ UC | Tuần 2 |
-| 5 | Viết luồng sự kiện | Event flow | Tuần 2 |
-
-##### 1.2.2.1.2. Phạm vi công việc thiết kế (Team 2)
-
-| STT | Công việc | Đầu ra | Thời gian |
-|-----|-----------|--------|-----------|
-| 1 | Thiết kế kiến trúc | Architecture Diagram | Tuần 3 |
-| 2 | Thiết kế CSDL | ERD, DBML | Tuần 3 |
-| 3 | Thiết kế API | API Spec (OpenAPI) | Tuần 3-4 |
-| 4 | Thiết kế UI/UX | Wireframe, Mockup | Tuần 3-4 |
-| 5 | Review thiết kế | Checklist | Tuần 4 |
-
-##### 1.2.2.1.3. Phạm vi công việc lập trình (Team 3)
-
-| STT | Công việc | Đầu ra | Thời gian |
-|-----|-----------|--------|-----------|
-| 1 | Setup project, CI/CD | Repo, pipeline | Tuần 4 |
-| 2 | Phát triển Backend | API endpoints | Tuần 5-6 |
-| 3 | Phát triển Frontend | UI components | Tuần 5-6 |
-| 4 | Tích hợp | Hệ thống hoàn chỉnh | Tuần 7 |
-| 5 | Fix bugs | Bug-free code | Tuần 8 |
-
-##### 1.2.2.1.4. Phạm vi công việc kiểm thử (Team 4)
-
-| STT | Công việc | Đầu ra | Thời gian |
-|-----|-----------|--------|-----------|
-| 1 | Viết Test Plan | Test Plan | Tuần 4 |
-| 2 | Viết Test Case | Test Cases | Tuần 5 |
-| 3 | Thực hiện Unit Test | Test Report | Tuần 6 |
-| 4 | Thực hiện Integration Test | Test Report | Tuần 7 |
-| 5 | UAT (User Acceptance Test) | UAT Report | Tuần 8 |
-
-##### 1.2.2.1.5. Phạm vi công việc triển khai (Team 5)
-
-| STT | Công việc | Đầu ra | Thời gian |
-|-----|-----------|--------|-----------|
-| 1 | Chuẩn bị môi trường | Server, Docker | Tuần 7 |
-| 2 | Deploy staging | Staging environment | Tuần 7 |
-| 3 | Deploy production | Production environment | Tuần 8 |
-| 4 | Viết tài liệu | User manual | Tuần 8 |
-
-#### 1.2.2.2. Phạm vi tài nguyên
-
-| Tài nguyên | Chi tiết | Ghi chú |
-|------------|----------|---------|
-| Nhân lực | 14 người | Sinh viên, 8h/tuần/người |
-| Thời gian | 8 tuần | Phase 1 (MVP) |
-| Server | 1 VPS (4 CPU, 8GB RAM) | Development + Staging |
-| Database | PostgreSQL 15 | Managed hoặc Docker |
-| Source control | GitHub | Private repo |
-| CI/CD | GitHub Actions | Free tier |
-| Domain | hrms.tlu.edu.vn | Ví dụ |
-
-### 1.2.3. Ước lượng chi phí dự án
-
-#### 1.2.3.1. Function Point Analysis
-
-##### 1.2.3.1.1. Tính toán UFP (Unadjusted Function Points)
-
-**External Inputs (EI):**
-
-| STT | Chức năng | Độ phức tạp | FP |
-|-----|-----------|-------------|-----|
-| 1 | Thêm hồ sơ nhân sự | Cao | 6 |
-| 2 | Sửa hồ sơ nhân sự | Trung bình | 4 |
-| 3 | Thêm hợp đồng | Cao | 6 |
-| 4 | Sửa hợp đồng | Trung bình | 4 |
-| 5 | Thêm đơn vị | Thấp | 3 |
-| 6 | Phân bổ nhân sự | Trung bình | 4 |
-| 7 | Tạo tài khoản | Trung bình | 4 |
-| 8 | Đăng nhập | Thấp | 3 |
-| | **Tổng EI** | | **34** |
-
-**External Outputs (EO):**
-
-| STT | Chức năng | Độ phức tạp | FP |
-|-----|-----------|-------------|-----|
-| 1 | Xuất hồ sơ PDF | Cao | 7 |
-| 2 | Xuất hồ sơ Excel | Trung bình | 5 |
-| 3 | In hợp đồng | Cao | 7 |
-| 4 | Báo cáo thống kê | Cao | 7 |
-| | **Tổng EO** | | **26** |
-
-**External Inquiries (EQ):**
-
-| STT | Chức năng | Độ phức tạp | FP |
-|-----|-----------|-------------|-----|
-| 1 | Tìm kiếm hồ sơ | Trung bình | 4 |
-| 2 | Xem chi tiết hồ sơ | Thấp | 3 |
-| 3 | Xem sơ đồ tổ chức | Trung bình | 4 |
-| 4 | Xem thông tin cá nhân | Thấp | 3 |
-| | **Tổng EQ** | | **14** |
-
-**Internal Logical Files (ILF):**
-
-| STT | File | Độ phức tạp | FP |
-|-----|------|-------------|-----|
-| 1 | Employee | Cao | 15 |
-| 2 | Contract | Cao | 15 |
-| 3 | Organization_Unit | Trung bình | 10 |
-| 4 | User_Account | Trung bình | 10 |
-| 5 | Qualification | Trung bình | 10 |
-| 6 | Salary | Trung bình | 10 |
-| | **Tổng ILF** | | **70** |
-
-**External Interface Files (EIF):**
-
-| STT | File | Độ phức tạp | FP |
-|-----|------|-------------|-----|
-| 1 | Danh mục Quốc gia | Thấp | 5 |
-| 2 | Danh mục Tỉnh/TP | Thấp | 5 |
-| | **Tổng EIF** | | **10** |
-
-**Tổng UFP = 34 + 26 + 14 + 70 + 10 = 154 FP**
-
-##### 1.2.3.1.2. Tính toán AFP (Adjusted Function Points)
-
-**Value Adjustment Factor (VAF):**
-
-| STT | Yếu tố | Giá trị (0-5) |
-|-----|--------|---------------|
-| 1 | Data communications | 4 |
-| 2 | Distributed data processing | 2 |
-| 3 | Performance | 3 |
-| 4 | Heavily used configuration | 2 |
-| 5 | Transaction rate | 2 |
-| 6 | Online data entry | 5 |
-| 7 | End-user efficiency | 4 |
-| 8 | Online update | 4 |
-| 9 | Complex processing | 3 |
-| 10 | Reusability | 3 |
-| 11 | Installation ease | 3 |
-| 12 | Operational ease | 3 |
-| 13 | Multiple sites | 2 |
-| 14 | Facilitate change | 4 |
-| | **Tổng TDI** | **44** |
-
-**VAF = 0.65 + (TDI × 0.01) = 0.65 + 0.44 = 1.09**
-
-**AFP = UFP × VAF = 154 × 1.09 = 168 FP**
-
-#### 1.2.3.2. COCOMO II Estimation
-
-**Giả định:**
-- SLOC/FP = 50 (Java/Spring Boot)
-- SLOC = 168 × 50 = 8,400 SLOC = 8.4 KLOC
-
-**Basic COCOMO:**
-- Effort = a × (KLOC)^b
-- Với dự án Semi-detached: a = 3.0, b = 1.12
-- Effort = 3.0 × (8.4)^1.12 = **32 person-months**
-
-**Với 14 người, 8h/tuần:**
-- Tổng giờ = 14 × 8 × 8 tuần = 896 giờ
-- = 896 / 160 = **5.6 person-months** thực tế
-
-**Kết luận:** Với scope MVP đã rút gọn, dự án **KHẢN THI** trong 8 tuần với 14 người.
-
-### 1.2.4. Kế hoạch thời gian dự án
-
-#### 1.2.4.1. Các đầu mục công việc chính
-
-| STT | Công việc | Bắt đầu | Kết thúc | Thời lượng |
-|-----|-----------|---------|----------|------------|
-| 1 | Phân tích yêu cầu | Tuần 1 | Tuần 2 | 2 tuần |
-| 2 | Thiết kế hệ thống | Tuần 3 | Tuần 4 | 2 tuần |
-| 3 | Phát triển Backend | Tuần 5 | Tuần 6 | 2 tuần |
-| 4 | Phát triển Frontend | Tuần 5 | Tuần 6 | 2 tuần |
-| 5 | Kiểm thử | Tuần 7 | Tuần 8 | 2 tuần |
-| 6 | Triển khai | Tuần 8 | Tuần 8 | 1 tuần |
-
-#### 1.2.4.2. Ước lượng thời gian theo PERT
-
-| Công việc | Optimistic (O) | Most Likely (M) | Pessimistic (P) | Expected (E) |
-|-----------|----------------|-----------------|-----------------|--------------|
-| Phân tích | 1.5 tuần | 2 tuần | 3 tuần | 2.1 tuần |
-| Thiết kế | 1.5 tuần | 2 tuần | 3 tuần | 2.1 tuần |
-| Dev Backend | 1.5 tuần | 2 tuần | 3 tuần | 2.1 tuần |
-| Dev Frontend | 1.5 tuần | 2 tuần | 3 tuần | 2.1 tuần |
-| Kiểm thử | 1 tuần | 2 tuần | 3 tuần | 2.0 tuần |
-| Triển khai | 0.5 tuần | 1 tuần | 2 tuần | 1.1 tuần |
-
-*E = (O + 4M + P) / 6*
-
-#### 1.2.4.3. Biểu đồ Gantt
-
-*(Hình 1.11: Biểu đồ Gantt - Cần bổ sung)*
+### 1.2.4. Kế hoạch thời gian (Gantt)
 
 ```
 Tuần      | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 ----------|---|---|---|---|---|---|---|---|
 Phân tích |███|███|   |   |   |   |   |   |
 Thiết kế  |   |   |███|███|   |   |   |   |
-Backend   |   |   |   |   |███|███|   |   |
-Frontend  |   |   |   |   |███|███|   |   |
+Phát triển|   |   |   |   |███|███|   |   |
 Kiểm thử  |   |   |   |   |   |   |███|███|
 Triển khai|   |   |   |   |   |   |   |███|
 ```
 
+*(Hình 1.10: Biểu đồ Gantt - Cần bổ sung)*
+
 ### 1.2.5. Quản trị rủi ro
 
-| STT | Rủi ro | Xác suất | Tác động | Biện pháp phòng ngừa | Biện pháp khắc phục |
-|-----|--------|----------|----------|---------------------|---------------------|
-| 1 | Yêu cầu thay đổi giữa chừng | Cao | Cao | Freeze requirements sau tuần 2 | Đánh giá impact, thương lượng |
-| 2 | Thành viên nghỉ học/bận | Trung bình | Trung bình | Tài liệu hóa mọi thứ, pair work | Phân công lại |
-| 3 | Conflict code (Git) | Cao | Thấp | Branching strategy, code review | Resolve conflict kịp thời |
-| 4 | Bug nhiều khi test | Trung bình | Cao | Unit test sớm, TDD | Tăng ca fix bug |
-| 5 | Server sập | Thấp | Cao | Backup hàng ngày | Restore từ backup |
-| 6 | Thiếu thời gian | Cao | Cao | Buffer 20% thời gian | Cắt bớt scope |
+| Rủi ro | Xác suất | Tác động | Biện pháp |
+|--------|----------|----------|-----------|
+| Yêu cầu thay đổi | Cao | Cao | Freeze requirements sau tuần 2 |
+| Thành viên bận | Trung bình | Trung bình | Tài liệu hóa, pair work |
+| Conflict code | Cao | Thấp | Branching strategy |
+| Bug nhiều | Trung bình | Cao | Unit test sớm |
+| Thiếu thời gian | Cao | Cao | Buffer 20% thời gian |
 
 ---
 
-> **Ghi chú:** Các hình ảnh (Biểu đồ Use Case, Sequence Diagram, Gantt Chart) cần được bổ sung riêng bằng công cụ vẽ (Draw.io, Lucidchart, PlantUML).
+## Tổng kết Chương 1
+
+| Tiêu chí | Giá trị |
+|----------|---------|
+| Tổng số STRQ | **119** |
+| Tổng số FEAT | **62** |
+| Số module | **8** |
+| Số Use Case | **10** |
+| Function Points | **168 FP** |
+| Thời gian | **8 tuần (Phase 1)** |
+| Nhân lực | **14 người** |
+
+---
+
+> **Ghi chú:** Các hình ảnh (Biểu đồ Use Case, Sequence Diagram, Gantt Chart) cần được bổ sung bằng công cụ vẽ (Draw.io, Lucidchart, PlantUML).
