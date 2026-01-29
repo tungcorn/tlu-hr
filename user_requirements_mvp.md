@@ -29,164 +29,125 @@
 
 ---
 
-## 2. Yêu cầu của Stakeholders
+## 2. Các yêu cầu của Stakeholders (Needs)
 
-### 2.1. Quản lý Hồ sơ Nhân sự ⭐⭐⭐
+### 2.1. Quản lý Hồ sơ Nhân sự
 
-**Mô tả:** Quản lý toàn diện thông tin của tất cả cán bộ, giảng viên, nhân viên trong trường.
+- Ban giám hiệu muốn quản lý toàn diện thông tin của tất cả cán bộ, giảng viên, nhân viên trong trường.
+- Phòng nhân sự muốn tạo lập hồ sơ cá nhân.
+- Phòng nhân sự muốn hồ sơ cá nhân lưu trữ thông tin cá nhân: họ tên, ngày sinh, giới tính, CCCD/CMT, nơi sinh, quê quán, dân tộc, tôn giáo.
+- Phòng nhân sự muốn lưu trữ thông tin liên hệ: địa chỉ thường trú, địa chỉ tạm trú, số điện thoại, email cá nhân, email công việc.
+- Phòng nhân sự muốn lưu trữ thông tin gia đình: tình trạng hôn nhân, thông tin vợ/chồng, con cái, người phụ thuộc (để tính giảm trừ thuế TNCN).
+- Phòng nhân sự muốn lưu trữ ảnh chân dung cán bộ (3x4, 4x6).
+- Phòng nhân sự muốn lưu trữ thông tin ngân hàng: tên ngân hàng, số tài khoản, chi nhánh.
+- Phòng nhân sự muốn lưu trữ quá trình công tác trước khi vào trường.
+- Phòng nhân sự muốn lưu trữ thông tin Đảng viên: ngày vào Đảng, ngày chính thức, đảng bộ trực thuộc.
+- Phòng nhân sự muốn lưu trữ thông tin đoàn viên công đoàn.
+- Phòng nhân sự muốn mã cán bộ có thể được tạo tự động.
+- Khách hàng muốn cho phép tìm kiếm, lọc hồ sơ theo nhiều tiêu chí.
+- Khách hàng muốn xuất hồ sơ ra file (PDF, Excel, Word) theo mẫu.
+- Phòng nhân sự muốn thông tin được hỗ trợ hiển thị dạng học hàm, học vị.
 
-**Yêu cầu chi tiết:**
+### 2.2. Quản lý Trình độ Học vấn, Chức danh
 
-| STT | Yêu cầu | Mức độ |
-|-----|---------|--------|
-| 1 | Tạo lập hồ sơ cá nhân | Bắt buộc |
-| 2 | Lưu trữ thông tin cá nhân: họ tên, ngày sinh, giới tính, CCCD/CMT, nơi sinh, quê quán, dân tộc, tôn giáo | Bắt buộc |
-| 3 | Lưu trữ thông tin liên hệ: địa chỉ thường trú, tạm trú, SĐT, email cá nhân, email công việc | Bắt buộc |
-| 4 | Lưu trữ thông tin gia đình: hôn nhân, vợ/chồng, con cái, người phụ thuộc | Bắt buộc |
-| 5 | Quản lý ảnh chân dung (3x4, 4x6) | Bắt buộc |
-| 6 | Lưu trữ thông tin ngân hàng: tên NH, số tài khoản, chi nhánh | Bắt buộc |
-| 7 | Lưu trữ quá trình công tác trước khi vào trường | Bắt buộc |
-| 8 | Lưu trữ thông tin Đảng viên: ngày vào Đảng, ngày chính thức, đảng bộ | Bắt buộc |
-| 9 | Lưu trữ thông tin đoàn viên công đoàn | Bắt buộc |
-| 10 | Mã cán bộ được tạo tự động | Bắt buộc |
-| 11 | Tìm kiếm, lọc hồ sơ theo nhiều tiêu chí | Bắt buộc |
-| 12 | Xuất hồ sơ ra file PDF, Excel, Word theo mẫu | Bắt buộc |
-| 13 | Hiển thị thông tin dạng học hàm, học vị (VD: PGS.TS. Nguyễn Văn A) | Bắt buộc |
+- Phòng nhân sự muốn lưu trữ chi tiết bằng cấp: tên bằng, chuyên ngành, trường cấp, năm tốt nghiệp, xếp loại.
+- Phòng nhân sự muốn lưu các chức danh khoa học.
+- Phòng nhân sự muốn lưu thông tin về chức danh, ngạch viên chức.
+- Phòng nhân sự muốn lưu thông tin về chức vụ có lưu quá trình bổ nhiệm, miễn nhiệm chức vụ.
+- Phòng nhân sự muốn lưu các chứng chỉ và có thể biết ngày hết hạn.
 
----
+### 2.3. Quản lý Cơ cấu Tổ chức
 
-### 2.2. Quản lý Trình độ Học vấn, Chức danh ⭐⭐⭐
+- Ban giám hiệu muốn thông tin cơ cấu tổ chức là hệ thống phân cấp theo quan hệ cha con, được xây dựng theo hướng hội đồng trường, hội đồng đảng ủy, các phòng ban quản lý, các khoa (dưới các khoa là các bộ môn).
+- Ban giám hiệu muốn có thể phân bổ nhân sự, chuyển công tác vào các khoa, các phòng, các bộ môn qua phần mềm.
+- Ban giám hiệu muốn một người có thể kiêm nhiệm nhiều chức vụ ở nhiều đơn vị.
+- Phòng nhân sự muốn các đơn vị có thể được lưu lịch sử thành lập, sáp nhập, giải thể đơn vị, có thể đánh dấu trạng thái tồn tại hay đã giải thể.
 
-| STT | Yêu cầu | Mức độ |
-|-----|---------|--------|
-| 1 | Lưu trữ chi tiết bằng cấp: tên bằng, chuyên ngành, trường cấp, năm tốt nghiệp, xếp loại | Bắt buộc |
-| 2 | Lưu các chức danh khoa học | Bắt buộc |
-| 3 | Lưu thông tin chức danh, ngạch viên chức | Bắt buộc |
-| 4 | Lưu thông tin chức vụ + quá trình bổ nhiệm, miễn nhiệm | Bắt buộc |
-| 5 | Lưu các chứng chỉ + ngày hết hạn | Bắt buộc |
+### 2.4. Quản lý Hợp đồng Lao động
 
----
+- Phòng nhân sự muốn phần mềm cho phép tạo lập 4 loại hợp đồng lao động: không xác định thời hạn, xác định thời hạn, thử việc, thỉnh giảng.
+- Phòng nhân sự muốn hợp đồng lao động có thể lưu trữ các thông tin: số HĐ, ngày ký, ngày hiệu lực, ngày hết hạn, nội dung công việc, phụ lục.
+- Phòng nhân sự muốn hợp đồng thỉnh giảng cho phép gia hạn và có cảnh báo hết hạn.
+- Phòng nhân sự muốn hợp đồng thử việc có thời gian dựa trên bậc hay ngạch tương ứng.
+- Phòng nhân sự muốn hợp đồng có thể in theo chuẩn mẫu.
+- Phòng nhân sự muốn hợp đồng có thể chuyển đổi theo quy tắc (từ thử việc → chính thức, từ có thời hạn → vô thời hạn).
+- Phòng nhân sự muốn cho phép lập hồ sơ từ các nhân sự đã được ký hợp đồng.
 
-### 2.3. Quản lý Cơ cấu Tổ chức ⭐⭐⭐
+### 2.5. Quản lý Bậc lương (Cơ bản - Chỉ lưu trữ)
 
-| STT | Yêu cầu | Mức độ |
-|-----|---------|--------|
-| 1 | Cơ cấu tổ chức phân cấp theo quan hệ cha-con (Trường → Khoa → Bộ môn) | Bắt buộc |
-| 2 | Phân bổ nhân sự, chuyển công tác vào các đơn vị | Bắt buộc |
-| 3 | Một người có thể kiêm nhiệm nhiều chức vụ ở nhiều đơn vị | Bắt buộc |
-| 4 | Lưu lịch sử thành lập, sáp nhập, giải thể đơn vị | Bắt buộc |
-| 5 | Đánh dấu trạng thái tồn tại/giải thể | Bắt buộc |
+- Phòng nhân sự muốn mỗi nhân sự sở hữu một hệ số lương và mức lương cơ sở, lương lấy theo ngạch bậc công chức, viên chức.
+- Phòng nhân sự muốn mỗi nhân sự cũng được lưu các loại phụ cấp.
+- Phòng nhân sự muốn có một bảng hệ số lương theo ngạch/bậc (Giảng viên, GV chính, GV cao cấp, Chuyên viên...) để tiện thay đổi bậc và ngạch.
+- Phòng nhân sự muốn lưu số bậc và hệ số tương ứng cho mỗi ngạch (VD: Giảng viên có 9 bậc, hệ số 2.34 - 4.98).
+- Phòng nhân sự muốn lưu hệ số phụ cấp chức vụ theo từng vị trí.
+- Phòng nhân sự muốn yêu cầu có các loại phụ cấp mặc định sau: chức vụ, thâm niên, ưu đãi ngành, trách nhiệm, độc hại, khu vực.
 
----
+> **Lưu ý MVP:** Phase 1 chỉ lưu trữ thông tin lương, KHÔNG tính lương tự động và KHÔNG thông báo tăng bậc tự động.
 
-### 2.4. Quản lý Hợp đồng Lao động ⭐⭐⭐
+### 2.6. Báo cáo Thống kê (Cơ bản)
 
-| STT | Yêu cầu | Mức độ |
-|-----|---------|--------|
-| 1 | Tạo lập 4 loại HĐ: không xác định thời hạn, xác định thời hạn, thử việc, thỉnh giảng | Bắt buộc |
-| 2 | Lưu thông tin HĐ: số HĐ, ngày ký, ngày hiệu lực, ngày hết hạn, nội dung công việc, phụ lục | Bắt buộc |
-| 3 | HĐ thỉnh giảng cho phép gia hạn và cảnh báo hết hạn | Bắt buộc |
-| 4 | HĐ thử việc có thời gian theo bậc/ngạch | Bắt buộc |
-| 5 | In hợp đồng theo chuẩn mẫu | Bắt buộc |
-| 6 | Chuyển đổi HĐ theo quy tắc (thử việc → chính thức, có thời hạn → vô thời hạn) | Bắt buộc |
-| 7 | Tạo hồ sơ nhân sự từ HĐ đã ký | Bắt buộc |
+- Lãnh đạo muốn thống kê nhân sự theo toàn trường, theo đơn vị dạng bảng.
+- Lãnh đạo muốn có thể xuất thống kê ra PDF, Excel.
 
----
+> **Lưu ý MVP:** Phase 1 không bao gồm thống kê biến động nhân sự phức tạp.
 
-### 2.5. Quản lý Bậc lương ⭐⭐ (Đơn giản hóa)
+### 2.7. Self-Service Portal (Cơ bản)
 
-| STT | Yêu cầu | Mức độ |
-|-----|---------|--------|
-| 1 | Lưu hệ số lương và mức lương cơ sở theo ngạch/bậc | Bắt buộc |
-| 2 | Lưu các loại phụ cấp (chức vụ, thâm niên, ưu đãi ngành, trách nhiệm, độc hại, khu vực) | Bắt buộc |
-| 3 | Bảng hệ số lương theo ngạch/bậc (VD: Giảng viên 9 bậc, hệ số 2.34-4.98) | Bắt buộc |
-| 4 | Hệ số phụ cấp chức vụ theo từng vị trí | Bắt buộc |
+- CBGV/NV muốn xem thông tin cá nhân.
+- CBGV/NV muốn xem lịch sử hợp đồng.
+- CBGV/NV muốn xem thông tin chức vụ, chức danh, học vấn, thông tin bậc lương.
 
-> **Lưu ý MVP:** Chỉ lưu trữ thông tin lương, KHÔNG tính lương tự động trong Phase 1.
-
----
-
-### 2.6. Báo cáo Thống kê ⭐ (Cơ bản)
-
-| STT | Yêu cầu | Mức độ |
-|-----|---------|--------|
-| 1 | Thống kê nhân sự theo toàn trường, theo đơn vị (dạng bảng) | Bắt buộc |
-| 2 | Xuất thống kê ra PDF, Excel | Bắt buộc |
-
----
-
-### 2.7. Self-Service Portal ⭐ (Cơ bản)
-
-| STT | Yêu cầu | Mức độ |
-|-----|---------|--------|
-| 1 | Xem thông tin cá nhân | Bắt buộc |
-| 2 | Xem lịch sử hợp đồng | Bắt buộc |
-| 3 | Xem thông tin chức vụ, học vấn, bậc lương | Bắt buộc |
+> **Lưu ý MVP:** Phase 1 không bao gồm chức năng yêu cầu cập nhật thông tin online.
 
 ---
 
 ## 3. Yêu cầu Chung
 
-| STT | Yêu cầu | Mức độ |
-|-----|---------|--------|
-| 1 | Kiểm tra tính hợp lệ dữ liệu trước khi lưu | Bắt buộc |
-| 2 | Mỗi danh mục hỗ trợ: thêm/sửa, đánh dấu active/inactive, sắp xếp thứ tự | Bắt buộc |
-| 3 | Hỗ trợ danh mục phân cấp (VD: Quốc gia → Tỉnh/Thành phố) | Bắt buộc |
-| 4 | Không cho phép xóa danh mục đang sử dụng, chỉ đánh dấu inactive | Bắt buộc |
+- Với mỗi nhân sự có thể xem thông tin cá nhân.
+- Trước khi lưu một mục phải có kiểm tra tính hợp lệ của dữ liệu.
+- Mỗi danh mục hỗ trợ: thêm/sửa, đánh dấu active/inactive, sắp xếp thứ tự hiển thị.
+- Hỗ trợ danh mục phân cấp cho một số loại (VD: Quốc gia → Tỉnh/Thành phố).
+- Không cho phép xóa mục danh mục đang được sử dụng, chỉ cho phép đánh dấu inactive.
 
 ---
 
 ## 4. Yêu cầu Phi chức năng
 
-### 4.1. Hiệu năng
-- Trang thông thường: < 2 giây
-- Báo cáo phức tạp: < 10 giây
+**Hiệu năng:**
+- Trang thông thường < 2 giây, báo cáo phức tạp < 10 giây.
 
-### 4.2. Bảo mật
-- Mã hóa dữ liệu nhạy cảm (lương, CCCD)
-- HTTPS cho web
-- Ghi lại tất cả thao tác quan trọng
+**Bảo mật:**
+- Mã hóa dữ liệu nhạy cảm (lương, CCCD); HTTPS cho web.
+- Ghi lại tất cả thao tác quan trọng.
 
-### 4.3. Khả năng sử dụng
-- Giao diện tiếng Việt, thân thiện, responsive
-- Có tài liệu hướng dẫn sử dụng
-- Người dùng mới sử dụng được sau 4 giờ đào tạo
+**Khả năng sử dụng:**
+- Giao diện tiếng Việt, thân thiện, responsive.
+- Có tài liệu hướng dẫn sử dụng đầy đủ.
+- Người dùng mới sử dụng được các chức năng cơ bản sau 4 giờ đào tạo.
 
-### 4.4. Tích hợp
-- Hỗ trợ quản lý đa cơ sở: Hà Nội, Phố Hiến, TP.HCM
-- Hỗ trợ xuất file theo chuẩn
+**Tích hợp:**
+- Hỗ trợ xuất file theo chuẩn.
+- Hỗ trợ quản lý đa cơ sở: Hà Nội, Phố Hiến, TP.HCM.
 
-### 4.5. Tuân thủ pháp luật
-- Tuân thủ Bộ Luật Lao động 2019
-- Tuân thủ Luật Viên chức và các văn bản hướng dẫn
+**Tuân thủ pháp luật:**
+- Tuân thủ Bộ Luật Lao động 2019.
+- Tuân thủ Luật Viên chức và các văn bản hướng dẫn.
 
 ---
 
 ## 5. Phạm vi KHÔNG nằm trong Phase 1
 
-> Các module sau sẽ được phát triển trong Phase 2:
+Các module sau sẽ được phát triển trong Phase 2:
 
-| Module | Lý do hoãn |
-|--------|-----------|
-| Chấm công | Cần tích hợp máy chấm công |
-| Nghiên cứu khoa học | Quy tắc quy đổi phức tạp |
-| Giờ giảng | Nhiều quy tắc đặc thù |
-| Đào tạo chi tiết | Giảm xuống cơ bản |
-| Tuyển dụng | Ưu tiên thấp hơn |
-| Đánh giá viên chức | Ưu tiên thấp hơn |
-| Tính lương tự động | Chỉ lưu trữ trong Phase 1 |
-
----
-
-## Tổng kết
-
-| Tiêu chí | Giá trị |
-|----------|---------|
-| Số module MVP | 7 |
-| Số yêu cầu chức năng | ~35 |
-| Thời gian triển khai | 2 tháng |
-| Đội ngũ | 14 người (5 Teams) |
+- **Quản lý Tuyển dụng:** Lập hồ sơ ứng tuyển, lịch phỏng vấn → Hoãn.
+- **Quản lý Đào tạo:** Khóa đào tạo, cam kết, chi phí → Hoãn.
+- **Chấm công:** Cần tích hợp máy chấm công → Hoãn.
+- **Nghiên cứu khoa học:** Quy tắc quy đổi phức tạp → Hoãn.
+- **Giờ giảng:** Nhiều quy tắc đặc thù → Hoãn.
+- **Đánh giá viên chức:** Ưu tiên thấp hơn → Hoãn.
+- **Tính lương tự động:** Chỉ lưu trữ trong Phase 1 → Hoãn.
+- **Thông báo tăng bậc lương tự động:** → Hoãn.
 
 ---
 
-> *Tài liệu này là phiên bản rút gọn MVP từ bản đầy đủ. Các module và yêu cầu bị hoãn sẽ được triển khai trong Phase 2 sau khi hoàn thành Phase 1.*
+> *Tài liệu này là phiên bản rút gọn MVP. Các yêu cầu bị hoãn sẽ được triển khai trong Phase 2.*
