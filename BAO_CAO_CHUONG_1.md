@@ -289,6 +289,111 @@ Xây dựng hệ thống quản lý nhân sự tập trung, hiện đại, đáp
 
 ---
 
+#### 1.1.7.1. Module Tài khoản & Phân quyền (FEAT-AU)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-AU-01.1 | Đăng nhập | Đăng nhập bằng tài khoản/mật khẩu | STRQ-AU-01 |
+| FEAT-AU-01.2 | Đăng xuất | Đăng xuất khỏi hệ thống | STRQ-AU-02 |
+| FEAT-AU-01.3 | Đổi mật khẩu | Người dùng tự đổi mật khẩu | STRQ-AU-03 |
+| FEAT-AU-01.4 | Quên mật khẩu | Gửi link reset qua email | STRQ-AU-04 |
+| FEAT-AU-02.1 | Tạo tài khoản | Admin tạo tài khoản mới | STRQ-AU-05 |
+| FEAT-AU-02.2 | Sửa tài khoản | Admin sửa thông tin tài khoản | STRQ-AU-06 |
+| FEAT-AU-02.3 | Khóa/Mở khóa tài khoản | Admin khóa/mở khóa | STRQ-AU-07 |
+| FEAT-AU-02.4 | Reset mật khẩu | Admin reset mật khẩu cho người dùng | STRQ-AU-08 |
+| FEAT-AU-03.1 | Tạo vai trò | Tạo các role trong hệ thống | STRQ-AU-09 |
+| FEAT-AU-03.2 | Phân quyền chức năng | Gán chức năng cho role | STRQ-AU-10 |
+| FEAT-AU-03.3 | Gán vai trò | Gán role cho người dùng | STRQ-AU-11 |
+| FEAT-AU-04.1 | Log đăng nhập/xuất | Ghi lại lịch sử đăng nhập | STRQ-AU-12 |
+| FEAT-AU-04.2 | Log thao tác | Ghi lại các thao tác quan trọng | STRQ-AU-13 |
+| FEAT-AU-04.3 | Xem lịch sử đăng nhập | Admin xem log đăng nhập | STRQ-AU-14 |
+
+#### 1.1.7.2. Module Hồ sơ Nhân sự (FEAT-ER)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-ER-01 | Tạo hồ sơ nhân sự | Form nhập thông tin cơ bản | STRQ-ER-01, 02 |
+| FEAT-ER-01.1 | Nhập họ tên | Trường nhập họ tên đầy đủ | STRQ-ER-03 |
+| FEAT-ER-01.2 | Nhập ngày sinh | Trường nhập ngày tháng năm sinh | STRQ-ER-04 |
+| FEAT-ER-01.3 | Chọn giới tính | Dropdown chọn giới tính | STRQ-ER-05 |
+| FEAT-ER-01.4 | Nhập CCCD/CMT | Trường nhập số CCCD | STRQ-ER-06 |
+| FEAT-ER-01.5 | Nhập nơi sinh, quê quán | Trường nhập địa chỉ | STRQ-ER-07 |
+| FEAT-ER-01.6 | Chọn dân tộc, tôn giáo | Dropdown chọn từ danh mục | STRQ-ER-08 |
+| FEAT-ER-02 | Quản lý thông tin liên hệ | Nhập/sửa địa chỉ, SĐT, email | STRQ-ER-09 → 13 |
+| FEAT-ER-03 | Quản lý thông tin gia đình | Nhập/sửa hôn nhân, người phụ thuộc | STRQ-ER-14 → 17 |
+| FEAT-ER-04 | Upload ảnh chân dung | Upload ảnh 3x4, 4x6 | STRQ-ER-18, 19 |
+| FEAT-ER-05 | Quản lý thông tin ngân hàng | Nhập tài khoản, chi nhánh | STRQ-ER-20 → 22 |
+| FEAT-ER-06 | Quản lý quá trình công tác | Nhập lịch sử công tác | STRQ-ER-23 |
+| FEAT-ER-07 | Quản lý thông tin Đảng viên | Nhập thông tin Đảng | STRQ-ER-24 → 26 |
+| FEAT-ER-08 | Quản lý thông tin Công đoàn | Nhập thông tin đoàn viên | STRQ-ER-27 |
+| FEAT-ER-09 | Sinh mã cán bộ tự động | Tự động tạo mã theo quy tắc | STRQ-ER-28 |
+| FEAT-ER-10 | Tìm kiếm, lọc hồ sơ | Tìm theo tên, mã, đơn vị | STRQ-ER-29 → 32 |
+| FEAT-ER-11 | Xuất hồ sơ | Xuất PDF, Excel, Word | STRQ-ER-33 → 35 |
+| FEAT-ER-12 | Hiển thị học hàm/học vị | Format: PGS.TS. Nguyễn Văn A | STRQ-ER-36 |
+
+#### 1.1.7.3. Module Trình độ, Chức danh (FEAT-QM)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-QM-01 | Quản lý bằng cấp | Nhập/sửa thông tin bằng cấp | STRQ-QM-01 → 05 |
+| FEAT-QM-02 | Quản lý chức danh khoa học | Lưu GS, PGS | STRQ-QM-06 |
+| FEAT-QM-03 | Quản lý học vị | Lưu TS, ThS, CN | STRQ-QM-07 |
+| FEAT-QM-04 | Quản lý ngạch viên chức | Lưu ngạch công chức | STRQ-QM-08 |
+| FEAT-QM-05 | Quản lý chức vụ | Lưu quá trình bổ nhiệm | STRQ-QM-09 → 12 |
+| FEAT-QM-06 | Quản lý chứng chỉ | Lưu + cảnh báo hết hạn | STRQ-QM-13 → 16 |
+
+#### 1.1.7.4. Module Cơ cấu Tổ chức (FEAT-OS)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-OS-01 | Quản lý đơn vị phân cấp | Cây tổ chức Trường → Khoa → Bộ môn | STRQ-OS-01 → 06 |
+| FEAT-OS-02 | Phân bổ nhân sự | Gán nhân viên vào đơn vị | STRQ-OS-07 |
+| FEAT-OS-03 | Chuyển công tác | Di chuyển nhân sự giữa đơn vị | STRQ-OS-08 |
+| FEAT-OS-04 | Quản lý kiêm nhiệm | Một người nhiều chức vụ | STRQ-OS-09 |
+| FEAT-OS-05 | Lịch sử đơn vị | Thành lập/sáp nhập/giải thể | STRQ-OS-10 → 13 |
+| FEAT-OS-06 | Sơ đồ tổ chức | Hiển thị cây trực quan | STRQ-OS-14 |
+
+#### 1.1.7.5. Module Hợp đồng Lao động (FEAT-CM)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-CM-01 | Tạo hợp đồng | Form tạo 4 loại HĐ | STRQ-CM-01 → 04 |
+| FEAT-CM-02 | Lưu thông tin HĐ | Số, ngày, hiệu lực, phụ lục | STRQ-CM-05 → 10 |
+| FEAT-CM-03 | Gia hạn HĐ thỉnh giảng | Chức năng gia hạn | STRQ-CM-11 |
+| FEAT-CM-04 | Cảnh báo hết hạn | Thông báo HĐ sắp hết | STRQ-CM-12 |
+| FEAT-CM-05 | Thời gian thử việc theo ngạch | Tự động tính theo ngạch | STRQ-CM-13 |
+| FEAT-CM-06 | In hợp đồng | Xuất theo mẫu chuẩn | STRQ-CM-14 |
+| FEAT-CM-07 | Chuyển đổi HĐ | Thử việc → Chính thức | STRQ-CM-15, 16 |
+| FEAT-CM-08 | Tạo hồ sơ từ HĐ | Tự động tạo hồ sơ | STRQ-CM-17 |
+
+#### 1.1.7.6. Module Bậc lương (FEAT-PB)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-PB-01 | Lưu hệ số lương | Hệ số theo ngạch/bậc | STRQ-PB-01 |
+| FEAT-PB-02 | Lưu lương cơ sở | Mức lương cơ sở hiện hành | STRQ-PB-02 |
+| FEAT-PB-03 | Gán ngạch/bậc | Lưu ngạch và bậc của nhân sự | STRQ-PB-03, 04 |
+| FEAT-PB-04 | Bảng hệ số lương | Danh mục ngạch/bậc/hệ số | STRQ-PB-05 |
+| FEAT-PB-05 | Quản lý phụ cấp | 6 loại phụ cấp | STRQ-PB-06 → 11 |
+| FEAT-PB-06 | Hệ số phụ cấp chức vụ | Theo vị trí | STRQ-PB-12 |
+
+#### 1.1.7.7. Module Báo cáo (FEAT-RP)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-RP-01 | Thống kê nhân sự | Theo toàn trường/đơn vị | STRQ-RP-01, 02 |
+| FEAT-RP-02 | Xuất báo cáo | PDF, Excel | STRQ-RP-03, 04 |
+
+#### 1.1.7.8. Module Self-Service (FEAT-SS)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|----------------|
+| FEAT-SS-01 | Xem hồ sơ cá nhân | Trang xem thông tin | STRQ-SS-01 |
+| FEAT-SS-02 | Xem lịch sử HĐ | Danh sách HĐ đã ký | STRQ-SS-02 |
+| FEAT-SS-03 | Xem thông tin lương | Ngạch/bậc, phụ cấp | STRQ-SS-03 → 05 |
+
+---
+
 ### 1.1.8. Mô hình hóa yêu cầu
 
 #### 1.1.8.1. Xác định các tác nhân và Use Case
