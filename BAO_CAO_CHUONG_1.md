@@ -836,7 +836,7 @@ Triển khai|   |   |   |   |   |   |   |███|
 
 | Tiêu chí | Giá trị |
 |----------|---------|
-| Tổng số STRQ | **119** |
+| Tổng số STRQ | **118** |
 | Tổng số FEAT | **62** |
 | Số module | **8** |
 | Số Use Case | **10** |

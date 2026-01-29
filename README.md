@@ -12,7 +12,7 @@ Dự án **Phân tích và Thiết kế Hệ thống Quản lý Nhân sự (HRMS
 | **Phạm vi Phase 1** | MVP - 8 Modules cốt lõi |
 | **Thời gian** | 2 tháng |
 | **Nhân lực** | 14 thành viên (5 Team) |
-| **Số yêu cầu** | 119 STRQ → 62 FEAT |
+| **Số yêu cầu** | 118 STRQ → 62 FEAT |
 | **Số Use Case** | 10 UC |
 
 ---

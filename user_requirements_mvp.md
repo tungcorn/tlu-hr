@@ -139,7 +139,7 @@
 
 ---
 
-### 2.4. Quản lý Hợp đồng Lao động
+### 2.5. Quản lý Hợp đồng Lao động
 
 | STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
 |-----|-----------|-------------|---------|----------------|-------------|
@@ -371,4 +371,4 @@
 
 ---
 
-> *Tài liệu này chứa 119 yêu cầu STRQ ánh xạ sang 62 Features trong 8 modules. Phase 2 sẽ triển khai các tính năng còn lại.*
+> *Tài liệu này chứa 118 yêu cầu STRQ ánh xạ sang 62 Features trong 8 modules. Phase 2 sẽ triển khai các tính năng còn lại.*
