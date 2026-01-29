@@ -31,7 +31,28 @@
 
 ## 2. Thu thập yêu cầu từ các Stakeholders (STRQ → FEAT)
 
-### 2.1. Quản lý Hồ sơ Nhân sự
+### 2.1. Quản lý Tài khoản & Phân quyền
+
+| STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
+|-----|-----------|-------------|---------|----------------|-------------|
+| 1 | Tất cả người dùng | Phỏng vấn | STRQ-AU-01 | Người dùng muốn đăng nhập bằng tài khoản/mật khẩu | → FEAT-AU-01.1 |
+| 2 | Tất cả người dùng | Phỏng vấn | STRQ-AU-02 | Người dùng muốn đăng xuất khỏi hệ thống | → FEAT-AU-01.2 |
+| 3 | Tất cả người dùng | Phỏng vấn | STRQ-AU-03 | Người dùng muốn đổi mật khẩu của mình | → FEAT-AU-01.3 |
+| 4 | Tất cả người dùng | Phỏng vấn | STRQ-AU-04 | Người dùng muốn lấy lại mật khẩu khi quên | → FEAT-AU-01.4 |
+| 5 | Phòng CNTT | Phỏng vấn | STRQ-AU-05 | Quản trị viên muốn tạo tài khoản mới cho người dùng | → FEAT-AU-02.1 |
+| 6 | Phòng CNTT | Phỏng vấn | STRQ-AU-06 | Quản trị viên muốn sửa thông tin tài khoản | → FEAT-AU-02.2 |
+| 7 | Phòng CNTT | Phỏng vấn | STRQ-AU-07 | Quản trị viên muốn khóa/mở khóa tài khoản | → FEAT-AU-02.3 |
+| 8 | Phòng CNTT | Phỏng vấn | STRQ-AU-08 | Quản trị viên muốn reset mật khẩu cho người dùng | → FEAT-AU-02.4 |
+| 9 | Phòng CNTT | Phỏng vấn | STRQ-AU-09 | Quản trị viên muốn tạo các vai trò (role) trong hệ thống | → FEAT-AU-03.1 |
+| 10 | Phòng CNTT | Phỏng vấn | STRQ-AU-10 | Quản trị viên muốn phân quyền chức năng cho từng vai trò | → FEAT-AU-03.2 |
+| 11 | Phòng CNTT | Phỏng vấn | STRQ-AU-11 | Quản trị viên muốn gán vai trò cho người dùng | → FEAT-AU-03.3 |
+| 12 | Phòng CNTT | Brainstorming | STRQ-AU-12 | Hệ thống cần ghi log tất cả các lần đăng nhập/đăng xuất | → FEAT-AU-04.1 |
+| 13 | Phòng CNTT | Brainstorming | STRQ-AU-13 | Hệ thống cần ghi log các thao tác quan trọng của người dùng | → FEAT-AU-04.2 |
+| 14 | Phòng CNTT | Brainstorming | STRQ-AU-14 | Quản trị viên muốn xem lịch sử đăng nhập của người dùng | → FEAT-AU-04.3 |
+
+---
+
+### 2.2. Quản lý Hồ sơ Nhân sự
 
 | STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
 |-----|-----------|-------------|---------|----------------|-------------|
@@ -74,7 +95,7 @@
 
 ---
 
-### 2.2. Quản lý Trình độ Học vấn, Chức danh
+### 2.3. Quản lý Trình độ Học vấn, Chức danh
 
 | STT | Đối tượng | Phương pháp | Mã STRQ | Yêu cầu (STRQ) | Ánh xạ FEAT |
 |-----|-----------|-------------|---------|----------------|-------------|
@@ -188,7 +209,26 @@
 
 ## 3. Bảng tổng hợp Features (FEAT)
 
-### 3.1. Module Hồ sơ Nhân sự (FEAT-ER)
+### 3.1. Module Tài khoản & Phân quyền (FEAT-AU)
+
+| Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
+|---------|--------------|-------|-----------------|
+| FEAT-AU-01.1 | Đăng nhập | Đăng nhập bằng tài khoản/mật khẩu | STRQ-AU-01 |
+| FEAT-AU-01.2 | Đăng xuất | Đăng xuất khỏi hệ thống | STRQ-AU-02 |
+| FEAT-AU-01.3 | Đổi mật khẩu | Người dùng tự đổi mật khẩu | STRQ-AU-03 |
+| FEAT-AU-01.4 | Quên mật khẩu | Gửi link reset qua email | STRQ-AU-04 |
+| FEAT-AU-02.1 | Tạo tài khoản | Admin tạo tài khoản mới | STRQ-AU-05 |
+| FEAT-AU-02.2 | Sửa tài khoản | Admin sửa thông tin tài khoản | STRQ-AU-06 |
+| FEAT-AU-02.3 | Khóa/Mở khóa tài khoản | Admin khóa/mở khóa | STRQ-AU-07 |
+| FEAT-AU-02.4 | Reset mật khẩu | Admin reset mật khẩu cho người dùng | STRQ-AU-08 |
+| FEAT-AU-03.1 | Tạo vai trò | Tạo các role trong hệ thống | STRQ-AU-09 |
+| FEAT-AU-03.2 | Phân quyền chức năng | Gán chức năng cho role | STRQ-AU-10 |
+| FEAT-AU-03.3 | Gán vai trò | Gán role cho người dùng | STRQ-AU-11 |
+| FEAT-AU-04.1 | Log đăng nhập/xuất | Ghi lại lịch sử đăng nhập | STRQ-AU-12 |
+| FEAT-AU-04.2 | Log thao tác | Ghi lại các thao tác quan trọng | STRQ-AU-13 |
+| FEAT-AU-04.3 | Xem lịch sử đăng nhập | Admin xem log đăng nhập | STRQ-AU-14 |
+
+### 3.2. Module Hồ sơ Nhân sự (FEAT-ER)
 
 | Mã FEAT | Tên tính năng | Mô tả | STRQ liên quan |
 |---------|--------------|-------|----------------|
@@ -311,9 +351,9 @@
 
 | Tiêu chí | Giá trị |
 |----------|---------|
-| Tổng số STRQ | **105** |
-| Tổng số FEAT | **48** |
-| Số module | **7** |
+| Tổng số STRQ | **119** |
+| Tổng số FEAT | **62** |
+| Số module | **8** |
 | Thời gian triển khai | **2 tháng (Phase 1)** |
 
 ---
@@ -331,4 +371,4 @@
 
 ---
 
-> *Tài liệu này chứa 105 yêu cầu STRQ ánh xạ sang 48 Features. Phase 2 sẽ triển khai các tính năng còn lại.*
+> *Tài liệu này chứa 119 yêu cầu STRQ ánh xạ sang 62 Features trong 8 modules. Phase 2 sẽ triển khai các tính năng còn lại.*
